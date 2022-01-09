@@ -1,0 +1,812 @@
+[    0.000669][Mv-A][6oo1] Starting recovery (pid 576) on Sun Jan  1 00:38:32 2017
+[    0.000858][Mv-A][6oo1] recovery tmp log path : /efs/recovery/tmp_recovery.log
+[    0.000943][Mv-A][6oo1] init_extra_history() : /efs/recovery/extra_history exists
+[    0.001026][Mv-A][6oo1] no /efs/recovery/tmp_recovery.log file -> normal operation
+[    0.001109][Mv-A][6oo1]
+[    0.001162][Mv-A][6oo1] [collecting table information 2]
+[    0.001226][Mv-A][6oo1] recovery filesystem table
+[    0.001285][Mv-A][6oo1] =========================
+[    0.001343][Mv-A][6oo1]   0 /odm  ext4 /dev/block/platform/soc/1da4000.ufshc/by-name/odm 0
+[    0.001417][Mv-A][6oo1]   1 /system  ext4 /dev/block/platform/soc/1da4000.ufshc/by-name/system 0
+[    0.001492][Mv-A][6oo1]   2 /vendor  ext4 /dev/block/platform/soc/1da4000.ufshc/by-name/vendor 0
+[    0.001568][Mv-A][6oo1]   3 /boot  emmc /dev/block/bootdevice/by-name/boot 0
+[    0.001635][Mv-A][6oo1]   4 /recovery  emmc /dev/block/bootdevice/by-name/recovery 0
+[    0.001707][Mv-A][6oo1]   5 /system  ext4 /dev/block/bootdevice/by-name/system 0
+[    0.001788][Mv-A][6oo1]   6 /data  ext4 /dev/block/bootdevice/by-name/userdata -16384
+[    0.001872][Mv-A][6oo1]   7 /cache  ext4 /dev/block/bootdevice/by-name/cache 0
+[    0.001954][Mv-A][6oo1]   8 /sdcard  sdfat /dev/block/mmcblk0p1 0
+[    0.002065][Mv-A][6oo1]   9 /efs  ext4 /dev/block/bootdevice/by-name/efs 0
+[    0.002150][Mv-A][6oo1]   10 /carrier  ext4 /dev/block/bootdevice/by-name/carrier 0
+[    0.002236][Mv-A][6oo1]   11 /preload  ext4 /dev/block/bootdevice/by-name/hidden 0
+[    0.002347][Mv-A][6oo1]   12 /modem  emmc /dev/block/bootdevice/by-name/apnhlos 0
+[    0.002432][Mv-A][6oo1]   13 /mdm  emmc /dev/block/bootdevice/by-name/modem 0
+[    0.002530][Mv-A][6oo1]   14 /dsp  emmc /dev/block/bootdevice/by-name/dsp 0
+[    0.002618][Mv-A][6oo1]   15 /vendor  ext4 /dev/block/bootdevice/by-name/vendor 0
+[    0.002737][Mv-A][6oo1]   16 /odm  ext4 /dev/block/bootdevice/by-name/odm 0
+[    0.002807][Mv-A][6oo1]   17 /misc  emmc /dev/block/bootdevice/by-name/misc 0
+[    0.002876][Mv-A][6oo1]   18 /tmp  ramdisk ramdisk 0
+[    0.002935][Mv-A][6oo1]
+[    0.003013][Mv-A][6oo1]
+[    0.003061][Mv-A][6oo1] [initialize init-recovery]
+[    0.003161][Mv-A][6oo1]
+[    0.003292][Mv-A][6oo1] #mount -f /cache 
+[    0.003455][Mv-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.003666][Mv-A][6oo1] I:[libfs_mgr]Filesystem on /dev/block/bootdevice/by-name/cache was not cleanly shutdown; state flags: 0x1, incompat feature flags: 0x246
+[    0.003886][Mv-A][6oo1] I:[libfs_mgr]Do not set FS_STAT_UNCLEAN_SHUTDOWN
+[    0.005667][Mv-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.005778][Mv-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.005871][Mv-A][6oo1]
+[    0.005950][Mv-A][6oo1] #ls /cache/recovery/ 
+[    0.006452][Mv-A][6oo1] -rw-r--r-- system   system          0 2017-01-01 00:34 last_install
+[    0.006530][Mv-A][6oo1] -rw------- system   system     467851 2017-01-01 00:34 last_kmsg
+[    0.006604][Mv-A][6oo1] -rw------- system   system          0 2017-01-01 00:34 last_crash
+[    0.006677][Mv-A][6oo1] -rw------- system   system          0 2017-01-01 00:34 last_extra_history_old
+[    0.006754][Mv-A][6oo1] -rw------- system   system      49721 2017-01-01 00:34 log
+[    0.006824][Mv-A][6oo1] -rw------- system   system       8125 2017-01-01 00:34 last_history
+[    0.006914][Mv-A][6oo1] -rw------- system   system       2748 2017-01-01 00:34 last_extra_history
+[    0.007004][Mv-A][6oo1] -rw-r--r-- system   system       1118 2017-01-01 00:34 last_avc_msg_recovery
+[    0.007094][Mv-A][6oo1] -rw-r--r-- system   system      50149 2017-01-01 00:34 last_recovery
+[    0.007181][Mv-A][6oo1] -rw------- root     root            5 2017-01-01 00:34 last_locale
+[    0.007266][Mv-A][6oo1] -rw-r----- system   system      49721 2017-01-01 00:34 last_log
+[    0.007351][Mv-A][6oo1] -rw-r--r-- system   system      24030 2017-01-01 00:34 last_last_kernel
+[    0.007450][Mv-A][6oo1]
+[    0.007504][Mv-A][6oo1] #ls /cache/fota/ 
+[    0.007559][Mv-A][6oo1]
+[    0.007607][Mv-A][6oo1] #unmount /cache 
+[    0.010166][Mv-A][6oo1] /cache sucessfully unmounted
+[    0.010234][Mv-A][6oo1]
+[    0.010285][Mv-A][6oo1] #exec -f /system/bin/e2fsck -v -y /dev/block/bootdevice/by-name/cache 
+[    0.022371][Mv-A][6oo1] e2fsck 1.44.4 (18-Aug-2018)
+[    0.027824][Mv-A][6oo1] skipping journal recovery because INCOMPAT_RECOVER was clear.
+[    0.027932][Mv-A][6oo1] check whether gdt & bitmap free count is vaild
+[    0.028297][Mv-A][6oo1] cache: clean, 29/25600 files, 2817/102400 blocks
+[    0.029703][Mv-A][6oo1]
+[    0.029763][Mv-A][6oo1] #mount /cache 
+[    0.030062][Mv-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.031566][Mv-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.031676][Mv-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.031778][Mv-A][6oo1]
+[    0.031834][Mv-A][6oo1] #fcut --limited-file-size=1024k -f /cache/recovery/last_recovery /tmp/recovery_old.tmp 
+[    0.032491][Mv-A][6oo1]
+[    0.032541][Mv-A][6oo1] #ls /efs/ 
+[    0.032597][Mv-A][6oo1] drwx------ root     root              1970-01-01 00:00 lost+found
+[    0.032674][Mv-A][6oo1] drwxr-xr-x system   system            2017-01-01 00:00 carrier
+[    0.032747][Mv-A][6oo1] drwxrwxr-x radio    system            2022-01-07 17:44 sec_efs
+[    0.032819][Mv-A][6oo1] drwxrwx--- system   system            2018-11-28 02:44 prov
+[    0.032892][Mv-A][6oo1] drwxrwx--- system   system            2018-11-28 02:44 prov_data
+[    0.032966][Mv-A][6oo1] drwxrwx--x radio    system            2017-01-01 00:38 recovery
+[    0.033038][Mv-A][6oo1] drwxrwxr-- drm      system            2017-01-01 00:00 drm
+[    0.033118][Mv-A][6oo1] drwxrwx--x radio    system            2017-01-01 00:00 cpk
+[    0.033201][Mv-A][6oo1] drwxrw---- spay     spay              2017-01-01 00:00 pfw_data
+[    0.033287][Mv-A][6oo1] drwxrwx--- radio    system            2018-11-28 02:44 TEE
+[    0.033371][Mv-A][6oo1] drwxrwx--- system   system            2019-10-26 03:50 ssm
+[    0.033457][Mv-A][6oo1] drwxrwxr-x wifi     root              2018-11-28 02:44 wifi
+[    0.033540][Mv-A][6oo1] drwxrwx--- audioserver audio             2017-01-01 00:00 maxim
+[    0.033629][Mv-A][6oo1] drwxrwxr-x root     radio             2017-01-01 00:00 imei
+[    0.033712][Mv-A][6oo1] drwxrwxr-x system   system            2018-11-28 02:44 DAK
+[    0.033782][Mv-A][6oo1] drwxrwxr-x system   system            2019-01-17 19:13 FactoryApp
+[    0.033854][Mv-A][6oo1] drwxrwxr-x radio    system            2017-01-01 00:00 Battery
+[    0.033925][Mv-A][6oo1] drwx------ system   system            2017-01-01 00:00 etc
+[    0.033995][Mv-A][6oo1] drwxrwx--- system   bluetooth          2018-11-28 02:44 bluetooth
+[    0.034067][Mv-A][6oo1] drwx------ system   system            2019-05-26 22:33 sfs
+[    0.034136][Mv-A][6oo1] drwxrwx--x radio    system            2018-11-28 02:04 usb_hw_param
+[    0.034210][Mv-A][6oo1] -rw-rw-r-- radio    radio         152 2018-11-28 02:44 00000000.authtokcont
+[    0.034294][Mv-A][6oo1] -rw-r--r-- system   system        144 2018-11-28 02:44 wv.keys
+[    0.034380][Mv-A][6oo1] drwx------ system   system            2021-02-14 02:56 umc
+[    0.034531][Mv-A][6oo1] drwxr--r-- system   system            2019-01-17 19:13 adp_token
+[    0.034623][Mv-A][6oo1] -rw-rw---- root     root           16 2017-01-01 00:01 lpm_boot.log
+[    0.034712][Mv-A][6oo1] drwx------ nfc      nfc               2017-06-22 14:42 nfc
+[    0.034799][Mv-A][6oo1] drwxrwxr-x system   system            2017-03-15 09:40 lpm
+[    0.034886][Mv-A][6oo1] drwx------ system   system            2017-07-27 01:02 mb_po
+[    0.034969][Mv-A][6oo1] drwxrwxr-x system   system            2017-07-27 01:02 gatekeeper
+[    0.035042][Mv-A][6oo1] -rwx------ radio    radio          30 2021-10-27 06:32 telephony.prop
+[    0.035117][Mv-A][6oo1] drwx------ system   system            2020-07-01 19:45 sfsAlt
+[    0.035203][Mv-A][6oo1]
+[    0.035252][Mv-A][6oo1] #ls /efs/MDM/ 
+[    0.040712][Mv-A][6oo1] /cache sucessfully unmounted
+[    0.040857][Mv-A][6oo1] running init-recovery time : 0.039s
+[    0.040956][Mv-A][6oo1]
+[    0.041037][Mv-A][6oo1] [init-history]
+[    0.041305][Mv-A][6oo1]
+[    0.041444][Mv-A][6oo1] #df /efs 
+[    0.041540][Mv-A][6oo1] Filesystem               Size         Used         Free       Blksize
+[    0.041834][Mv-A][6oo1] /efs                    15.7M(16433152)  844.0K(864256)   14.8M(15568896) 4096
+[    0.041964][Mv-A][6oo1]
+[    0.042208][Mv-A][6oo1] #mkdir -f radio system 0771 /efs/recovery 
+[    0.042401][Mv-A][6oo1]
+[    0.042571][Mv-A][6oo1] #touch -f /efs/recovery/history 
+[    0.042840][Mv-A][6oo1] running init-history time : 0.001s
+[    0.042948][Mv-A][6oo1]
+[    0.043035][Mv-A][6oo1] [collecting command]
+[    0.043306][Mv-A][6oo1] read /sys/class/sec/sec_key/keycode_pressed = 115:1,116:1,114:0
+[    0.043381][Mv-A][6oo1] 9;w
+[    0.043473][Mv-A][6oo1] E:isManualModeByKeyPress: KEY_VOLUMEUP(1)
+[    0.043574][Mv-A][6oo1] E:isManualModeByKeyPress: KEY_POWER(1)
+[    0.043671][Mv-A][6oo1] E:isManualModeByKeyPress: KEY_VOLUMEDOWN(0)
+[    0.043771][Mv-A][6oo1] E:isManualModeByKeyPress: ManualKeyPress(0)
+[    0.043880][Mv-A][6oo1] I:main :: Check recovery command!!
+[    0.046054][Mv-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.047872][Mv-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.047991][Mv-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.051719][Mv-A][6oo1] save_header(), prefix : Mv
+[    0.052123][Mv-A][6oo1] copy_file '/efs/recovery/history' '/cache/recovery/last_history'
+[    0.054743][Mv-A][6oo1] /proc/reset_reason : NP
+[    0.054827][Mv-A][6oo1] save_resetreason() : Failed to open /proc/pwrsrc (No such file or directory)
+[    0.055426][Mv-A][6oo1] /proc/store_lastkmsg : 1
+[    0.055491][Mv-A][6oo1] save_resetreason() : Failed to open /proc/extra (No such file or directory)
+[    0.055934][Mv-A][6oo1] locale is [en-US]
+[    0.056523][Mv-A][6oo1] Loading make_device from librecovery_ui_ext.so
+[    0.057447][Mv-A][6oo1] I:Brightness file: /sys/class/leds/lcd-backlight/brightness
+[    0.057522][Mv-A][6oo1] I:Max brightness file: /sys/class/leds/lcd-backlight/max_brightness
+[    0.057614][Mv-A][6oo1] I:Brightness: 120 (50%)
+[    0.057719][Mv-A][6oo1] pixel_format : UNKNOWN
+[    0.059700][Mv-A][6oo1] Failed to find/open a drm device: No such file or directory
+[    0.060133][Mv-A][6oo1] fb0 reports (possibly inaccurate):
+[    0.060210][Mv-A][6oo1]   vi.bits_per_pixel = 32
+[    0.060278][Mv-A][6oo1]   vi.red.offset   =   0   .length =   8
+[    0.060345][Mv-A][6oo1]   vi.green.offset =   8   .length =   8
+[    0.060408][Mv-A][6oo1]   vi.blue.offset  =  16   .length =   8
+[    0.083736][Mv-A][6oo1] framebuffer: 0 (2560 x 1600)
+[    0.341497][Mv-A][6oo1] dpi : xxhdpi
+[    0.341562][Mv-A][6oo1] dpY = 3
+[    0.343329][Mv-A][6oo1]           erasing_text: en (137 x 57 @ 2030)
+[    0.345634][Mv-A][6oo1]        no_command_text: en (249 x 57 @ 2030)
+[    0.347263][Mv-A][6oo1]             error_text: en (99 x 57 @ 2030)
+[    0.348031][Mv-A][6oo1]   cancel_wipe_data_text: en (315 x 48 @ 714)
+[    0.349314][Mv-A][6oo1]   factory_data_reset_text: en (816 x 48 @ 714)
+[    0.349467][Mv-A][6oo1] E:Failed to load bitmap try_again_text (error -1)
+[    0.352274][Mv-A][6oo1]   wipe_data_confirmation_text: en (1052 x 96 @ 1462)
+[    0.352506][Mv-A][6oo1] E:Failed to load bitmap wipe_data_menu_header_text (error -1)
+[    0.352582][Mv-A][6oo1]
+[    0.352628][Mv-A][6oo1] sim_frames 12
+[    0.387678][Mv-A][6oo1] intro_frames 0
+[    0.387752][Mv-A][6oo1] loop_frames 15
+[    0.418725][Mv-A][6oo1] Reboot Recovery Cause file exist
+[    0.418808][Mv-A][6oo1] read_reboot_recovery_cause_file++
+[    0.418875][Mv-A][6oo1]
+[    0.418922][Mv-A][6oo1] #fail to open recovery_cause(No such file or directory)#
+[    0.418986][Mv-A][6oo1] read_reboot_recovery_cause_file(-2)--
+[    0.419065][Mv-A][6oo1] Reboot Recovery Cause couldn't be read from file, so [UNKNOWN]
+[    0.419141][Mv-A][6oo1]
+[    0.419185][Mv-A][6oo1] #Reboot Recovery Cause is [UNKNOWN]#
+[    0.425817][Mv-A][6oo1]
+[    0.425864][Mv-A][6oo1] #Reboot Recovery Cause is [UNKNOWN]#
+[    0.425926][Mv-A][6oo1]
+[    0.425970][Mv-A][6oo1] [reboot-reason-history]
+[    0.426024][Mv-A][6oo1] save_recovery_cause() : reboot_reason=UNKNOWN
+[    0.426091][Mv-A][6oo1] copy_file '/efs/recovery/history' '/cache/recovery/last_history'
+[    0.429854][Mv-A][6oo1] /system/bin/fastbootd can't be invoked (No such file or directory)
+[    0.429920][Mv-A][6oo1] check the MDM policy. retry(1)
+[    0.429994][Mv-A][6oo1] I:/efs is already mounted
+[    0.430042][Mv-A][6oo1] check_MDM_policy: /efs is mounted normally
+[    0.430096][Mv-A][6oo1] check_MDM_policy: /efs/MDM/FactoryReset does not exist. MDM allows factoryReset (No such file or directory)
+[    0.430255][Mv-A][6oo1] W:[libfs_mgr]Failed to umount /efs: Device or resource busy
+[    0.430318][Mv-A][6oo1] check_MDM_policy: can't unmount /efs (Device or resource busy)
+[    0.430381][Mv-A][6oo1] check_MDM_policy: ret 1
+[    0.453690][Mv-A][6oo1] I:locale is [en-US]
+[    0.457413][Mv-A][6oo1] SELinux:  Skipping /product_file_contexts:  empty file
+[    0.457521][Mv-A][6oo1] SELinux:  Skipping /odm_file_contexts:  empty file
+[    0.457679][Mv-A][6oo1] SELinux: Loaded file_contexts
+[    0.457868][Mv-A][6oo1] main() : usb_config = none, usb_state = none
+[    0.457936][Mv-A][6oo1] ro.boot.boot_recovery=1 
+[    0.457992][Mv-A][6oo1] rtn_config value is empty.
+[    0.458049][Mv-A][6oo1] stage is []
+[    0.458102][Mv-A][6oo1] reason is [(null)]
+[    0.458154][Mv-A][6oo1] requested_time is [(null)]
+[    0.458207][Mv-A][6oo1]
+[    0.458243][Mv-A][6oo1] [read csc code]
+[    0.458288][Mv-A][6oo1] I:/efs is already mounted
+[    0.458800][Mv-A][6oo1] W:[libfs_mgr]Failed to umount /efs: Device or resource busy
+[    0.458862][Mv-A][6oo1] can't unmount /efs - Device or resource busy
+[    0.458972][Mv-A][6oo1] read csc code = 'EGY'
+[    0.459020][Mv-A][6oo1] Use simple ui.
+[    0.462356][Mv-A][6oo1]        installing_text: en (459 x 57 @ 2030)
+[    0.486995][Mv-A][6oo1] kernel_version : Linux version 4.4.205-19646842 (dpi@SWDH4620) (gcc version 4.9.x 20150123 (prerelease) (GCC) ) #1 SMP PREEMPT Thu Mar 25 15:07:26 KST 2021
+[    0.487171][Mv-A][6oo1]
+[    0.487232][Mv-A][6oo1] Command: "/system/bin/recovery"
+[    0.487304][Mv-A][6oo1]
+[    0.487362][Mv-A][6oo1] update_package = (null)
+[    0.487431][Mv-A][6oo1] should_wipe_data = 0, should_wipe_cache = 0,wipe_sdcard = 0,should_wipe_carrier = 0,no_wipe_custom=0
+[    0.487537][Mv-A][6oo1] data_resizing = 0
+[    0.487603][Mv-A][6oo1] update_factory_csc = 0, update_home_csc = 0, factory_fota = 0
+[    0.487690][Mv-A][6oo1] carry_out = (null)
+[    0.487758][Mv-A][6oo1] tima_kernel_recovery = 0
+[    0.487827][Mv-A][6oo1] just_exit = 0
+[    0.487886][Mv-A][6oo1] omc_binary_download = 0
+[    0.487947][Mv-A][6oo1] delete_apn_changes = 0
+[    0.488007][Mv-A][6oo1] color_id_wallpaper = 0
+[    0.488067][Mv-A][6oo1] check_carrier_format = 0
+[    0.488127][Mv-A][6oo1] should_prompt_and_wipe_data = 0
+[    0.488190][Mv-A][6oo1] should_prompt_and_wipe_app_data = 0
+[    0.488255][Mv-A][6oo1] rescue = 0
+[    0.488310][Mv-A][6oo1]
+[    0.488369][Mv-A][6oo1]
+[    0.488423][Mv-A][6oo1]
+[    0.488476][Mv-A][6oo1] [property list]
+[    0.488538][Mv-A][6oo1] persist.audio.fluence.voicecomm=true
+[    0.488615][Mv-A][6oo1] ro.bluetooth.a2dp_offload.supported=true
+[    0.488696][Mv-A][6oo1] persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
+[    0.488784][Mv-A][6oo1] persist.bluetooth.a2dp_offload.disabled=false
+[    0.488867][Mv-A][6oo1] vendor.bluetooth.soc=cherokee
+[    0.488941][Mv-A][6oo1] persist.vendor.btstack.enable.splita2dp=true
+[    0.489023][Mv-A][6oo1] persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+[    0.489120][Mv-A][6oo1] ro.boot.dram_info=FF,03,00,4G
+[    0.489194][Mv-A][6oo1] ro.boottime.init=4411
+[    0.489262][Mv-A][6oo1] ro.boottime.init.selinux=74
+[    0.489350][Mv-A][6oo1] ro.boottime.init.cold_boot_wait=1283
+[    0.489420][Mv-A][6oo1] ro.boottime.ueventd=4576431507
+[    0.489487][Mv-A][6oo1] ro.boottime.recovery=5879343173
+[    0.489553][Mv-A][6oo1] persist.vendor.cne.feature=0
+[    0.489616][Mv-A][6oo1] ro.cfg.freelimit_val=17
+[    0.489677][Mv-A][6oo1] ro.cfg.dha_cached_max=18
+[    0.489737][Mv-A][6oo1] ro.cfg.custom_sw_limit=325
+[    0.489798][Mv-A][6oo1] ro.cfg.custom_tm_limit=1000
+[    0.489860][Mv-A][6oo1] ro.cfg.upgrade_pressure=75
+[    0.489924][Mv-A][6oo1] ro.cfg.enable_reentry_lmk=true
+[    0.489997][Mv-A][6oo1] ro.cfg.kill_heaviest_task=true
+[    0.490069][Mv-A][6oo1] ro.cfg.enable_userspace_lmk=true
+[    0.490141][Mv-A][6oo1] ro.config.knox=v30
+[    0.490208][Mv-A][6oo1] ro.config.knox.ucm=1
+[    0.490275][Mv-A][6oo1] ro.config.tima=1
+[    0.490340][Mv-A][6oo1] ro.config.dmverity=G
+[    0.490407][Mv-A][6oo1] ro.config.fha_enable=true
+[    0.490477][Mv-A][6oo1] ro.config.ringtone_2=Basic_Bell.ogg
+[    0.490551][Mv-A][6oo1] ro.config.media_sound=Media_preview_Touch_the_light.ogg
+[    0.490633][Mv-A][6oo1] ro.config.timaversion=3.0
+[    0.490694][Mv-A][6oo1] ro.config.add_bonusEFK=1
+[    0.490755][Mv-A][6oo1] ro.config.iccc_version=3.0
+[    0.490816][Mv-A][6oo1] ro.config.dha_lmk_scale=1.0
+[    0.490878][Mv-A][6oo1] ro.config.freelimit_val=17
+[    0.490939][Mv-A][6oo1] ro.config.dha_cached_max=16
+[    0.491003][Mv-A][6oo1] ro.config.dha_cached_min=4
+[    0.491066][Mv-A][6oo1] ro.config.custom_sw_limit=250
+[    0.491133][Mv-A][6oo1] ro.config.timaversion_info=Knox3.4_S.R.R
+[    0.491208][Mv-A][6oo1] ro.config.upgrade_pressure=50
+[    0.491275][Mv-A][6oo1] ro.config.rm_preload_enabled=1
+[    0.491349][Mv-A][6oo1] ro.config.fall_prevent_enable=true
+[    0.491427][Mv-A][6oo1] ro.config.notification_sound_2=S_Charming_Bell.ogg
+[    0.491512][Mv-A][6oo1] ro.boot.cp_reserved_mem=off
+[    0.491585][Mv-A][6oo1] ro.bionic.arch=arm64
+[    0.491656][Mv-A][6oo1] ro.bionic.2nd_arch=arm
+[    0.491729][Mv-A][6oo1] ro.bionic.cpu_variant=generic
+[    0.491805][Mv-A][6oo1] ro.bionic.2nd_cpu_variant=cortex-a73
+[    0.491887][Mv-A][6oo1] dalvik.vm.minidebuginfo=true
+[    0.491965][Mv-A][6oo1] dalvik.vm.dex2oat-minidebuginfo=true
+[    0.492039][Mv-A][6oo1] dalvik.vm.dex2oat-max-image-block-size=524288
+[    0.492111][Mv-A][6oo1] dalvik.vm.dex2oat-resolve-startup-strings=true
+[    0.492183][Mv-A][6oo1] ro.boot.debug_level=0x4f4c
+[    0.492248][Mv-A][6oo1] debug.sf.hw=1
+[    0.492306][Mv-A][6oo1] debug.sf.enable_hwc_vds=1
+[    0.492367][Mv-A][6oo1] debug.sf.latch_unsignaled=1
+[    0.492429][Mv-A][6oo1] debug.atrace.tags.enableflags=0
+[    0.492494][Mv-A][6oo1] debug.gralloc.enable_fb_ubwc=1
+[    0.492557][Mv-A][6oo1] debug.stagefright.omx_default_rank=0
+[    0.492624][Mv-A][6oo1] debug.stagefright.omx_default_rank.sw-audio=1
+[    0.492701][Mv-A][6oo1] bt.max.hfpclient.connections=1
+[    0.492773][Mv-A][6oo1] mm.enable.smoothstreaming=true
+[    0.492846][Mv-A][6oo1] ro.cmc.version=2.0
+[    0.492912][Mv-A][6oo1] ro.cmc.device_type=sd
+[    0.492981][Mv-A][6oo1] ro.nfc.port=I2C
+[    0.493046][Mv-A][6oo1] ro.opa.eligible_device=true
+[    0.493117][Mv-A][6oo1] ro.hwui.path_cache_size=32
+[    0.493188][Mv-A][6oo1] ro.hwui.layer_cache_size=48
+[    0.493261][Mv-A][6oo1] ro.hwui.texture_cache_size=72
+[    0.493333][Mv-A][6oo1] ro.hwui.gradient_cache_size=1
+[    0.493399][Mv-A][6oo1] ro.hwui.r_buffer_cache_size=8
+[    0.493462][Mv-A][6oo1] ro.hwui.drop_shadow_cache_size=6
+[    0.493525][Mv-A][6oo1] ro.hwui.text_large_cache_width=2048
+[    0.493591][Mv-A][6oo1] ro.hwui.text_small_cache_width=1024
+[    0.493658][Mv-A][6oo1] ro.hwui.text_large_cache_height=4096
+[    0.493728][Mv-A][6oo1] ro.hwui.text_small_cache_height=1024
+[    0.493795][Mv-A][6oo1] ro.hwui.texture_cache_flushrate=0.4
+[    0.493864][Mv-A][6oo1] ro.smps.enable=true
+[    0.493925][Mv-A][6oo1] ro.wifi.channels=
+[    0.493986][Mv-A][6oo1] ro.allow.mock.location=0
+[    0.494056][Mv-A][6oo1] ro.build.keys=test-keys
+[    0.494128][Mv-A][6oo1] ro.build.scafe.version=2020A
+[    0.494203][Mv-A][6oo1] ro.build.flavor=gts4lltexx-user
+[    0.494288][Mv-A][6oo1] ro.build.selinux=1
+[    0.494357][Mv-A][6oo1] ro.build.selinux.enforce=1
+[    0.494429][Mv-A][6oo1] ro.build.version.sem=2902
+[    0.494601][Mv-A][6oo1] ro.build.version.sep=110100
+[    0.494675][Mv-A][6oo1] ro.build.version.all_codenames=REL
+[    0.494751][Mv-A][6oo1] ro.build.version.security_index=1
+[    0.494827][Mv-A][6oo1] ro.build.version.preview_sdk_fingerprint=REL
+[    0.494904][Mv-A][6oo1] ro.build.version.min_supported_target_sdk=23
+[    0.494976][Mv-A][6oo1] ro.build.2ndbrand=false
+[    0.495039][Mv-A][6oo1] ro.build.official.release=true
+[    0.495106][Mv-A][6oo1] ro.build.changelist=19646842
+[    0.495170][Mv-A][6oo1] ro.build.sw_version=T835JXS5CUC2
+[    0.495235][Mv-A][6oo1] ro.build.tf_modelnumber=SM-T835
+[    0.495298][Mv-A][6oo1] ro.build.display_build_number=true
+[    0.495364][Mv-A][6oo1] ro.iorapd.enable=false
+[    0.495425][Mv-A][6oo1] ro.system.build.id=QP1A.190711.020
+[    0.495489][Mv-A][6oo1] ro.system.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.495570][Mv-A][6oo1] ro.system.build.date.utc=1616652039
+[    0.495644][Mv-A][6oo1] ro.system.build.tags=release-keys
+[    0.495717][Mv-A][6oo1] ro.system.build.type=user
+[    0.495787][Mv-A][6oo1] ro.system.build.version.sdk=29
+[    0.495860][Mv-A][6oo1] ro.system.build.version.sehi=2903
+[    0.495933][Mv-A][6oo1] ro.system.build.version.release=10
+[    0.496008][Mv-A][6oo1] ro.system.build.version.incremental=T835JXS5CUC2
+[    0.496088][Mv-A][6oo1] ro.system.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.496193][Mv-A][6oo1] ro.treble.enabled=true
+[    0.496253][Mv-A][6oo1] ro.product.locale=en-GB
+[    0.496314][Mv-A][6oo1] ro.qualcomm.cabl=1
+[    0.496373][Mv-A][6oo1] ro.bluetooth.a4wp=false
+[    0.496432][Mv-A][6oo1] ro.bluetooth.wipower=true
+[    0.496498][Mv-A][6oo1] ro.bluetooth.emb_wp_mode=true
+[    0.496564][Mv-A][6oo1] ro.bluetooth.library_name=libbluetooth.so
+[    0.496635][Mv-A][6oo1] ro.user_trial=FALSE
+[    0.496696][Mv-A][6oo1] ro.postinstall.fstab.prefix=/system
+[    0.496765][Mv-A][6oo1] ro.factory_mode=0
+[    0.496825][Mv-A][6oo1] ro.actionable_compatible_property.enabled=true
+[    0.496907][Mv-A][6oo1] mmp.enable.3g2=true
+[    0.496976][Mv-A][6oo1] sdm.debug.disable_skip_validate=1
+[    0.497053][Mv-A][6oo1] sdm.perf_hint_window=50
+[    0.497129][Mv-A][6oo1] init.svc.ueventd=running
+[    0.497199][Mv-A][6oo1] init.svc.recovery=running
+[    0.497268][Mv-A][6oo1] qcom.hw.aac.encoder=true
+[    0.497337][Mv-A][6oo1] qcom.bluetooth.soc=cherokee
+[    0.497405][Mv-A][6oo1] qemu.hw.mainkeys=0
+[    0.497470][Mv-A][6oo1] rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+[    0.497549][Mv-A][6oo1] vidc.enc.dcvs.extra-buff-count=2
+[    0.497611][Mv-A][6oo1] audio.sys.noisy.broadcast.delay=600
+[    0.497673][Mv-A][6oo1] audio.sys.offload.pstimeout.secs=3
+[    0.497736][Mv-A][6oo1] media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+[    0.497807][Mv-A][6oo1] media.stagefright.enable-aac=true
+[    0.497869][Mv-A][6oo1] media.stagefright.enable-qcp=true
+[    0.497930][Mv-A][6oo1] media.stagefright.enable-http=true
+[    0.497992][Mv-A][6oo1] media.stagefright.enable-scan=true
+[    0.498054][Mv-A][6oo1] media.stagefright.enable-fma2dp=true
+[    0.498116][Mv-A][6oo1] media.stagefright.enable-player=true
+[    0.498187][Mv-A][6oo1] media.aac_51_output_enabled=true
+[    0.498259][Mv-A][6oo1] tunnel.audio.encode=true# end of device/samsung/gts4llte/system.prop
+[    0.498348][Mv-A][6oo1] persist.mm.enable.prefetch=true
+[    0.498420][Mv-A][6oo1] persist.ts.rtmakeup=false
+[    0.498488][Mv-A][6oo1] persist.hwc.enable_vds=1
+[    0.498556][Mv-A][6oo1] persist.data.netmgrd.qos.enable=true
+[    0.498629][Mv-A][6oo1] persist.demo.hdmirotationlock=false
+[    0.498702][Mv-A][6oo1] persist.rild.nitz_plmn=
+[    0.498769][Mv-A][6oo1] persist.rild.nitz_long_ons_0=
+[    0.498837][Mv-A][6oo1] persist.rild.nitz_long_ons_1=
+[    0.498896][Mv-A][6oo1] persist.rild.nitz_long_ons_2=
+[    0.498956][Mv-A][6oo1] persist.rild.nitz_long_ons_3=
+[    0.499017][Mv-A][6oo1] persist.rild.nitz_short_ons_0=
+[    0.499088][Mv-A][6oo1] persist.rild.nitz_short_ons_1=
+[    0.499152][Mv-A][6oo1] persist.rild.nitz_short_ons_2=
+[    0.499214][Mv-A][6oo1] persist.rild.nitz_short_ons_3=
+[    0.499274][Mv-A][6oo1] persist.backup.ntpServer=0.pool.ntp.org
+[    0.499339][Mv-A][6oo1] persist.fuse_sdcard=true
+[    0.499398][Mv-A][6oo1] restore.feature.use_samsung_smart_switch_flow=1
+[    0.499471][Mv-A][6oo1] DEVICE_PROVISIONED=1
+[    0.499536][Mv-A][6oo1] security.securehw.available=false
+[    0.499608][Mv-A][6oo1] security.securenvm.available=false
+[    0.499680][Mv-A][6oo1] ro.config.ringtone=Over_the_Horizon.ogg
+[    0.499755][Mv-A][6oo1] ro.config.alarm_alert=Morning_Glory.ogg
+[    0.499828][Mv-A][6oo1] ro.config.notification_sound=Skyline.ogg
+[    0.499905][Mv-A][6oo1] ro.boot.em.did=205E07B88522
+[    0.499974][Mv-A][6oo1] ro.boot.em.model=SM-T835
+[    0.500042][Mv-A][6oo1] ro.boot.em.status=0x0
+[    0.500108][Mv-A][6oo1] ro.boot.usrf=9438192
+[    0.500167][Mv-A][6oo1] ro.boot.flash.locked=0
+[    0.500225][Mv-A][6oo1] ro.boot.sales.param.offset=9437648
+[    0.500286][Mv-A][6oo1] ro.boot.sec_atd.tty=/dev/ttyHS8
+[    0.500347][Mv-A][6oo1] ro.boot.baseband=msm
+[    0.500402][Mv-A][6oo1] ro.boot.hardware=qcom
+[    0.500458][Mv-A][6oo1] ro.boot.revision=7
+[    0.500513][Mv-A][6oo1] ro.boot.ucs_mode=0
+[    0.500570][Mv-A][6oo1] ro.boot.ap_serial=0x07B88522
+[    0.500631][Mv-A][6oo1] ro.boot.carrierid=
+[    0.500691][Mv-A][6oo1] ro.boot.carrierid.param.offset=9437644
+[    0.500760][Mv-A][6oo1] ro.boot.prototype.param.offset=9437660
+[    0.500834][Mv-A][6oo1] ro.boot.bootdevice=1da4000.ufshc
+[    0.500904][Mv-A][6oo1] ro.boot.bootloader=T835JXS5CUC2
+[    0.500975][Mv-A][6oo1] ro.boot.sales_code=EGY
+[    0.501042][Mv-A][6oo1] ro.boot.warranty_bit=1
+[    0.501108][Mv-A][6oo1] ro.boot.boot_recovery=1
+[    0.501180][Mv-A][6oo1] ro.boot.security_mode=1526595585
+[    0.501260][Mv-A][6oo1] ro.boot.cp_debug_level=0x55FF
+[    0.501336][Mv-A][6oo1] ro.boot.ddr_start_type=1
+[    0.501410][Mv-A][6oo1] ro.boot.verifiedbootstate=orange
+[    0.501485][Mv-A][6oo1] ro.build.id=QP1A.190711.020
+[    0.501550][Mv-A][6oo1] ro.build.PDA=T835JXS5CUC2
+[    0.501614][Mv-A][6oo1] ro.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.501684][Mv-A][6oo1] ro.build.date.utc=1616652039
+[    0.501748][Mv-A][6oo1] ro.build.host=SWDH4620
+[    0.501810][Mv-A][6oo1] ro.build.tags=release-keys
+[    0.501873][Mv-A][6oo1] ro.build.type=user
+[    0.501935][Mv-A][6oo1] ro.build.user=dpi
+[    0.501995][Mv-A][6oo1] ro.build.display.id=QP1A.190711.020.T835JXS5CUC2
+[    0.502068][Mv-A][6oo1] ro.build.product=gts4llte
+[    0.502135][Mv-A][6oo1] ro.build.version.sdk=29
+[    0.502207][Mv-A][6oo1] ro.build.version.base_os=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXU4CTI4:user/release-keys
+[    0.502323][Mv-A][6oo1] ro.build.version.release=10
+[    0.502398][Mv-A][6oo1] ro.build.version.codename=REL
+[    0.502474][Mv-A][6oo1] ro.build.version.incremental=T835JXS5CUC2
+[    0.502556][Mv-A][6oo1] ro.build.version.preview_sdk=0
+[    0.502634][Mv-A][6oo1] ro.build.version.security_patch=2021-02-01
+[    0.502717][Mv-A][6oo1] ro.build.description=gts4lltexx-user 10 QP1A.190711.020 T835JXS5CUC2 release-keys
+[    0.502843][Mv-A][6oo1] ro.build.characteristics=tablet
+[    0.502953][Mv-A][6oo1] ro.build.system_root_image=false
+[    0.503063][Mv-A][6oo1] ro.product.cpu.abi=arm64-v8a
+[    0.503168][Mv-A][6oo1] ro.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+[    0.503265][Mv-A][6oo1] ro.product.name=gts4lltexx
+[    0.503323][Mv-A][6oo1] ro.product.brand=samsung
+[    0.503427][Mv-A][6oo1] ro.product.model=SM-T835
+[    0.503532][Mv-A][6oo1] ro.product.device=gts4llte
+[    0.503636][Mv-A][6oo1] ro.product.system.brand=samsung
+[    0.503745][Mv-A][6oo1] ro.product.manufacturer=samsung
+[    0.503853][Mv-A][6oo1] ro.baseband=msm
+[    0.503958][Mv-A][6oo1] ro.bootmode=unknown
+[    0.504067][Mv-A][6oo1] ro.hardware=qcom
+[    0.504173][Mv-A][6oo1] ro.revision=7
+[    0.504278][Mv-A][6oo1] ro.bootloader=T835JXS5CUC2
+[    0.504393][Mv-A][6oo1] ro.debuggable=0
+[    0.504559][Mv-A][6oo1] ro.property_service.version=2
+[    0.504628][Mv-A][6oo1] sys.usb.controller=a800000.dwc3
+[    0.504684][Mv-A][6oo1] persist.sys.dalvik.vm.lib.2=libart.so
+[    0.504743][Mv-A][6oo1] af.fast_track_multiplier=1
+[    0.504797][Mv-A][6oo1] ro.af.client_heap_size_kbyte=7168
+[    0.504849][Mv-A][6oo1] ro.sf.lcd_density=360
+[    0.504891][Mv-A][6oo1] ro.com.google.gmsversion=10_202005
+[    0.504938][Mv-A][6oo1] ro.minui.default_rotation=ROTATION_LEFT
+[    0.504988][Mv-A][6oo1] ro.radio.noril=no
+[    0.505034][Mv-A][6oo1] ro.zygote=zygote64_32
+[    0.505082][Mv-A][6oo1] ro.opengles.version=196610
+[    0.505129][Mv-A][6oo1] ro.telephony.default_cdma_sub=0
+[    0.505178][Mv-A][6oo1] ro.oem_unlock_supported=1
+[    0.505226][Mv-A][6oo1] ro.control_privapp_permissions=enforce
+[    0.505278][Mv-A][6oo1] audio.offload.min.duration.secs=30
+[    0.505334][Mv-A][6oo1] audio.offload.video=true
+[    0.505389][Mv-A][6oo1] audio.deep_buffer.media=true
+[    0.505447][Mv-A][6oo1] media.stagefright.thumbnail.prefer_hw_codecs=true
+[    0.505515][Mv-A][6oo1] keyguard.no_require_sim=true
+[    0.505573][Mv-A][6oo1] persist.radio.multisim.config=ss
+[    0.505633][Mv-A][6oo1] ro.dalvik.vm.native.bridge=0
+[    0.505691][Mv-A][6oo1] dalvik.vm.isa.arm.variant=cortex-a73
+[    0.505754][Mv-A][6oo1] dalvik.vm.isa.arm.features=default
+[    0.505814][Mv-A][6oo1] dalvik.vm.isa.arm64.variant=generic
+[    0.505876][Mv-A][6oo1] dalvik.vm.isa.arm64.features=default
+[    0.505937][Mv-A][6oo1] dalvik.vm.dexopt.secondary=true
+[    0.505996][Mv-A][6oo1] dalvik.vm.usejit=true
+[    0.506048][Mv-A][6oo1] dalvik.vm.heapsize=512m
+[    0.506102][Mv-A][6oo1] dalvik.vm.lockprof.threshold=500
+[    0.506163][Mv-A][6oo1] dalvik.vm.dex2oat-Xms=64m
+[    0.506219][Mv-A][6oo1] dalvik.vm.dex2oat-Xmx=512m
+[    0.506277][Mv-A][6oo1] dalvik.vm.heapmaxfree=8m
+[    0.506333][Mv-A][6oo1] dalvik.vm.heapminfree=2m
+[    0.506388][Mv-A][6oo1] dalvik.vm.heapstartsize=8m
+[    0.506444][Mv-A][6oo1] dalvik.vm.appimageformat=lz4
+[    0.506507][Mv-A][6oo1] dalvik.vm.usejitprofiles=true
+[    0.506574][Mv-A][6oo1] dalvik.vm.heapgrowthlimit=256m
+[    0.506641][Mv-A][6oo1] dalvik.vm.image-dex2oat-Xms=64m
+[    0.506707][Mv-A][6oo1] dalvik.vm.image-dex2oat-Xmx=64m
+[    0.506772][Mv-A][6oo1] dalvik.vm.heaptargetutilization=0.75
+[    0.506833][Mv-A][6oo1] ro.frp.pst=/dev/block/persistent
+[    0.506893][Mv-A][6oo1] ro.odm.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.506959][Mv-A][6oo1] ro.odm.build.date.utc=1616652039
+[    0.507018][Mv-A][6oo1] ro.odm.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.507106][Mv-A][6oo1] ro.apex.updatable=false
+[    0.507154][Mv-A][6oo1] ro.hwui.use_vulkan=
+[    0.507199][Mv-A][6oo1] ro.vndk.version=29
+[    0.507244][Mv-A][6oo1] ro.board.platform=msm8998
+[    0.507292][Mv-A][6oo1] ro.kernel.qemu=0
+[    0.507336][Mv-A][6oo1] ro.vendor.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.507392][Mv-A][6oo1] ro.vendor.build.date.utc=1616652039
+[    0.507445][Mv-A][6oo1] ro.vendor.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.507523][Mv-A][6oo1] ro.carrier=unknown
+[    0.507571][Mv-A][6oo1] ro.product.cpu.abilist32=armeabi-v7a,armeabi
+[    0.507640][Mv-A][6oo1] ro.product.cpu.abilist64=arm64-v8a
+[    0.507710][Mv-A][6oo1] ro.product.odm.name=gts4lltexx
+[    0.507779][Mv-A][6oo1] ro.product.odm.brand=samsung
+[    0.507843][Mv-A][6oo1] ro.product.odm.model=SM-T835
+[    0.507910][Mv-A][6oo1] ro.product.odm.device=gts4llte
+[    0.507976][Mv-A][6oo1] ro.product.odm.manufacturer=samsung
+[    0.508050][Mv-A][6oo1] ro.product.board=msm8998
+[    0.508116][Mv-A][6oo1] ro.product.vendor.name=gts4lltexx
+[    0.508185][Mv-A][6oo1] ro.product.vendor.brand=samsung
+[    0.508246][Mv-A][6oo1] ro.product.vendor.model=SM-T835
+[    0.508304][Mv-A][6oo1] ro.product.vendor.device=gts4llte
+[    0.508363][Mv-A][6oo1] ro.product.vendor.manufacturer=samsung
+[    0.508427][Mv-A][6oo1] ro.product.first_api_level=27
+[    0.508486][Mv-A][6oo1] ro.hardware.egl=adreno
+[    0.508532][Mv-A][6oo1] ro.hardware.vulkan=adreno
+[    0.508590][Mv-A][6oo1] ro.hardware.nfc_nci=nqx.default
+[    0.508642][Mv-A][6oo1] ro.hardware.chipname=MSM8998
+[    0.508692][Mv-A][6oo1] ro.hardware.keystore=mdfpp
+[    0.508740][Mv-A][6oo1] ro.hardware.gatekeeper=mdfpp
+[    0.508795][Mv-A][6oo1] ro.bootimage.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.508864][Mv-A][6oo1] ro.bootimage.build.date.utc=1616652039
+[    0.508926][Mv-A][6oo1] ro.bootimage.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.509023][Mv-A][6oo1] ro.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.509121][Mv-A][6oo1] pm.dexopt.boot=verify
+[    0.509176][Mv-A][6oo1] pm.dexopt.ab-ota=speed-profile
+[    0.509235][Mv-A][6oo1] pm.dexopt.shared=speed
+[    0.509289][Mv-A][6oo1] pm.dexopt.install=speed-profile
+[    0.509345][Mv-A][6oo1] pm.dexopt.inactive=verify
+[    0.509397][Mv-A][6oo1] pm.dexopt.bg-dexopt=speed-profile
+[    0.509454][Mv-A][6oo1] pm.dexopt.first-boot=quicken
+[    0.509510][Mv-A][6oo1] ro.telephony.iwlan_operation_mode=legacy
+[    0.509571][Mv-A][6oo1] ro.adb.secure=1
+[    0.509621][Mv-A][6oo1] ro.secure=1
+[    0.509671][Mv-A][6oo1] ro.com.google.clientidbase=android-samsung-ss
+[    0.509737][Mv-A][6oo1] security.mdf=None
+[    0.509791][Mv-A][6oo1] security.mdf.result=None
+[    0.509846][Mv-A][6oo1] sys.usb.configfs=1
+[    0.509899][Mv-A][6oo1] ro.gsid.image_running=0
+[    0.509963][Mv-A][6oo1] log.tag.stats_log=I
+[    0.510023][Mv-A][6oo1] ro.logd.size.stats=64K
+[    0.510087][Mv-A][6oo1] ro.logd.auditd=false
+[    0.510147][Mv-A][6oo1] vendor.mm.enable.qcom_parser=13631487
+[    0.510221][Mv-A][6oo1] ro.multisim.simslotcount=1
+[    0.510278][Mv-A][6oo1] persist.vendor.overlay.izat.optin=rro
+[    0.510340][Mv-A][6oo1] vendor.camera.aux.packagelist=org.codeaurora.snapcam
+[    0.510410][Mv-A][6oo1] persist.vendor.camera.privapp.list=org.codeaurora.snapcam
+[    0.510482][Mv-A][6oo1] persist.debug.wfd.enable=1
+[    0.510535][Mv-A][6oo1] persist.debug.coresight.config=stm-events
+[    0.510589][Mv-A][6oo1] ro.product_ship=true
+[    0.510634][Mv-A][6oo1] ril.subscription.types=NV,RUIM
+[    0.510684][Mv-A][6oo1] persist.radio.sib16_support=1
+[    0.510733][Mv-A][6oo1] ro.error.receiver.default=com.samsung.receiver.error
+[    0.510791][Mv-A][6oo1] persist.timed.enable=true
+[    0.510839][Mv-A][6oo1] selinux.policy_version=SEPF_SM-T835_10_0021
+[    0.510894][Mv-A][6oo1] ro.boot.serialno=ce10182ab292a103037e
+[    0.510947][Mv-A][6oo1] ro.serialno=ce10182ab292a103037e
+[    0.510997][Mv-A][6oo1] ro.setupwizard.mode=OPTIONAL
+[    0.511054][Mv-A][6oo1] ro.setupwizard.wifi_on_exit=false
+[    0.511119][Mv-A][6oo1] ro.setupwizard.rotation_locked=false
+[    0.511191][Mv-A][6oo1] setupwizard.theme=glif_v3_light
+[    0.511259][Mv-A][6oo1] setupwizard.feature.enable_stencil_partner_customization=1
+[    0.511342][Mv-A][6oo1] security.perf_harden=1
+[    0.511403][Mv-A][6oo1] ro.product.system.name=gts4lltexx
+[    0.511473][Mv-A][6oo1] ro.product.system.model=SM-T835
+[    0.511539][Mv-A][6oo1] ro.product.system.device=gts4llte
+[    0.511609][Mv-A][6oo1] ro.product.system.manufacturer=samsung
+[    0.511679][Mv-A][6oo1] ro.security.mdf.ux=Enabled
+[    0.511736][Mv-A][6oo1] ro.security.mdf.ver=3.1
+[    0.511791][Mv-A][6oo1] ro.security.mdf.release=5
+[    0.511837][Mv-A][6oo1] ro.security.fips.ux=Enabled
+[    0.511883][Mv-A][6oo1] ro.security.wlan.ver=1.0
+[    0.511930][Mv-A][6oo1] ro.security.wlan.release=2
+[    0.511977][Mv-A][6oo1] ro.security.vpnpp.ver=2.1
+[    0.512023][Mv-A][6oo1] ro.security.vpnpp.release=3.0
+[    0.512072][Mv-A][6oo1] ro.security.fips_skc.ver=1.8
+[    0.512118][Mv-A][6oo1] ro.security.keystore.keytype=sak,gak
+[    0.512172][Mv-A][6oo1] ro.security.fips_bssl.ver=1.4
+[    0.512228][Mv-A][6oo1] dev.pm.dyn_samplingrate=1
+[    0.512282][Mv-A][6oo1] dev.mnt.blk.efs=sda
+[    0.512335][Mv-A][6oo1] dev.mnt.blk.cache=sda
+[    0.512388][Mv-A][6oo1] net.bt.name=Android
+[    0.512441][Mv-A][6oo1] sys.config.activelaunch_enable=true
+[    0.512501][Mv-A][6oo1] sys.vendor.shutdown.waittime=500
+[    0.512565][Mv-A][6oo1] persist.sys.usb.config=mtp
+[    0.512621][Mv-A][6oo1] persist.sys.wfd.virtual=0
+[    0.512678][Mv-A][6oo1] persist.security.ams.enforcing=1
+[    0.512735][Mv-A][6oo1] security.ADP.version=0
+[    0.512780][Mv-A][6oo1] security.ADP.policy_version=00000000
+[    0.512831][Mv-A][6oo1] security.ASKS.version=0
+[    0.512876][Mv-A][6oo1] security.ASKS.time_value=00000000
+[    0.512925][Mv-A][6oo1] security.ASKS.rufs_enable=true
+[    0.512973][Mv-A][6oo1] security.ASKS.policy_version=00000000
+[    0.513024][Mv-A][6oo1] ro.vendor.audio.sdk.ssr=false
+[    0.513072][Mv-A][6oo1] ro.vendor.audio.sdk.fluencetype=none
+[    0.513122][Mv-A][6oo1] vendor.audio.hw.aac.encoder=true
+[    0.513171][Mv-A][6oo1] vendor.audio.use.sw.ape.decoder=true
+[    0.513225][Mv-A][6oo1] vendor.audio.use.sw.alac.decoder=true
+[    0.513287][Mv-A][6oo1] vendor.audio.flac.sw.decoder.24bit=true
+[    0.513348][Mv-A][6oo1] vendor.audio.safx.pbe.enabled=false
+[    0.513409][Mv-A][6oo1] vendor.audio.dolby.ds2.enabled=false
+[    0.513469][Mv-A][6oo1] vendor.audio.dolby.ds2.hardbypass=false
+[    0.513532][Mv-A][6oo1] vendor.audio.parser.ip.buffer.size=262144
+[    0.513595][Mv-A][6oo1] vendor.audio.tunnel.encode=false
+[    0.513653][Mv-A][6oo1] vendor.audio.volume.headset.gain.depcal=true
+[    0.513718][Mv-A][6oo1] vendor.audio.feature.fm.enable=true
+[    0.513774][Mv-A][6oo1] vendor.audio.feature.hfp.enable=true
+[    0.513824][Mv-A][6oo1] vendor.audio.feature.snd_mon.enable=true
+[    0.513875][Mv-A][6oo1] vendor.audio.feature.audiozoom.enable=false
+[    0.513927][Mv-A][6oo1] vendor.audio.feature.hdmi_edid.enable=true
+[    0.513979][Mv-A][6oo1] vendor.audio.feature.hwdep_cal.enable=false
+[    0.514032][Mv-A][6oo1] vendor.audio.feature.spkr_prot.enable=true
+[    0.514084][Mv-A][6oo1] vendor.audio.feature.compr_voip.enable=true
+[    0.514136][Mv-A][6oo1] vendor.audio.feature.maxx_audio.enable=false
+[    0.514189][Mv-A][6oo1] vendor.audio.feature.usb_offload.enable=true
+[    0.514246][Mv-A][6oo1] vendor.audio.feature.a2dp_offload.enable=false
+[    0.514311][Mv-A][6oo1] vendor.audio.feature.display_port.enable=true
+[    0.514376][Mv-A][6oo1] vendor.audio.feature.external_dsp.enable=false
+[    0.514461][Mv-A][6oo1] vendor.audio.feature.external_speaker.enable=false
+[    0.514532][Mv-A][6oo1] vendor.audio.feature.compress_meta_data.enable=true
+[    0.514599][Mv-A][6oo1] vendor.audio.feature.concurrent_capture.enable=false
+[    0.514667][Mv-A][6oo1] vendor.audio.feature.multi_voice_session.enable=false
+[    0.514734][Mv-A][6oo1] vendor.audio.feature.deepbuffer_as_primary.enable=true
+[    0.514802][Mv-A][6oo1] vendor.audio.offload.track.enable=true
+[    0.514852][Mv-A][6oo1] vendor.audio.offload.buffer.size.kb=32
+[    0.514904][Mv-A][6oo1] vendor.audio.offload.gapless.enabled=true
+[    0.514955][Mv-A][6oo1] vendor.audio.offload.multiaac.enable=true
+[    0.515006][Mv-A][6oo1] vendor.audio.offload.multiple.enabled=false
+[    0.515058][Mv-A][6oo1] vendor.audio.offload.passthrough=false
+[    0.515109][Mv-A][6oo1] vendor.audio.spkr_prot.tx.sampling_rate=48000
+[    0.515162][Mv-A][6oo1] vendor.voice.path.for.pcm.voip=true
+[    0.515213][Mv-A][6oo1] persist.vendor.audio.hw.binder.size_kbyte=1024
+[    0.515269][Mv-A][6oo1] persist.vendor.audio.ras.enabled=false
+[    0.515331][Mv-A][6oo1] persist.vendor.audio.fluence.speaker=true
+[    0.515393][Mv-A][6oo1] persist.vendor.audio.fluence.voicerec=false
+[    0.515457][Mv-A][6oo1] persist.vendor.audio.fluence.voicecall=true
+[    0.515520][Mv-A][6oo1] ro.vendor.bluetooth.wipower=false
+[    0.515579][Mv-A][6oo1] vendor.qcom.bluetooth.soc=cherokee
+[    0.515639][Mv-A][6oo1] persist.vendor.qcom.bluetooth.enable.splita2dp=true
+[    0.515709][Mv-A][6oo1] persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
+[    0.515788][Mv-A][6oo1] persist.camera.privapp.list=org.codeaurora.snapcam
+[    0.515849][Mv-A][6oo1] ro.odm.build.id=QP1A.190711.020
+[    0.515898][Mv-A][6oo1] ro.odm.build.tags=release-keys
+[    0.515945][Mv-A][6oo1] ro.odm.build.type=user
+[    0.515989][Mv-A][6oo1] ro.odm.build.version.sdk=29
+[    0.516041][Mv-A][6oo1] ro.odm.build.version.release=10
+[    0.516090][Mv-A][6oo1] ro.odm.build.version.incremental=T835JXS5CUC2
+[    0.516144][Mv-A][6oo1] ro.odm.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+[    0.516202][Mv-A][6oo1] ro.odm.product.cpu.abilist32=armeabi-v7a,armeabi
+[    0.516257][Mv-A][6oo1] ro.odm.product.cpu.abilist64=arm64-v8a
+[    0.516311][Mv-A][6oo1] ro.vendor.sec.radio.def_network=9
+[    0.516370][Mv-A][6oo1] ro.vendor.epdg.support=true
+[    0.516427][Mv-A][6oo1] ro.vendor.build.id=QP1A.190711.020
+[    0.516486][Mv-A][6oo1] ro.vendor.build.tags=release-keys
+[    0.516546][Mv-A][6oo1] ro.vendor.build.type=user
+[    0.516602][Mv-A][6oo1] ro.vendor.build.version.sdk=29
+[    0.516659][Mv-A][6oo1] ro.vendor.build.version.sehi=2903
+[    0.516718][Mv-A][6oo1] ro.vendor.build.version.release=10
+[    0.516778][Mv-A][6oo1] ro.vendor.build.version.incremental=T835JXS5CUC2
+[    0.516846][Mv-A][6oo1] ro.vendor.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+[    0.516906][Mv-A][6oo1] ro.vendor.product.cpu.abilist32=armeabi-v7a,armeabi
+[    0.516961][Mv-A][6oo1] ro.vendor.product.cpu.abilist64=arm64-v8a
+[    0.517014][Mv-A][6oo1] ro.vendor.sensors.dpc=true
+[    0.517060][Mv-A][6oo1] ro.vendor.sensors.pmd=true
+[    0.517106][Mv-A][6oo1] ro.vendor.sensors.dev_ori=true
+[    0.517153][Mv-A][6oo1] ro.vendor.sensors.mot_detect=true
+[    0.517202][Mv-A][6oo1] ro.vendor.sensors.multishake=true
+[    0.517250][Mv-A][6oo1] ro.vendor.sensors.sta_detect=true
+[    0.517299][Mv-A][6oo1] ro.vendor.mg_factory_mode=0
+[    0.517351][Mv-A][6oo1] ro.vendor.use_data_netmgrd=true
+[    0.517408][Mv-A][6oo1] ro.vendor.extension_library=libqti-perfd-client.so
+[    0.517476][Mv-A][6oo1] vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
+[    0.517543][Mv-A][6oo1] vendor.vidc.enc.disable.pq=true
+[    0.517602][Mv-A][6oo1] vendor.power.pasr.enabled=true
+[    0.517660][Mv-A][6oo1] vendor.audio_hal.period_size=192
+[    0.517718][Mv-A][6oo1] persist.vendor.bt.aac_frm_ctl.enabled=true
+[    0.517782][Mv-A][6oo1] persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+[    0.517853][Mv-A][6oo1] persist.vendor.data.mode=concurrent
+[    0.517917][Mv-A][6oo1] persist.vendor.qcomsysd.enabled=1
+[    0.517973][Mv-A][6oo1] ro.vendor.display.hdr.config=/vendor/etc/hdr_tm_config.xml
+[    0.518041][Mv-A][6oo1] ro.vendor.display.cabl=2
+[    0.518097][Mv-A][6oo1] vendor.display.disable_ext_anim=1
+[    0.518153][Mv-A][6oo1] vendor.display.perf_hint_window=50
+[    0.518210][Mv-A][6oo1] vendor.display.disable_skip_validate=1
+[    0.518270][Mv-A][6oo1] vendor.display.enable_default_color_mode=1
+[    0.518331][Mv-A][6oo1] ro.vendor.qti.va_odm.support=1
+[    0.518386][Mv-A][6oo1] ro.vendor.qti.va_aosp.support=1
+[    0.518443][Mv-A][6oo1] vendor.gralloc.enable_fb_ubwc=1
+[    0.518512][Mv-A][6oo1] ro.vendor.multisim.simslotcount=1
+[    0.518580][Mv-A][6oo1] persist.vendor.radio.atfwd.start=true
+[    0.518651][Mv-A][6oo1] persist.vendor.radio.rat_on=combine
+[    0.518721][Mv-A][6oo1] persist.vendor.radio.custom_ecc=1
+[    0.518789][Mv-A][6oo1] persist.vendor.radio.sib16_support=1
+[    0.518860][Mv-A][6oo1] persist.vendor.radio.procedure_bytes=SKIP
+[    0.518933][Mv-A][6oo1] persist.vendor.radio.apm_sim_not_pwdn=1
+[    0.519005][Mv-A][6oo1] vendor.rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+[    0.519089][Mv-A][6oo1] ro.vendor.build.security_patch=2021-02-01
+[    0.519149][Mv-A][6oo1]
+[    0.519191][Mv-A][6oo1] Supported API: 3
+[    0.521351][Mv-A][6oo1] I:/efs is already mounted
+[    0.521656][Mv-A][6oo1] W:[libfs_mgr]Failed to umount /efs: Device or resource busy
+[    0.521737][Mv-A][6oo1] check_selective_file:Can't unmount /efs - Device or resource busy
+[    0.521818][Mv-A][6oo1] just_reboot_after_update = 1
+[    0.521878][Mv-A][6oo1]
+[    0.521922][Mv-A][6oo1] # MANUAL MODE v1.0.0#
+[    0.553052][Mv-A][6oo1] No command specified.
+[    0.553126][Mv-A][6oo1]
+[    0.553177][Mv-A][6oo1] [Checking pre-multi-csc2]
+[    0.553242][Mv-A][6oo1]
+[    0.553287][Mv-A][6oo1] [start failed section]
+[    0.553341][Mv-A][6oo1] sales_code=[EGY]
+[    0.553408][Mv-A][6oo1] Carrier ID=[EMPTY]
+[    0.553463][Mv-A][6oo1] [WARNING] Carrier ID Error
+[    0.569598][Mv-A][6oo1]
+[    0.569645][Mv-A][6oo1] [system partition space check]
+[    0.569703][Mv-A][6oo1] This device has /odm partition.
+[    0.569762][Mv-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[    0.569825][Mv-A][6oo1] copy_log_files_to_cache :: klog : 0
+[    0.569882][Mv-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[    0.575385][Mv-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[    0.575459][Mv-A][6oo1] append_file offset 50149
+[    0.575568][Mv-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[    0.584755][Mv-A][6oo1] status = [3], sideload_auto_reboot = [0], visible = [1], noaction = [1]
+[    0.584834][Mv-A][6oo1] ## ENTER MANUAL MODE
+[    0.585180][Mv-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.586774][Mv-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.586868][Mv-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.588205][Mv-A][6oo1] mode is manual mode
+[    0.594868][Mv-A][6oo1] success to save recovery mode : manual mode
+[    0.595227][Mv-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.596591][Mv-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.596693][Mv-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.597838][Mv-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[    0.597920][Mv-A][6oo1] I:Saving locale "en-US"
+[    0.598207][Mv-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.599602][Mv-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.599712][Mv-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.601882][Mv-A][6oo1] I:## clear BCB message
+[    0.601993][Mv-A][6oo1] I:## unlink /cache/recovery/command
+[    0.612770][Mv-A][6oo1] save_current_log true, has_cashe true.
+[    0.613317][Mv-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.614527][Mv-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.614626][Mv-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.677755][Mv-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[    0.677884][Mv-A][6oo1] copy_log_files_to_cache :: klog : 1
+[    0.678026][Mv-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[    0.683324][Mv-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[    0.683420][Mv-A][6oo1] append_file offset 95866
+[    0.683661][Mv-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[    0.696270][Mv-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[    0.768964][Mv-A][6oo1]
+[    0.769025][Mv-A][6oo1]  check_ReactivationLock_Support[] 
+[    0.769080][Mv-A][6oo1]
+[    0.769121][Mv-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    0.769177][Mv-A][6oo1]
+[    0.769217][Mv-A][6oo1]  FRP Enabled!! 
+[    0.794910][Mv-A][6oo1]
+[    0.794982][Mv-A][6oo1]  drawWarning[-1] 
+[    0.856740][Mv-A][6oo1]
+[    0.856801][Mv-A][6oo1]  check_ReactivationLock_Support[] 
+[    0.856862][Mv-A][6oo1]
+[    0.856902][Mv-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    0.856960][Mv-A][6oo1]
+[    0.857000][Mv-A][6oo1]  FRP Enabled!! 
+[    0.882620][Mv-A][6oo1]
+[    0.882660][Mv-A][6oo1]  drawWarning[-1] 
+[    3.295679][Mv-A][6oo1]
+[    3.295734][Mv-A][6oo1]  check_ReactivationLock_Support[] 
+[    3.295786][Mv-A][6oo1]
+[    3.295823][Mv-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    3.295928][Mv-A][6oo1]
+[    3.295969][Mv-A][6oo1]  FRP Enabled!! 
+[    3.321070][Mv-A][6oo1]
+[    3.321110][Mv-A][6oo1]  drawWarning[-1] 
+[    4.167979][Mv-A][6oo1]
+[    4.168034][Mv-A][6oo1]  check_ReactivationLock_Support[] 
+[    4.168105][Mv-A][6oo1]
+[    4.168156][Mv-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    4.168229][Mv-A][6oo1]
+[    4.168279][Mv-A][6oo1]  FRP Enabled!! 
+[    4.193788][Mv-A][6oo1]
+[    4.193834][Mv-A][6oo1]  drawWarning[-1] 
+[    4.785331][Mv-A][6oo1]
+[    4.785376][Mv-A][6oo1]  check_ReactivationLock_Support[] 
+[    4.785427][Mv-A][6oo1]
+[    4.785466][Mv-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    4.785530][Mv-A][6oo1]
+[    4.785573][Mv-A][6oo1]  FRP Enabled!! 
+[    4.810721][Mv-A][6oo1]
+[    4.810767][Mv-A][6oo1]  drawWarning[-1] 
+[    8.884172][Mv-A][6oo1]
+[    8.884241][Mv-A][6oo1] [out-recovery]
+[    8.884955][Mv-A][6oo1] running out-recovery time : 0.000s
+[    8.885022][Mv-A][6oo1] copy_avc_msg_to_data(0)
+[    8.887007][Mv-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    8.888690][Mv-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    8.888768][Mv-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    8.888841][Mv-A][6oo1] copy_file '/proc/avc_msg' '/cache/recovery/last_avc_msg_recovery'
+[    8.897882][Mv-A][6oo1] !__RECOVERY_FOR_ASSAMBLY
+[    8.898357][Mv-A][6oo1] start_recovery() : del_recovery_command = yes
+[    8.898427][Mv-A][6oo1] main() : del_recovery_command(recovery.delete.command) = yes
+[    8.898507][Mv-A][6oo1] Rebooting to bootloader...
+[   10.915583][Mv-A][6oo1] ## sec_reboot(del=1, cmd=reboot,bootloader, clear_BCB=1)
+[   10.915666][Mv-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=1)
+[   10.915740][Mv-A][6oo1] I:Saving locale "en-US"
+[   10.917640][Mv-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[   10.919240][Mv-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[   10.919317][Mv-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[   10.921594][Mv-A][6oo1] I:## clear BCB message
+[   10.921711][Mv-A][6oo1] I:## unlink /cache/recovery/command
+[   10.925170][Mv-A][6oo1] save_current_log true, has_cashe true.
+[   10.925710][Mv-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[   10.927107][Mv-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[   10.927201][Mv-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success

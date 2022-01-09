@@ -1,0 +1,6 @@
+audit(0.629:1): initialized
+audit(1483231110.919:2): policy loaded auid=4294967295 ses=4294967295
+audit(1483231112.279:3): avc:  denied  { getattr } for  pid=1 comm="init" name="panic_on_oops" dev="proc" ino=18417 scontext=u:r:init:s0 tcontext=u:object_r:proc_panic:s0 tclass=file permissive=0
+audit(1483231112.279:4): avc:  denied  { getattr } for  pid=1 comm="init" name="max_map_count" dev="proc" ino=18418 scontext=u:r:init:s0 tcontext=u:object_r:proc_max_map_count:s0 tclass=file permissive=0
+audit(1483231112.289:5): avc:  denied  { getattr } for  pid=1 comm="init" name="hostname" dev="proc" ino=22542 scontext=u:r:init:s0 tcontext=u:object_r:proc_hostname:s0 tclass=file permissive=0
+audit(1483231112.289:6): avc:  denied  { getattr } for  pid=1 comm="init" name="domainname" dev="proc" ino=22543 scontext=u:r:init:s0 tcontext=u:object_r:proc_hostname:s0 tclass=file permissive=0

@@ -1,0 +1,21 @@
+01-01 00:36:26.798   703   703 I : Magisk 92546e8a(23016) daemon started
+01-01 00:36:26.799   703   703 I : * Device API level: 29
+01-01 02:36:28.757   703   705 D : resetprop: getprop [ro.crypto.state]: [encrypted]
+01-01 02:36:28.757   703   705 D : resetprop: getprop [init.svc.vold]: [running]
+01-01 02:36:28.757   703   705 I : ** post-fs-data mode running
+01-01 02:36:28.758   703   705 I : * Mounting mirrors
+01-01 02:36:28.758   703   705 I : mount: /sbin/.magisk/mirror/vendor
+01-01 02:36:28.758   703   705 I : link: /sbin/.magisk/mirror/persist
+01-01 02:36:28.758   703   705 I : link: /sbin/.magisk/mirror/cache
+01-01 02:36:28.758   703   705 I : mount: /sbin/.magisk/mirror/data
+01-01 02:36:28.758   703   705 I : link: /sbin/.magisk/mirror/system
+01-01 02:36:28.759   703   705 I : mount: /sbin/.magisk/mirror/system_root
+01-01 02:36:28.759   703   705 I : link: /sbin/.magisk/mirror/product
+01-01 02:36:28.759   703   705 I : * Initializing Magisk environment
+01-01 02:36:28.800   703   705 D : resetprop: decode with protobuf [/data/property/persistent_properties]
+01-01 02:36:28.800   703   705 D : resetprop: prop [persist.sys.safemode] does not exist
+01-01 02:36:28.804   703   705 I : * Running post-fs-data.d scripts
+01-01 02:36:28.808   703   705 D : magiskdb: query denylist=[0]
+01-01 02:36:28.808   703   705 D : bind_mnt: /sbin/.magisk/modules <- /sbin/.magisk/mirror/data/adb/modules
+01-01 02:36:28.821   703   705 I : * Running module post-fs-data scripts
+01-01 02:36:28.821   703   705 I : * Loading modules
