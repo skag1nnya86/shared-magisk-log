@@ -1,0 +1,13 @@
+
+
+RECOVERY_DBG: Exception count : 150
+RECOVERY_DBG: !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+RECOVERY_DBG: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+RECOVERY_DBG: 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+RECOVERY_DBG: 	at com.android.server.SystemServer.run(SystemServer.java:905)
+RECOVERY_DBG: 	at com.android.server.SystemServer.main(SystemServer.java:731)
+RECOVERY_DBG: 	at java.lang.reflect.Method.invoke(Native Method)
+RECOVERY_DBG: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+RECOVERY_DBG: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+RECOVERY_DBG: 
+

@@ -1,0 +1,2209 @@
+[    0.000646][fe-A][6oo1] Starting recovery (pid 574) on Sun Jan  1 00:44:27 2017
+[    0.000809][fe-A][6oo1] recovery tmp log path : /efs/recovery/tmp_recovery.log
+[    0.000893][fe-A][6oo1] init_extra_history() : /efs/recovery/extra_history exists
+[    0.000977][fe-A][6oo1] no /efs/recovery/tmp_recovery.log file -> normal operation
+[    0.001060][fe-A][6oo1]
+[    0.001116][fe-A][6oo1] [collecting table information 2]
+[    0.001190][fe-A][6oo1] recovery filesystem table
+[    0.001258][fe-A][6oo1] =========================
+[    0.001326][fe-A][6oo1]   0 /odm  ext4 /dev/block/platform/soc/1da4000.ufshc/by-name/odm 0
+[    0.001413][fe-A][6oo1]   1 /system  ext4 /dev/block/platform/soc/1da4000.ufshc/by-name/system 0
+[    0.001498][fe-A][6oo1]   2 /vendor  ext4 /dev/block/platform/soc/1da4000.ufshc/by-name/vendor 0
+[    0.001574][fe-A][6oo1]   3 /boot  emmc /dev/block/bootdevice/by-name/boot 0
+[    0.001643][fe-A][6oo1]   4 /recovery  emmc /dev/block/bootdevice/by-name/recovery 0
+[    0.001714][fe-A][6oo1]   5 /system  ext4 /dev/block/bootdevice/by-name/system 0
+[    0.001785][fe-A][6oo1]   6 /data  ext4 /dev/block/bootdevice/by-name/userdata -16384
+[    0.001857][fe-A][6oo1]   7 /cache  ext4 /dev/block/bootdevice/by-name/cache 0
+[    0.001926][fe-A][6oo1]   8 /sdcard  sdfat /dev/block/mmcblk0p1 0
+[    0.001991][fe-A][6oo1]   9 /efs  ext4 /dev/block/bootdevice/by-name/efs 0
+[    0.002067][fe-A][6oo1]   10 /carrier  ext4 /dev/block/bootdevice/by-name/carrier 0
+[    0.002153][fe-A][6oo1]   11 /preload  ext4 /dev/block/bootdevice/by-name/hidden 0
+[    0.002239][fe-A][6oo1]   12 /modem  emmc /dev/block/bootdevice/by-name/apnhlos 0
+[    0.002322][fe-A][6oo1]   13 /mdm  emmc /dev/block/bootdevice/by-name/modem 0
+[    0.002403][fe-A][6oo1]   14 /dsp  emmc /dev/block/bootdevice/by-name/dsp 0
+[    0.002483][fe-A][6oo1]   15 /vendor  ext4 /dev/block/bootdevice/by-name/vendor 0
+[    0.002566][fe-A][6oo1]   16 /odm  ext4 /dev/block/bootdevice/by-name/odm 0
+[    0.002645][fe-A][6oo1]   17 /misc  emmc /dev/block/bootdevice/by-name/misc 0
+[    0.002718][fe-A][6oo1]   18 /tmp  ramdisk ramdisk 0
+[    0.002778][fe-A][6oo1]
+[    0.002827][fe-A][6oo1]
+[    0.002876][fe-A][6oo1] [initialize init-recovery]
+[    0.002935][fe-A][6oo1]
+[    0.002983][fe-A][6oo1] #mount -f /cache 
+[    0.003042][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.003129][fe-A][6oo1] I:[libfs_mgr]Filesystem on /dev/block/bootdevice/by-name/cache was not cleanly shutdown; state flags: 0x1, incompat feature flags: 0x246
+[    0.003230][fe-A][6oo1] I:[libfs_mgr]Do not set FS_STAT_UNCLEAN_SHUTDOWN
+[    0.005491][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.005599][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.005703][fe-A][6oo1]
+[    0.005759][fe-A][6oo1] #ls /cache/recovery/ 
+[    0.006275][fe-A][6oo1] -rw-r----- system   system      52671 2017-01-01 03:07 last_log.1
+[    0.006369][fe-A][6oo1] -rw------- system   system          0 2017-01-01 03:11 last_crash
+[    0.006456][fe-A][6oo1] -rw------- system   system     649146 2017-01-01 03:11 last_kmsg
+[    0.006530][fe-A][6oo1] -rw------- system   system       7836 2017-01-01 03:11 last_history
+[    0.006605][fe-A][6oo1] -rw------- root     root          783 2017-01-01 03:11 rescueparty_summary
+[    0.006681][fe-A][6oo1] -rw------- system   system     179469 2017-01-01 03:11 log
+[    0.006754][fe-A][6oo1] -rw-r----- system   system     137425 2017-01-01 03:04 last_log.3
+[    0.006828][fe-A][6oo1] -rw------- system   system    1491689 2017-01-01 03:04 last_kmsg.3
+[    0.006902][fe-A][6oo1] -rw-r----- system   system      52589 2017-01-01 02:00 last_log.4
+[    0.006978][fe-A][6oo1] -rw-r--r-- system   system      22391 2017-01-01 03:11 last_last_kernel
+[    0.007065][fe-A][6oo1] -rw------- system   system       2684 2017-01-01 03:11 last_extra_history
+[    0.007155][fe-A][6oo1] -rw-r--r-- system   system    1403328 2017-01-01 03:11 last_recovery
+[    0.007254][fe-A][6oo1] -rw-r----- system   system      56374 2017-01-01 01:59 last_log.5
+[    0.007342][fe-A][6oo1] -rw------- system   system         12 2017-01-01 03:11 last_recovery_mode
+[    0.007432][fe-A][6oo1] -rw------- root     root            5 2017-01-01 03:11 last_locale
+[    0.007519][fe-A][6oo1] -rw------- system   system    1168212 2017-01-01 01:59 last_kmsg.5
+[    0.007607][fe-A][6oo1] -rw------- system   system     463658 2017-01-01 01:27 last_kmsg.7
+[    0.007686][fe-A][6oo1] -rw------- system   system     464797 2017-01-01 02:00 last_kmsg.4
+[    0.007760][fe-A][6oo1] -rw------- system   system    1078763 2017-01-01 01:45 last_kmsg.6
+[    0.007834][fe-A][6oo1] -rw------- system   system     469900 2017-01-01 03:04 last_kmsg.2
+[    0.007907][fe-A][6oo1] -rw------- system   system     466622 2017-01-01 03:07 last_kmsg.1
+[    0.007981][fe-A][6oo1] -rw-r--r-- system   system          0 2017-01-01 03:11 last_install
+[    0.008054][fe-A][6oo1] -rw------- system   system      92550 2021-10-27 06:34 rescueparty_log
+[    0.008130][fe-A][6oo1] -rw-r--r-- system   system        884 2017-01-01 03:11 last_avc_msg_recovery
+[    0.008212][fe-A][6oo1] -rw------- system   system          0 2017-01-01 03:11 last_extra_history_old
+[    0.008304][fe-A][6oo1] -rw-r----- system   system      49681 2017-01-01 01:27 last_log.7
+[    0.008391][fe-A][6oo1] -rw-r----- system   system     179469 2017-01-01 03:11 last_log
+[    0.008477][fe-A][6oo1] -rw-r----- system   system      53126 2017-01-01 03:04 last_log.2
+[    0.008564][fe-A][6oo1] -rw-r----- system   system     114052 2017-01-01 01:45 last_log.6
+[    0.008651][fe-A][6oo1]
+[    0.008706][fe-A][6oo1] #ls /cache/fota/ 
+[    0.008770][fe-A][6oo1]
+[    0.008825][fe-A][6oo1] #unmount /cache 
+[    0.011377][fe-A][6oo1] /cache sucessfully unmounted
+[    0.011445][fe-A][6oo1]
+[    0.011495][fe-A][6oo1] #exec -f /system/bin/e2fsck -v -y /dev/block/bootdevice/by-name/cache 
+[    0.025326][fe-A][6oo1] e2fsck 1.44.4 (18-Aug-2018)
+[    0.026860][fe-A][6oo1] skipping journal recovery because INCOMPAT_RECOVER was clear.
+[    0.026952][fe-A][6oo1] check whether gdt & bitmap free count is vaild
+[    0.027408][fe-A][6oo1] cache: clean, 46/25600 files, 4779/102400 blocks
+[    0.028673][fe-A][6oo1]
+[    0.028731][fe-A][6oo1] #mount /cache 
+[    0.029050][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.030301][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.030409][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.030514][fe-A][6oo1]
+[    0.030565][fe-A][6oo1] #fcut --limited-file-size=1024k -f /cache/recovery/last_recovery /tmp/recovery_old.tmp 
+[    0.034835][fe-A][6oo1]
+[    0.034886][fe-A][6oo1] #ls /efs/ 
+[    0.034971][fe-A][6oo1] drwx------ root     root              1970-01-01 00:00 lost+found
+[    0.035049][fe-A][6oo1] drwxr-xr-x system   system            2017-01-01 00:00 carrier
+[    0.035122][fe-A][6oo1] drwxrwxr-x radio    system            2022-01-07 17:44 sec_efs
+[    0.035197][fe-A][6oo1] drwxrwx--- system   system            2018-11-28 02:44 prov
+[    0.035268][fe-A][6oo1] drwxrwx--- system   system            2018-11-28 02:44 prov_data
+[    0.035347][fe-A][6oo1] drwxrwx--x radio    system            2017-01-01 00:44 recovery
+[    0.035433][fe-A][6oo1] drwxrwxr-- drm      system            2017-01-01 00:00 drm
+[    0.035516][fe-A][6oo1] drwxrwx--x radio    system            2017-01-01 00:00 cpk
+[    0.035603][fe-A][6oo1] drwxrw---- spay     spay              2017-01-01 00:00 pfw_data
+[    0.035689][fe-A][6oo1] drwxrwx--- radio    system            2018-11-28 02:44 TEE
+[    0.035773][fe-A][6oo1] drwxrwx--- system   system            2019-10-26 03:50 ssm
+[    0.035856][fe-A][6oo1] drwxrwxr-x wifi     root              2018-11-28 02:44 wifi
+[    0.035941][fe-A][6oo1] drwxrwx--- audioserver audio             2017-01-01 00:00 maxim
+[    0.036050][fe-A][6oo1] drwxrwxr-x root     radio             2017-01-01 00:00 imei
+[    0.036150][fe-A][6oo1] drwxrwxr-x system   system            2018-11-28 02:44 DAK
+[    0.036222][fe-A][6oo1] drwxrwxr-x system   system            2019-01-17 19:13 FactoryApp
+[    0.036297][fe-A][6oo1] drwxrwxr-x radio    system            2017-01-01 00:00 Battery
+[    0.036369][fe-A][6oo1] drwx------ system   system            2017-01-01 00:00 etc
+[    0.036440][fe-A][6oo1] drwxrwx--- system   bluetooth          2018-11-28 02:44 bluetooth
+[    0.036513][fe-A][6oo1] drwx------ system   system            2019-05-26 22:33 sfs
+[    0.036588][fe-A][6oo1] drwxrwx--x radio    system            2018-11-28 02:04 usb_hw_param
+[    0.036676][fe-A][6oo1] -rw-rw-r-- radio    radio         152 2018-11-28 02:44 00000000.authtokcont
+[    0.036767][fe-A][6oo1] -rw-r--r-- system   system        144 2018-11-28 02:44 wv.keys
+[    0.036852][fe-A][6oo1] drwx------ system   system            2021-02-14 02:56 umc
+[    0.036935][fe-A][6oo1] drwxr--r-- system   system            2019-01-17 19:13 adp_token
+[    0.037025][fe-A][6oo1] -rw-rw---- root     root           16 2017-01-01 00:01 lpm_boot.log
+[    0.037113][fe-A][6oo1] drwx------ nfc      nfc               2017-06-22 14:42 nfc
+[    0.037196][fe-A][6oo1] drwxrwxr-x system   system            2017-03-15 09:40 lpm
+[    0.037268][fe-A][6oo1] drwx------ system   system            2017-07-27 01:02 mb_po
+[    0.037340][fe-A][6oo1] drwxrwxr-x system   system            2017-07-27 01:02 gatekeeper
+[    0.037413][fe-A][6oo1] -rwx------ radio    radio          30 2021-10-27 06:32 telephony.prop
+[    0.037488][fe-A][6oo1] drwx------ system   system            2020-07-01 19:45 sfsAlt
+[    0.037559][fe-A][6oo1]
+[    0.037608][fe-A][6oo1] #ls /efs/MDM/ 
+[    0.040210][fe-A][6oo1] /cache sucessfully unmounted
+[    0.040280][fe-A][6oo1] running init-recovery time : 0.039s
+[    0.040345][fe-A][6oo1]
+[    0.040400][fe-A][6oo1] [init-history]
+[    0.040467][fe-A][6oo1]
+[    0.040523][fe-A][6oo1] #df /efs 
+[    0.040583][fe-A][6oo1] Filesystem               Size         Used         Free       Blksize
+[    0.040708][fe-A][6oo1] /efs                    15.7M(16433152)  844.0K(864256)   14.8M(15568896) 4096
+[    0.040802][fe-A][6oo1]
+[    0.040858][fe-A][6oo1] #mkdir -f radio system 0771 /efs/recovery 
+[    0.040933][fe-A][6oo1]
+[    0.040987][fe-A][6oo1] #touch -f /efs/recovery/history 
+[    0.041054][fe-A][6oo1] running init-history time : 0.000s
+[    0.041116][fe-A][6oo1]
+[    0.041163][fe-A][6oo1] [collecting command]
+[    0.041219][fe-A][6oo1] read /sys/class/sec/sec_key/keycode_pressed = 115:1,116:0,114:0
+[    0.041291][fe-A][6oo1] Øp
+[    0.041342][fe-A][6oo1] E:isManualModeByKeyPress: KEY_VOLUMEUP(1)
+[    0.041407][fe-A][6oo1] E:isManualModeByKeyPress: KEY_POWER(0)
+[    0.041470][fe-A][6oo1] E:isManualModeByKeyPress: KEY_VOLUMEDOWN(0)
+[    0.041535][fe-A][6oo1] E:isManualModeByKeyPress: ManualKeyPress(0)
+[    0.041600][fe-A][6oo1] I:main :: Check recovery command!!
+[    0.041954][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.043193][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.043303][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.045391][fe-A][6oo1] save_header(), prefix : fe
+[    0.045585][fe-A][6oo1] copy_file '/efs/recovery/history' '/cache/recovery/last_history'
+[    0.048623][fe-A][6oo1] /proc/reset_reason : NP
+[    0.048693][fe-A][6oo1] save_resetreason() : Failed to open /proc/pwrsrc (No such file or directory)
+[    0.048775][fe-A][6oo1] /proc/store_lastkmsg : 1
+[    0.048835][fe-A][6oo1] save_resetreason() : Failed to open /proc/extra (No such file or directory)
+[    0.049107][fe-A][6oo1] locale is [en_US]
+[    0.049493][fe-A][6oo1] Loading make_device from librecovery_ui_ext.so
+[    0.050174][fe-A][6oo1] I:Brightness file: /sys/class/leds/lcd-backlight/brightness
+[    0.050261][fe-A][6oo1] I:Max brightness file: /sys/class/leds/lcd-backlight/max_brightness
+[    0.050353][fe-A][6oo1] I:Brightness: 120 (50%)
+[    0.050437][fe-A][6oo1] pixel_format : UNKNOWN
+[    0.051735][fe-A][6oo1] Failed to find/open a drm device: No such file or directory
+[    0.052085][fe-A][6oo1] fb0 reports (possibly inaccurate):
+[    0.052158][fe-A][6oo1]   vi.bits_per_pixel = 32
+[    0.052224][fe-A][6oo1]   vi.red.offset   =   0   .length =   8
+[    0.052288][fe-A][6oo1]   vi.green.offset =   8   .length =   8
+[    0.052352][fe-A][6oo1]   vi.blue.offset  =  16   .length =   8
+[    0.075393][fe-A][6oo1] framebuffer: 0 (2560 x 1600)
+[    0.329853][fe-A][6oo1] dpi : xxhdpi
+[    0.329957][fe-A][6oo1] dpY = 3
+[    0.331511][fe-A][6oo1]           erasing_text: en_US (137 x 57 @ 1856)
+[    0.333570][fe-A][6oo1]        no_command_text: en_US (249 x 57 @ 1856)
+[    0.335038][fe-A][6oo1]             error_text: en_US (99 x 57 @ 1856)
+[    0.335816][fe-A][6oo1]   cancel_wipe_data_text: en (315 x 48 @ 714)
+[    0.337124][fe-A][6oo1]   factory_data_reset_text: en (816 x 48 @ 714)
+[    0.337277][fe-A][6oo1] E:Failed to load bitmap try_again_text (error -1)
+[    0.340085][fe-A][6oo1]   wipe_data_confirmation_text: en (1052 x 96 @ 1462)
+[    0.340312][fe-A][6oo1] E:Failed to load bitmap wipe_data_menu_header_text (error -1)
+[    0.340388][fe-A][6oo1]
+[    0.340433][fe-A][6oo1] sim_frames 12
+[    0.375056][fe-A][6oo1] intro_frames 0
+[    0.375130][fe-A][6oo1] loop_frames 15
+[    0.406398][fe-A][6oo1] Reboot Recovery Cause file exist
+[    0.406478][fe-A][6oo1] read_reboot_recovery_cause_file++
+[    0.406544][fe-A][6oo1]
+[    0.406598][fe-A][6oo1] #fail to open recovery_cause(No such file or directory)#
+[    0.406672][fe-A][6oo1] read_reboot_recovery_cause_file(-2)--
+[    0.406734][fe-A][6oo1] Reboot Recovery Cause couldn't be read from file, so [UNKNOWN]
+[    0.406808][fe-A][6oo1]
+[    0.406852][fe-A][6oo1] #Reboot Recovery Cause is [UNKNOWN]#
+[    0.413456][fe-A][6oo1]
+[    0.413504][fe-A][6oo1] #Reboot Recovery Cause is [UNKNOWN]#
+[    0.413565][fe-A][6oo1]
+[    0.413609][fe-A][6oo1] [reboot-reason-history]
+[    0.413664][fe-A][6oo1] save_recovery_cause() : reboot_reason=UNKNOWN
+[    0.413729][fe-A][6oo1] copy_file '/efs/recovery/history' '/cache/recovery/last_history'
+[    0.417030][fe-A][6oo1] /system/bin/fastbootd can't be invoked (No such file or directory)
+[    0.417104][fe-A][6oo1] check the MDM policy. retry(1)
+[    0.417174][fe-A][6oo1] I:/efs is already mounted
+[    0.417228][fe-A][6oo1] check_MDM_policy: /efs is mounted normally
+[    0.417288][fe-A][6oo1] check_MDM_policy: /efs/MDM/FactoryReset does not exist. MDM allows factoryReset (No such file or directory)
+[    0.417460][fe-A][6oo1] W:[libfs_mgr]Failed to umount /efs: Device or resource busy
+[    0.417534][fe-A][6oo1] check_MDM_policy: can't unmount /efs (Device or resource busy)
+[    0.417608][fe-A][6oo1] check_MDM_policy: ret 1
+[    0.442129][fe-A][6oo1] I:locale is [en_US]
+[    0.445853][fe-A][6oo1] SELinux:  Skipping /product_file_contexts:  empty file
+[    0.445990][fe-A][6oo1] SELinux:  Skipping /odm_file_contexts:  empty file
+[    0.446149][fe-A][6oo1] SELinux: Loaded file_contexts
+[    0.446316][fe-A][6oo1] main() : usb_config = none, usb_state = none
+[    0.446383][fe-A][6oo1] ro.boot.boot_recovery=1 
+[    0.446439][fe-A][6oo1] rtn_config value is empty.
+[    0.446492][fe-A][6oo1] stage is []
+[    0.446540][fe-A][6oo1] reason is [(null)]
+[    0.446589][fe-A][6oo1] requested_time is [(null)]
+[    0.446646][fe-A][6oo1]
+[    0.446689][fe-A][6oo1] [read csc code]
+[    0.446741][fe-A][6oo1] I:/efs is already mounted
+[    0.448799][fe-A][6oo1] W:[libfs_mgr]Failed to umount /efs: Device or resource busy
+[    0.448875][fe-A][6oo1] can't unmount /efs - Device or resource busy
+[    0.448968][fe-A][6oo1] read csc code = 'EGY'
+[    0.449025][fe-A][6oo1] Use simple ui.
+[    0.452077][fe-A][6oo1]        installing_text: en_US (459 x 57 @ 1856)
+[    0.475624][fe-A][6oo1] kernel_version : Linux version 4.4.205-19646842 (dpi@SWDH4620) (gcc version 4.9.x 20150123 (prerelease) (GCC) ) #1 SMP PREEMPT Thu Mar 25 15:07:26 KST 2021
+[    0.475816][fe-A][6oo1]
+[    0.475876][fe-A][6oo1] Command: "/system/bin/recovery"
+[    0.476007][fe-A][6oo1]
+[    0.476068][fe-A][6oo1] update_package = (null)
+[    0.476136][fe-A][6oo1] should_wipe_data = 0, should_wipe_cache = 0,wipe_sdcard = 0,should_wipe_carrier = 0,no_wipe_custom=0
+[    0.476240][fe-A][6oo1] data_resizing = 0
+[    0.476305][fe-A][6oo1] update_factory_csc = 0, update_home_csc = 0, factory_fota = 0
+[    0.476391][fe-A][6oo1] carry_out = (null)
+[    0.476457][fe-A][6oo1] tima_kernel_recovery = 0
+[    0.476526][fe-A][6oo1] just_exit = 0
+[    0.476591][fe-A][6oo1] omc_binary_download = 0
+[    0.476660][fe-A][6oo1] delete_apn_changes = 0
+[    0.476729][fe-A][6oo1] color_id_wallpaper = 0
+[    0.476797][fe-A][6oo1] check_carrier_format = 0
+[    0.476867][fe-A][6oo1] should_prompt_and_wipe_data = 0
+[    0.476939][fe-A][6oo1] should_prompt_and_wipe_app_data = 0
+[    0.477017][fe-A][6oo1] rescue = 0
+[    0.477083][fe-A][6oo1]
+[    0.477142][fe-A][6oo1]
+[    0.477201][fe-A][6oo1]
+[    0.477263][fe-A][6oo1] [property list]
+[    0.477325][fe-A][6oo1] persist.audio.fluence.voicecomm=true
+[    0.477394][fe-A][6oo1] ro.bluetooth.a2dp_offload.supported=true
+[    0.477464][fe-A][6oo1] persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
+[    0.477541][fe-A][6oo1] persist.bluetooth.a2dp_offload.disabled=false
+[    0.477614][fe-A][6oo1] vendor.bluetooth.soc=cherokee
+[    0.477680][fe-A][6oo1] persist.vendor.btstack.enable.splita2dp=true
+[    0.477753][fe-A][6oo1] persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+[    0.477832][fe-A][6oo1] ro.boot.dram_info=FF,03,00,4G
+[    0.477900][fe-A][6oo1] ro.boottime.init=4510
+[    0.477972][fe-A][6oo1] ro.boottime.init.selinux=74
+[    0.478046][fe-A][6oo1] ro.boottime.init.cold_boot_wait=1176
+[    0.478124][fe-A][6oo1] ro.boottime.ueventd=4675075779
+[    0.478199][fe-A][6oo1] ro.boottime.recovery=5878999476
+[    0.478275][fe-A][6oo1] persist.vendor.cne.feature=0
+[    0.478346][fe-A][6oo1] ro.cfg.freelimit_val=17
+[    0.478415][fe-A][6oo1] ro.cfg.dha_cached_max=18
+[    0.478485][fe-A][6oo1] ro.cfg.custom_sw_limit=325
+[    0.478555][fe-A][6oo1] ro.cfg.custom_tm_limit=1000
+[    0.478624][fe-A][6oo1] ro.cfg.upgrade_pressure=75
+[    0.478686][fe-A][6oo1] ro.cfg.enable_reentry_lmk=true
+[    0.478750][fe-A][6oo1] ro.cfg.kill_heaviest_task=true
+[    0.478813][fe-A][6oo1] ro.cfg.enable_userspace_lmk=true
+[    0.478878][fe-A][6oo1] ro.config.knox=v30
+[    0.478936][fe-A][6oo1] ro.config.knox.ucm=1
+[    0.478996][fe-A][6oo1] ro.config.tima=1
+[    0.479054][fe-A][6oo1] ro.config.dmverity=G
+[    0.479113][fe-A][6oo1] ro.config.fha_enable=true
+[    0.479175][fe-A][6oo1] ro.config.ringtone_2=Basic_Bell.ogg
+[    0.479240][fe-A][6oo1] ro.config.media_sound=Media_preview_Touch_the_light.ogg
+[    0.479324][fe-A][6oo1] ro.config.timaversion=3.0
+[    0.479394][fe-A][6oo1] ro.config.add_bonusEFK=1
+[    0.479463][fe-A][6oo1] ro.config.iccc_version=3.0
+[    0.479534][fe-A][6oo1] ro.config.dha_lmk_scale=1.0
+[    0.479605][fe-A][6oo1] ro.config.freelimit_val=17
+[    0.479679][fe-A][6oo1] ro.config.dha_cached_max=16
+[    0.479753][fe-A][6oo1] ro.config.dha_cached_min=4
+[    0.479827][fe-A][6oo1] ro.config.custom_sw_limit=250
+[    0.479903][fe-A][6oo1] ro.config.timaversion_info=Knox3.4_S.R.R
+[    0.479982][fe-A][6oo1] ro.config.upgrade_pressure=50
+[    0.480066][fe-A][6oo1] ro.config.rm_preload_enabled=1
+[    0.480133][fe-A][6oo1] ro.config.fall_prevent_enable=true
+[    0.480202][fe-A][6oo1] ro.config.notification_sound_2=S_Charming_Bell.ogg
+[    0.480279][fe-A][6oo1] ro.boot.cp_reserved_mem=off
+[    0.480345][fe-A][6oo1] ro.bionic.arch=arm64
+[    0.480407][fe-A][6oo1] ro.bionic.2nd_arch=arm
+[    0.480474][fe-A][6oo1] ro.bionic.cpu_variant=generic
+[    0.480543][fe-A][6oo1] ro.bionic.2nd_cpu_variant=cortex-a73
+[    0.480617][fe-A][6oo1] dalvik.vm.minidebuginfo=true
+[    0.480687][fe-A][6oo1] dalvik.vm.dex2oat-minidebuginfo=true
+[    0.480765][fe-A][6oo1] dalvik.vm.dex2oat-max-image-block-size=524288
+[    0.480848][fe-A][6oo1] dalvik.vm.dex2oat-resolve-startup-strings=true
+[    0.480931][fe-A][6oo1] ro.boot.debug_level=0x4f4c
+[    0.481002][fe-A][6oo1] debug.sf.hw=1
+[    0.481077][fe-A][6oo1] debug.sf.enable_hwc_vds=1
+[    0.481148][fe-A][6oo1] debug.sf.latch_unsignaled=1
+[    0.481219][fe-A][6oo1] debug.atrace.tags.enableflags=0
+[    0.481293][fe-A][6oo1] debug.gralloc.enable_fb_ubwc=1
+[    0.481367][fe-A][6oo1] debug.stagefright.omx_default_rank=0
+[    0.481437][fe-A][6oo1] debug.stagefright.omx_default_rank.sw-audio=1
+[    0.481506][fe-A][6oo1] bt.max.hfpclient.connections=1
+[    0.481570][fe-A][6oo1] mm.enable.smoothstreaming=true
+[    0.481633][fe-A][6oo1] ro.cmc.version=2.0
+[    0.481692][fe-A][6oo1] ro.cmc.device_type=sd
+[    0.481752][fe-A][6oo1] ro.nfc.port=I2C
+[    0.481810][fe-A][6oo1] ro.opa.eligible_device=true
+[    0.481873][fe-A][6oo1] ro.hwui.path_cache_size=32
+[    0.481935][fe-A][6oo1] ro.hwui.layer_cache_size=48
+[    0.481997][fe-A][6oo1] ro.hwui.texture_cache_size=72
+[    0.482064][fe-A][6oo1] ro.hwui.gradient_cache_size=1
+[    0.482136][fe-A][6oo1] ro.hwui.r_buffer_cache_size=8
+[    0.482208][fe-A][6oo1] ro.hwui.drop_shadow_cache_size=6
+[    0.482283][fe-A][6oo1] ro.hwui.text_large_cache_width=2048
+[    0.482362][fe-A][6oo1] ro.hwui.text_small_cache_width=1024
+[    0.482439][fe-A][6oo1] ro.hwui.text_large_cache_height=4096
+[    0.482518][fe-A][6oo1] ro.hwui.text_small_cache_height=1024
+[    0.482596][fe-A][6oo1] ro.hwui.texture_cache_flushrate=0.4
+[    0.482674][fe-A][6oo1] ro.smps.enable=true
+[    0.482744][fe-A][6oo1] ro.wifi.channels=
+[    0.482806][fe-A][6oo1] ro.allow.mock.location=0
+[    0.482871][fe-A][6oo1] ro.build.keys=test-keys
+[    0.482935][fe-A][6oo1] ro.build.scafe.version=2020A
+[    0.483000][fe-A][6oo1] ro.build.flavor=gts4lltexx-user
+[    0.483067][fe-A][6oo1] ro.build.selinux=1
+[    0.483129][fe-A][6oo1] ro.build.selinux.enforce=1
+[    0.483193][fe-A][6oo1] ro.build.version.sem=2902
+[    0.483258][fe-A][6oo1] ro.build.version.sep=110100
+[    0.483323][fe-A][6oo1] ro.build.version.all_codenames=REL
+[    0.483392][fe-A][6oo1] ro.build.version.security_index=1
+[    0.483461][fe-A][6oo1] ro.build.version.preview_sdk_fingerprint=REL
+[    0.483545][fe-A][6oo1] ro.build.version.min_supported_target_sdk=23
+[    0.483624][fe-A][6oo1] ro.build.2ndbrand=false
+[    0.483693][fe-A][6oo1] ro.build.official.release=true
+[    0.483765][fe-A][6oo1] ro.build.changelist=19646842
+[    0.483837][fe-A][6oo1] ro.build.sw_version=T835JXS5CUC2
+[    0.483910][fe-A][6oo1] ro.build.tf_modelnumber=SM-T835
+[    0.483983][fe-A][6oo1] ro.build.display_build_number=true
+[    0.484058][fe-A][6oo1] ro.iorapd.enable=false
+[    0.484127][fe-A][6oo1] ro.system.build.id=QP1A.190711.020
+[    0.484193][fe-A][6oo1] ro.system.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.484264][fe-A][6oo1] ro.system.build.date.utc=1616652039
+[    0.484330][fe-A][6oo1] ro.system.build.tags=release-keys
+[    0.484395][fe-A][6oo1] ro.system.build.type=user
+[    0.484457][fe-A][6oo1] ro.system.build.version.sdk=29
+[    0.484520][fe-A][6oo1] ro.system.build.version.sehi=2903
+[    0.484586][fe-A][6oo1] ro.system.build.version.release=10
+[    0.484651][fe-A][6oo1] ro.system.build.version.incremental=T835JXS5CUC2
+[    0.484722][fe-A][6oo1] ro.system.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.484824][fe-A][6oo1] ro.treble.enabled=true
+[    0.484894][fe-A][6oo1] ro.product.locale=en-GB
+[    0.484966][fe-A][6oo1] ro.qualcomm.cabl=1
+[    0.485036][fe-A][6oo1] ro.bluetooth.a4wp=false
+[    0.485107][fe-A][6oo1] ro.bluetooth.wipower=true
+[    0.485180][fe-A][6oo1] ro.bluetooth.emb_wp_mode=true
+[    0.485255][fe-A][6oo1] ro.bluetooth.library_name=libbluetooth.so
+[    0.485336][fe-A][6oo1] ro.user_trial=FALSE
+[    0.485406][fe-A][6oo1] ro.postinstall.fstab.prefix=/system
+[    0.485484][fe-A][6oo1] ro.factory_mode=0
+[    0.485544][fe-A][6oo1] ro.actionable_compatible_property.enabled=true
+[    0.485614][fe-A][6oo1] mmp.enable.3g2=true
+[    0.485674][fe-A][6oo1] sdm.debug.disable_skip_validate=1
+[    0.485739][fe-A][6oo1] sdm.perf_hint_window=50
+[    0.485797][fe-A][6oo1] init.svc.ueventd=running
+[    0.485855][fe-A][6oo1] init.svc.recovery=running
+[    0.485924][fe-A][6oo1] qcom.hw.aac.encoder=true
+[    0.486068][fe-A][6oo1] qcom.bluetooth.soc=cherokee
+[    0.486146][fe-A][6oo1] qemu.hw.mainkeys=0
+[    0.486194][fe-A][6oo1] rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+[    0.486261][fe-A][6oo1] vidc.enc.dcvs.extra-buff-count=2
+[    0.486320][fe-A][6oo1] audio.sys.noisy.broadcast.delay=600
+[    0.486381][fe-A][6oo1] audio.sys.offload.pstimeout.secs=3
+[    0.486441][fe-A][6oo1] media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+[    0.486512][fe-A][6oo1] media.stagefright.enable-aac=true
+[    0.486572][fe-A][6oo1] media.stagefright.enable-qcp=true
+[    0.486632][fe-A][6oo1] media.stagefright.enable-http=true
+[    0.486691][fe-A][6oo1] media.stagefright.enable-scan=true
+[    0.486752][fe-A][6oo1] media.stagefright.enable-fma2dp=true
+[    0.486806][fe-A][6oo1] media.stagefright.enable-player=true
+[    0.486857][fe-A][6oo1] media.aac_51_output_enabled=true
+[    0.486906][fe-A][6oo1] tunnel.audio.encode=true# end of device/samsung/gts4llte/system.prop
+[    0.486968][fe-A][6oo1] persist.mm.enable.prefetch=true
+[    0.487017][fe-A][6oo1] persist.ts.rtmakeup=false
+[    0.487064][fe-A][6oo1] persist.hwc.enable_vds=1
+[    0.487109][fe-A][6oo1] persist.data.netmgrd.qos.enable=true
+[    0.487160][fe-A][6oo1] persist.demo.hdmirotationlock=false
+[    0.487209][fe-A][6oo1] persist.rild.nitz_plmn=
+[    0.487256][fe-A][6oo1] persist.rild.nitz_long_ons_0=
+[    0.487314][fe-A][6oo1] persist.rild.nitz_long_ons_1=
+[    0.487371][fe-A][6oo1] persist.rild.nitz_long_ons_2=
+[    0.487428][fe-A][6oo1] persist.rild.nitz_long_ons_3=
+[    0.487485][fe-A][6oo1] persist.rild.nitz_short_ons_0=
+[    0.487542][fe-A][6oo1] persist.rild.nitz_short_ons_1=
+[    0.487600][fe-A][6oo1] persist.rild.nitz_short_ons_2=
+[    0.487659][fe-A][6oo1] persist.rild.nitz_short_ons_3=
+[    0.487717][fe-A][6oo1] persist.backup.ntpServer=0.pool.ntp.org
+[    0.487779][fe-A][6oo1] persist.fuse_sdcard=true
+[    0.487830][fe-A][6oo1] restore.feature.use_samsung_smart_switch_flow=1
+[    0.487885][fe-A][6oo1] DEVICE_PROVISIONED=1
+[    0.487928][fe-A][6oo1] security.securehw.available=false
+[    0.487977][fe-A][6oo1] security.securenvm.available=false
+[    0.488026][fe-A][6oo1] ro.config.ringtone=Over_the_Horizon.ogg
+[    0.488078][fe-A][6oo1] ro.config.alarm_alert=Morning_Glory.ogg
+[    0.488129][fe-A][6oo1] ro.config.notification_sound=Skyline.ogg
+[    0.488180][fe-A][6oo1] ro.boot.em.did=205E07B88522
+[    0.488227][fe-A][6oo1] ro.boot.em.model=SM-T835
+[    0.488273][fe-A][6oo1] ro.boot.em.status=0x0
+[    0.488325][fe-A][6oo1] ro.boot.usrf=9438192
+[    0.488378][fe-A][6oo1] ro.boot.flash.locked=0
+[    0.488432][fe-A][6oo1] ro.boot.sales.param.offset=9437648
+[    0.488491][fe-A][6oo1] ro.boot.sec_atd.tty=/dev/ttyHS8
+[    0.488549][fe-A][6oo1] ro.boot.baseband=msm
+[    0.488602][fe-A][6oo1] ro.boot.hardware=qcom
+[    0.488656][fe-A][6oo1] ro.boot.revision=7
+[    0.488708][fe-A][6oo1] ro.boot.ucs_mode=0
+[    0.488761][fe-A][6oo1] ro.boot.ap_serial=0x07B88522
+[    0.488817][fe-A][6oo1] ro.boot.carrierid=
+[    0.488871][fe-A][6oo1] ro.boot.carrierid.param.offset=9437644
+[    0.488923][fe-A][6oo1] ro.boot.prototype.param.offset=9437660
+[    0.488974][fe-A][6oo1] ro.boot.bootdevice=1da4000.ufshc
+[    0.489023][fe-A][6oo1] ro.boot.bootloader=T835JXS5CUC2
+[    0.489070][fe-A][6oo1] ro.boot.sales_code=EGY
+[    0.489115][fe-A][6oo1] ro.boot.warranty_bit=1
+[    0.489159][fe-A][6oo1] ro.boot.boot_recovery=1
+[    0.489204][fe-A][6oo1] ro.boot.security_mode=1526595585
+[    0.489253][fe-A][6oo1] ro.boot.cp_debug_level=0x55FF
+[    0.489300][fe-A][6oo1] ro.boot.ddr_start_type=1
+[    0.489348][fe-A][6oo1] ro.boot.verifiedbootstate=orange
+[    0.489408][fe-A][6oo1] ro.build.id=QP1A.190711.020
+[    0.489465][fe-A][6oo1] ro.build.PDA=T835JXS5CUC2
+[    0.489521][fe-A][6oo1] ro.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.489584][fe-A][6oo1] ro.build.date.utc=1616652039
+[    0.489640][fe-A][6oo1] ro.build.host=SWDH4620
+[    0.489695][fe-A][6oo1] ro.build.tags=release-keys
+[    0.489750][fe-A][6oo1] ro.build.type=user
+[    0.489813][fe-A][6oo1] ro.build.user=dpi
+[    0.489866][fe-A][6oo1] ro.build.display.id=QP1A.190711.020.T835JXS5CUC2
+[    0.489930][fe-A][6oo1] ro.build.product=gts4llte
+[    0.489975][fe-A][6oo1] ro.build.version.sdk=29
+[    0.490021][fe-A][6oo1] ro.build.version.base_os=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXU4CTI4:user/release-keys
+[    0.490096][fe-A][6oo1] ro.build.version.release=10
+[    0.490145][fe-A][6oo1] ro.build.version.codename=REL
+[    0.490193][fe-A][6oo1] ro.build.version.incremental=T835JXS5CUC2
+[    0.490245][fe-A][6oo1] ro.build.version.preview_sdk=0
+[    0.490293][fe-A][6oo1] ro.build.version.security_patch=2021-02-01
+[    0.490345][fe-A][6oo1] ro.build.description=gts4lltexx-user 10 QP1A.190711.020 T835JXS5CUC2 release-keys
+[    0.490418][fe-A][6oo1] ro.build.characteristics=tablet
+[    0.490478][fe-A][6oo1] ro.build.system_root_image=false
+[    0.490539][fe-A][6oo1] ro.product.cpu.abi=arm64-v8a
+[    0.490595][fe-A][6oo1] ro.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+[    0.490663][fe-A][6oo1] ro.product.name=gts4lltexx
+[    0.490719][fe-A][6oo1] ro.product.brand=samsung
+[    0.490774][fe-A][6oo1] ro.product.model=SM-T835
+[    0.490829][fe-A][6oo1] ro.product.device=gts4llte
+[    0.490885][fe-A][6oo1] ro.product.system.brand=samsung
+[    0.490943][fe-A][6oo1] ro.product.manufacturer=samsung
+[    0.490992][fe-A][6oo1] ro.baseband=msm
+[    0.491035][fe-A][6oo1] ro.bootmode=unknown
+[    0.491079][fe-A][6oo1] ro.hardware=qcom
+[    0.491122][fe-A][6oo1] ro.revision=7
+[    0.491163][fe-A][6oo1] ro.bootloader=T835JXS5CUC2
+[    0.491209][fe-A][6oo1] ro.debuggable=0
+[    0.491251][fe-A][6oo1] ro.property_service.version=2
+[    0.491299][fe-A][6oo1] sys.usb.controller=a800000.dwc3
+[    0.491347][fe-A][6oo1] persist.sys.dalvik.vm.lib.2=libart.so
+[    0.491398][fe-A][6oo1] af.fast_track_multiplier=1
+[    0.491447][fe-A][6oo1] ro.af.client_heap_size_kbyte=7168
+[    0.491506][fe-A][6oo1] ro.sf.lcd_density=360
+[    0.491559][fe-A][6oo1] ro.com.google.gmsversion=10_202005
+[    0.491619][fe-A][6oo1] ro.minui.default_rotation=ROTATION_LEFT
+[    0.491680][fe-A][6oo1] ro.radio.noril=no
+[    0.491738][fe-A][6oo1] ro.zygote=zygote64_32
+[    0.491797][fe-A][6oo1] ro.opengles.version=196610
+[    0.491861][fe-A][6oo1] ro.telephony.default_cdma_sub=0
+[    0.491929][fe-A][6oo1] ro.oem_unlock_supported=1
+[    0.491992][fe-A][6oo1] ro.control_privapp_permissions=enforce
+[    0.492057][fe-A][6oo1] audio.offload.min.duration.secs=30
+[    0.492110][fe-A][6oo1] audio.offload.video=true
+[    0.492157][fe-A][6oo1] audio.deep_buffer.media=true
+[    0.492207][fe-A][6oo1] media.stagefright.thumbnail.prefer_hw_codecs=true
+[    0.492266][fe-A][6oo1] keyguard.no_require_sim=true
+[    0.492316][fe-A][6oo1] persist.radio.multisim.config=ss
+[    0.492367][fe-A][6oo1] ro.dalvik.vm.native.bridge=0
+[    0.492417][fe-A][6oo1] dalvik.vm.isa.arm.variant=cortex-a73
+[    0.492471][fe-A][6oo1] dalvik.vm.isa.arm.features=default
+[    0.492523][fe-A][6oo1] dalvik.vm.isa.arm64.variant=generic
+[    0.492587][fe-A][6oo1] dalvik.vm.isa.arm64.features=default
+[    0.492657][fe-A][6oo1] dalvik.vm.dexopt.secondary=true
+[    0.492723][fe-A][6oo1] dalvik.vm.usejit=true
+[    0.492785][fe-A][6oo1] dalvik.vm.heapsize=512m
+[    0.492848][fe-A][6oo1] dalvik.vm.lockprof.threshold=500
+[    0.492915][fe-A][6oo1] dalvik.vm.dex2oat-Xms=64m
+[    0.492979][fe-A][6oo1] dalvik.vm.dex2oat-Xmx=512m
+[    0.493044][fe-A][6oo1] dalvik.vm.heapmaxfree=8m
+[    0.493106][fe-A][6oo1] dalvik.vm.heapminfree=2m
+[    0.493169][fe-A][6oo1] dalvik.vm.heapstartsize=8m
+[    0.493248][fe-A][6oo1] dalvik.vm.appimageformat=lz4
+[    0.493344][fe-A][6oo1] dalvik.vm.usejitprofiles=true
+[    0.493441][fe-A][6oo1] dalvik.vm.heapgrowthlimit=256m
+[    0.493539][fe-A][6oo1] dalvik.vm.image-dex2oat-Xms=64m
+[    0.493637][fe-A][6oo1] dalvik.vm.image-dex2oat-Xmx=64m
+[    0.493738][fe-A][6oo1] dalvik.vm.heaptargetutilization=0.75
+[    0.493838][fe-A][6oo1] ro.frp.pst=/dev/block/persistent
+[    0.493938][fe-A][6oo1] ro.odm.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.494049][fe-A][6oo1] ro.odm.build.date.utc=1616652039
+[    0.494155][fe-A][6oo1] ro.odm.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.494325][fe-A][6oo1] ro.apex.updatable=false
+[    0.494422][fe-A][6oo1] ro.hwui.use_vulkan=
+[    0.494514][fe-A][6oo1] ro.vndk.version=29
+[    0.494607][fe-A][6oo1] ro.board.platform=msm8998
+[    0.494708][fe-A][6oo1] ro.kernel.qemu=0
+[    0.494799][fe-A][6oo1] ro.vendor.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.494864][fe-A][6oo1] ro.vendor.build.date.utc=1616652039
+[    0.494922][fe-A][6oo1] ro.vendor.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.495011][fe-A][6oo1] ro.carrier=unknown
+[    0.495053][fe-A][6oo1] ro.product.cpu.abilist32=armeabi-v7a,armeabi
+[    0.495107][fe-A][6oo1] ro.product.cpu.abilist64=arm64-v8a
+[    0.495158][fe-A][6oo1] ro.product.odm.name=gts4lltexx
+[    0.495207][fe-A][6oo1] ro.product.odm.brand=samsung
+[    0.495256][fe-A][6oo1] ro.product.odm.model=SM-T835
+[    0.495304][fe-A][6oo1] ro.product.odm.device=gts4llte
+[    0.495354][fe-A][6oo1] ro.product.odm.manufacturer=samsung
+[    0.495406][fe-A][6oo1] ro.product.board=msm8998
+[    0.495453][fe-A][6oo1] ro.product.vendor.name=gts4lltexx
+[    0.495508][fe-A][6oo1] ro.product.vendor.brand=samsung
+[    0.495566][fe-A][6oo1] ro.product.vendor.model=SM-T835
+[    0.495625][fe-A][6oo1] ro.product.vendor.device=gts4llte
+[    0.495685][fe-A][6oo1] ro.product.vendor.manufacturer=samsung
+[    0.495747][fe-A][6oo1] ro.product.first_api_level=27
+[    0.495806][fe-A][6oo1] ro.hardware.egl=adreno
+[    0.495861][fe-A][6oo1] ro.hardware.vulkan=adreno
+[    0.495917][fe-A][6oo1] ro.hardware.nfc_nci=nqx.default
+[    0.496011][fe-A][6oo1] ro.hardware.chipname=MSM8998
+[    0.496082][fe-A][6oo1] ro.hardware.keystore=mdfpp
+[    0.496139][fe-A][6oo1] ro.hardware.gatekeeper=mdfpp
+[    0.496196][fe-A][6oo1] ro.bootimage.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.496265][fe-A][6oo1] ro.bootimage.build.date.utc=1616652039
+[    0.496327][fe-A][6oo1] ro.bootimage.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.496424][fe-A][6oo1] ro.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.496528][fe-A][6oo1] pm.dexopt.boot=verify
+[    0.496584][fe-A][6oo1] pm.dexopt.ab-ota=speed-profile
+[    0.496644][fe-A][6oo1] pm.dexopt.shared=speed
+[    0.496702][fe-A][6oo1] pm.dexopt.install=speed-profile
+[    0.496771][fe-A][6oo1] pm.dexopt.inactive=verify
+[    0.496833][fe-A][6oo1] pm.dexopt.bg-dexopt=speed-profile
+[    0.496894][fe-A][6oo1] pm.dexopt.first-boot=quicken
+[    0.496951][fe-A][6oo1] ro.telephony.iwlan_operation_mode=legacy
+[    0.497015][fe-A][6oo1] ro.adb.secure=1
+[    0.497067][fe-A][6oo1] ro.secure=1
+[    0.497117][fe-A][6oo1] ro.com.google.clientidbase=android-samsung-ss
+[    0.497183][fe-A][6oo1] security.mdf=None
+[    0.497235][fe-A][6oo1] security.mdf.result=None
+[    0.497290][fe-A][6oo1] sys.usb.configfs=1
+[    0.497335][fe-A][6oo1] ro.gsid.image_running=0
+[    0.497381][fe-A][6oo1] log.tag.stats_log=I
+[    0.497428][fe-A][6oo1] ro.logd.size.stats=64K
+[    0.497474][fe-A][6oo1] ro.logd.auditd=false
+[    0.497519][fe-A][6oo1] vendor.mm.enable.qcom_parser=13631487
+[    0.497572][fe-A][6oo1] ro.multisim.simslotcount=1
+[    0.497620][fe-A][6oo1] persist.vendor.overlay.izat.optin=rro
+[    0.497672][fe-A][6oo1] vendor.camera.aux.packagelist=org.codeaurora.snapcam
+[    0.497732][fe-A][6oo1] persist.vendor.camera.privapp.list=org.codeaurora.snapcam
+[    0.497802][fe-A][6oo1] persist.debug.wfd.enable=1
+[    0.497863][fe-A][6oo1] persist.debug.coresight.config=stm-events
+[    0.497933][fe-A][6oo1] ro.product_ship=true
+[    0.497989][fe-A][6oo1] ril.subscription.types=NV,RUIM
+[    0.498053][fe-A][6oo1] persist.radio.sib16_support=1
+[    0.498115][fe-A][6oo1] ro.error.receiver.default=com.samsung.receiver.error
+[    0.498189][fe-A][6oo1] persist.timed.enable=true
+[    0.498250][fe-A][6oo1] selinux.policy_version=SEPF_SM-T835_10_0021
+[    0.498320][fe-A][6oo1] ro.boot.serialno=ce10182ab292a103037e
+[    0.498394][fe-A][6oo1] ro.serialno=ce10182ab292a103037e
+[    0.498452][fe-A][6oo1] ro.setupwizard.mode=OPTIONAL
+[    0.498506][fe-A][6oo1] ro.setupwizard.wifi_on_exit=false
+[    0.498562][fe-A][6oo1] ro.setupwizard.rotation_locked=false
+[    0.498616][fe-A][6oo1] setupwizard.theme=glif_v3_light
+[    0.498666][fe-A][6oo1] setupwizard.feature.enable_stencil_partner_customization=1
+[    0.498726][fe-A][6oo1] security.perf_harden=1
+[    0.498773][fe-A][6oo1] ro.product.system.name=gts4lltexx
+[    0.498823][fe-A][6oo1] ro.product.system.model=SM-T835
+[    0.498872][fe-A][6oo1] ro.product.system.device=gts4llte
+[    0.498925][fe-A][6oo1] ro.product.system.manufacturer=samsung
+[    0.498987][fe-A][6oo1] ro.security.mdf.ux=Enabled
+[    0.499044][fe-A][6oo1] ro.security.mdf.ver=3.1
+[    0.499098][fe-A][6oo1] ro.security.mdf.release=5
+[    0.499154][fe-A][6oo1] ro.security.fips.ux=Enabled
+[    0.499212][fe-A][6oo1] ro.security.wlan.ver=1.0
+[    0.499267][fe-A][6oo1] ro.security.wlan.release=2
+[    0.499324][fe-A][6oo1] ro.security.vpnpp.ver=2.1
+[    0.499380][fe-A][6oo1] ro.security.vpnpp.release=3.0
+[    0.499438][fe-A][6oo1] ro.security.fips_skc.ver=1.8
+[    0.499497][fe-A][6oo1] ro.security.keystore.keytype=sak,gak
+[    0.499554][fe-A][6oo1] ro.security.fips_bssl.ver=1.4
+[    0.499607][fe-A][6oo1] dev.pm.dyn_samplingrate=1
+[    0.499662][fe-A][6oo1] dev.mnt.blk.efs=sda
+[    0.499714][fe-A][6oo1] dev.mnt.blk.cache=sda
+[    0.499768][fe-A][6oo1] net.bt.name=Android
+[    0.499818][fe-A][6oo1] sys.config.activelaunch_enable=true
+[    0.499879][fe-A][6oo1] sys.vendor.shutdown.waittime=500
+[    0.499937][fe-A][6oo1] persist.sys.usb.config=mtp
+[    0.499995][fe-A][6oo1] persist.sys.wfd.virtual=0
+[    0.500050][fe-A][6oo1] persist.security.ams.enforcing=1
+[    0.500119][fe-A][6oo1] security.ADP.version=0
+[    0.500181][fe-A][6oo1] security.ADP.policy_version=00000000
+[    0.500251][fe-A][6oo1] security.ASKS.version=0
+[    0.500317][fe-A][6oo1] security.ASKS.time_value=00000000
+[    0.500381][fe-A][6oo1] security.ASKS.rufs_enable=true
+[    0.500440][fe-A][6oo1] security.ASKS.policy_version=00000000
+[    0.500502][fe-A][6oo1] ro.vendor.audio.sdk.ssr=false
+[    0.500560][fe-A][6oo1] ro.vendor.audio.sdk.fluencetype=none
+[    0.500622][fe-A][6oo1] vendor.audio.hw.aac.encoder=true
+[    0.500678][fe-A][6oo1] vendor.audio.use.sw.ape.decoder=true
+[    0.500729][fe-A][6oo1] vendor.audio.use.sw.alac.decoder=true
+[    0.500781][fe-A][6oo1] vendor.audio.flac.sw.decoder.24bit=true
+[    0.500835][fe-A][6oo1] vendor.audio.safx.pbe.enabled=false
+[    0.500886][fe-A][6oo1] vendor.audio.dolby.ds2.enabled=false
+[    0.500938][fe-A][6oo1] vendor.audio.dolby.ds2.hardbypass=false
+[    0.500992][fe-A][6oo1] vendor.audio.parser.ip.buffer.size=262144
+[    0.501046][fe-A][6oo1] vendor.audio.tunnel.encode=false
+[    0.501097][fe-A][6oo1] vendor.audio.volume.headset.gain.depcal=true
+[    0.501153][fe-A][6oo1] vendor.audio.feature.fm.enable=true
+[    0.501220][fe-A][6oo1] vendor.audio.feature.hfp.enable=true
+[    0.501294][fe-A][6oo1] vendor.audio.feature.snd_mon.enable=true
+[    0.501369][fe-A][6oo1] vendor.audio.feature.audiozoom.enable=false
+[    0.501443][fe-A][6oo1] vendor.audio.feature.hdmi_edid.enable=true
+[    0.501518][fe-A][6oo1] vendor.audio.feature.hwdep_cal.enable=false
+[    0.501594][fe-A][6oo1] vendor.audio.feature.spkr_prot.enable=true
+[    0.501671][fe-A][6oo1] vendor.audio.feature.compr_voip.enable=true
+[    0.501747][fe-A][6oo1] vendor.audio.feature.maxx_audio.enable=false
+[    0.501818][fe-A][6oo1] vendor.audio.feature.usb_offload.enable=true
+[    0.501883][fe-A][6oo1] vendor.audio.feature.a2dp_offload.enable=false
+[    0.501938][fe-A][6oo1] vendor.audio.feature.display_port.enable=true
+[    0.501991][fe-A][6oo1] vendor.audio.feature.external_dsp.enable=false
+[    0.502044][fe-A][6oo1] vendor.audio.feature.external_speaker.enable=false
+[    0.502098][fe-A][6oo1] vendor.audio.feature.compress_meta_data.enable=true
+[    0.502154][fe-A][6oo1] vendor.audio.feature.concurrent_capture.enable=false
+[    0.502215][fe-A][6oo1] vendor.audio.feature.multi_voice_session.enable=false
+[    0.502271][fe-A][6oo1] vendor.audio.feature.deepbuffer_as_primary.enable=true
+[    0.502340][fe-A][6oo1] vendor.audio.offload.track.enable=true
+[    0.502401][fe-A][6oo1] vendor.audio.offload.buffer.size.kb=32
+[    0.502463][fe-A][6oo1] vendor.audio.offload.gapless.enabled=true
+[    0.502525][fe-A][6oo1] vendor.audio.offload.multiaac.enable=true
+[    0.502589][fe-A][6oo1] vendor.audio.offload.multiple.enabled=false
+[    0.502653][fe-A][6oo1] vendor.audio.offload.passthrough=false
+[    0.502714][fe-A][6oo1] vendor.audio.spkr_prot.tx.sampling_rate=48000
+[    0.502780][fe-A][6oo1] vendor.voice.path.for.pcm.voip=true
+[    0.502840][fe-A][6oo1] persist.vendor.audio.hw.binder.size_kbyte=1024
+[    0.502894][fe-A][6oo1] persist.vendor.audio.ras.enabled=false
+[    0.502944][fe-A][6oo1] persist.vendor.audio.fluence.speaker=true
+[    0.502996][fe-A][6oo1] persist.vendor.audio.fluence.voicerec=false
+[    0.503048][fe-A][6oo1] persist.vendor.audio.fluence.voicecall=true
+[    0.503100][fe-A][6oo1] ro.vendor.bluetooth.wipower=false
+[    0.503148][fe-A][6oo1] vendor.qcom.bluetooth.soc=cherokee
+[    0.503198][fe-A][6oo1] persist.vendor.qcom.bluetooth.enable.splita2dp=true
+[    0.503255][fe-A][6oo1] persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
+[    0.503323][fe-A][6oo1] persist.camera.privapp.list=org.codeaurora.snapcam
+[    0.503391][fe-A][6oo1] ro.odm.build.id=QP1A.190711.020
+[    0.503450][fe-A][6oo1] ro.odm.build.tags=release-keys
+[    0.503508][fe-A][6oo1] ro.odm.build.type=user
+[    0.503562][fe-A][6oo1] ro.odm.build.version.sdk=29
+[    0.503620][fe-A][6oo1] ro.odm.build.version.release=10
+[    0.503678][fe-A][6oo1] ro.odm.build.version.incremental=T835JXS5CUC2
+[    0.503744][fe-A][6oo1] ro.odm.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+[    0.503815][fe-A][6oo1] ro.odm.product.cpu.abilist32=armeabi-v7a,armeabi
+[    0.503879][fe-A][6oo1] ro.odm.product.cpu.abilist64=arm64-v8a
+[    0.503930][fe-A][6oo1] ro.vendor.sec.radio.def_network=9
+[    0.503978][fe-A][6oo1] ro.vendor.epdg.support=true
+[    0.504025][fe-A][6oo1] ro.vendor.build.id=QP1A.190711.020
+[    0.504074][fe-A][6oo1] ro.vendor.build.tags=release-keys
+[    0.504122][fe-A][6oo1] ro.vendor.build.type=user
+[    0.504167][fe-A][6oo1] ro.vendor.build.version.sdk=29
+[    0.504215][fe-A][6oo1] ro.vendor.build.version.sehi=2903
+[    0.504262][fe-A][6oo1] ro.vendor.build.version.release=10
+[    0.504313][fe-A][6oo1] ro.vendor.build.version.incremental=T835JXS5CUC2
+[    0.504375][fe-A][6oo1] ro.vendor.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+[    0.504445][fe-A][6oo1] ro.vendor.product.cpu.abilist32=armeabi-v7a,armeabi
+[    0.504512][fe-A][6oo1] ro.vendor.product.cpu.abilist64=arm64-v8a
+[    0.504576][fe-A][6oo1] ro.vendor.sensors.dpc=true
+[    0.504631][fe-A][6oo1] ro.vendor.sensors.pmd=true
+[    0.504688][fe-A][6oo1] ro.vendor.sensors.dev_ori=true
+[    0.504745][fe-A][6oo1] ro.vendor.sensors.mot_detect=true
+[    0.504804][fe-A][6oo1] ro.vendor.sensors.multishake=true
+[    0.504863][fe-A][6oo1] ro.vendor.sensors.sta_detect=true
+[    0.504918][fe-A][6oo1] ro.vendor.mg_factory_mode=0
+[    0.504964][fe-A][6oo1] ro.vendor.use_data_netmgrd=true
+[    0.505012][fe-A][6oo1] ro.vendor.extension_library=libqti-perfd-client.so
+[    0.505068][fe-A][6oo1] vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
+[    0.505124][fe-A][6oo1] vendor.vidc.enc.disable.pq=true
+[    0.505171][fe-A][6oo1] vendor.power.pasr.enabled=true
+[    0.505219][fe-A][6oo1] vendor.audio_hal.period_size=192
+[    0.505267][fe-A][6oo1] persist.vendor.bt.aac_frm_ctl.enabled=true
+[    0.505319][fe-A][6oo1] persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+[    0.505379][fe-A][6oo1] persist.vendor.data.mode=concurrent
+[    0.505440][fe-A][6oo1] persist.vendor.qcomsysd.enabled=1
+[    0.505499][fe-A][6oo1] ro.vendor.display.hdr.config=/vendor/etc/hdr_tm_config.xml
+[    0.505570][fe-A][6oo1] ro.vendor.display.cabl=2
+[    0.505626][fe-A][6oo1] vendor.display.disable_ext_anim=1
+[    0.505684][fe-A][6oo1] vendor.display.perf_hint_window=50
+[    0.505749][fe-A][6oo1] vendor.display.disable_skip_validate=1
+[    0.505811][fe-A][6oo1] vendor.display.enable_default_color_mode=1
+[    0.505877][fe-A][6oo1] ro.vendor.qti.va_odm.support=1
+[    0.505934][fe-A][6oo1] ro.vendor.qti.va_aosp.support=1
+[    0.505997][fe-A][6oo1] vendor.gralloc.enable_fb_ubwc=1
+[    0.506049][fe-A][6oo1] ro.vendor.multisim.simslotcount=1
+[    0.506099][fe-A][6oo1] persist.vendor.radio.atfwd.start=true
+[    0.506149][fe-A][6oo1] persist.vendor.radio.rat_on=combine
+[    0.506199][fe-A][6oo1] persist.vendor.radio.custom_ecc=1
+[    0.506248][fe-A][6oo1] persist.vendor.radio.sib16_support=1
+[    0.506298][fe-A][6oo1] persist.vendor.radio.procedure_bytes=SKIP
+[    0.506349][fe-A][6oo1] persist.vendor.radio.apm_sim_not_pwdn=1
+[    0.506401][fe-A][6oo1] vendor.rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+[    0.506469][fe-A][6oo1] ro.vendor.build.security_patch=2021-02-01
+[    0.506533][fe-A][6oo1]
+[    0.506576][fe-A][6oo1] Supported API: 3
+[    0.525062][fe-A][6oo1] I:/efs is already mounted
+[    0.525369][fe-A][6oo1] W:[libfs_mgr]Failed to umount /efs: Device or resource busy
+[    0.525443][fe-A][6oo1] check_selective_file:Can't unmount /efs - Device or resource busy
+[    0.525518][fe-A][6oo1] just_reboot_after_update = 1
+[    0.525575][fe-A][6oo1]
+[    0.525618][fe-A][6oo1] # MANUAL MODE v1.0.0#
+[    0.574564][fe-A][6oo1] No command specified.
+[    0.574623][fe-A][6oo1]
+[    0.574662][fe-A][6oo1] [Checking pre-multi-csc2]
+[    0.574710][fe-A][6oo1]
+[    0.574748][fe-A][6oo1] [start failed section]
+[    0.574794][fe-A][6oo1] sales_code=[EGY]
+[    0.574838][fe-A][6oo1] Carrier ID=[EMPTY]
+[    0.574883][fe-A][6oo1] [WARNING] Carrier ID Error
+[    0.591102][fe-A][6oo1]
+[    0.591145][fe-A][6oo1] [system partition space check]
+[    0.591205][fe-A][6oo1] This device has /odm partition.
+[    0.591264][fe-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[    0.591334][fe-A][6oo1] copy_log_files_to_cache :: klog : 0
+[    0.591395][fe-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[    0.595475][fe-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[    0.595557][fe-A][6oo1] append_file offset 1048576
+[    0.595637][fe-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[    0.616988][fe-A][6oo1] status = [3], sideload_auto_reboot = [0], visible = [1], noaction = [1]
+[    0.617129][fe-A][6oo1] ## ENTER MANUAL MODE
+[    0.617503][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.619024][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.619116][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.620012][fe-A][6oo1] mode is manual mode
+[    0.623208][fe-A][6oo1] success to save recovery mode : manual mode
+[    0.623594][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.624947][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.625053][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.626221][fe-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[    0.626311][fe-A][6oo1] I:Saving locale "en_US"
+[    0.628254][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.629389][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.629467][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.631345][fe-A][6oo1] I:## clear BCB message
+[    0.631460][fe-A][6oo1] I:## unlink /cache/recovery/command
+[    0.634089][fe-A][6oo1] save_current_log true, has_cashe true.
+[    0.634614][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.635787][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.635880][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.662258][fe-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[    0.662384][fe-A][6oo1] copy_log_files_to_cache :: klog : 1
+[    0.662446][fe-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[    0.664137][fe-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[    0.664216][fe-A][6oo1] append_file offset 1095917
+[    0.664270][fe-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[    0.684311][fe-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[    0.757457][fe-A][6oo1]
+[    0.757525][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    0.757596][fe-A][6oo1]
+[    0.757647][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    0.757721][fe-A][6oo1]
+[    0.757774][fe-A][6oo1]  FRP Enabled!! 
+[    0.783508][fe-A][6oo1]
+[    0.783555][fe-A][6oo1]  drawWarning[-1] 
+[    0.833704][fe-A][6oo1]
+[    0.833761][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    0.833818][fe-A][6oo1]
+[    0.833858][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    0.833916][fe-A][6oo1]
+[    0.833956][fe-A][6oo1]  FRP Enabled!! 
+[    0.859631][fe-A][6oo1]
+[    0.859673][fe-A][6oo1]  drawWarning[-1] 
+[    1.077634][fe-A][6oo1]
+[    1.077689][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    1.077743][fe-A][6oo1]
+[    1.077782][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    1.077836][fe-A][6oo1]
+[    1.077877][fe-A][6oo1]  FRP Enabled!! 
+[    1.103526][fe-A][6oo1]
+[    1.103573][fe-A][6oo1]  drawWarning[-1] 
+[    4.432981][fe-A][6oo1]
+[    4.433045][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    4.433117][fe-A][6oo1]
+[    4.433168][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    4.433228][fe-A][6oo1]
+[    4.433267][fe-A][6oo1]  FRP Enabled!! 
+[    4.458410][fe-A][6oo1]
+[    4.458453][fe-A][6oo1]  drawWarning[-1] 
+[    5.348650][fe-A][6oo1]
+[    5.348704][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    5.348765][fe-A][6oo1]
+[    5.348810][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    5.348873][fe-A][6oo1]
+[    5.348916][fe-A][6oo1]  FRP Enabled!! 
+[    5.374343][fe-A][6oo1]
+[    5.374389][fe-A][6oo1]  drawWarning[-1] 
+[    5.851386][fe-A][6oo1]
+[    5.851443][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    5.856561][fe-A][6oo1]
+[    5.856628][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    5.856706][fe-A][6oo1]
+[    5.856760][fe-A][6oo1]  FRP Enabled!! 
+[    5.876844][fe-A][6oo1]
+[    5.876897][fe-A][6oo1]  drawWarning[-1] 
+[    6.238745][fe-A][6oo1]
+[    6.238790][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    6.238842][fe-A][6oo1]
+[    6.238880][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    6.238933][fe-A][6oo1]
+[    6.238971][fe-A][6oo1]  FRP Enabled!! 
+[    6.264435][fe-A][6oo1]
+[    6.264475][fe-A][6oo1]  drawWarning[-1] 
+[    6.735699][fe-A][6oo1]
+[    6.735753][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    6.735815][fe-A][6oo1]
+[    6.735859][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    6.735922][fe-A][6oo1]
+[    6.735984][fe-A][6oo1]  FRP Enabled!! 
+[    6.761145][fe-A][6oo1]
+[    6.761192][fe-A][6oo1]  drawWarning[1] 
+[    7.122045][fe-A][6oo1]
+[    7.122091][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    7.122143][fe-A][6oo1]
+[    7.122181][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    7.122234][fe-A][6oo1]
+[    7.122277][fe-A][6oo1]  FRP Enabled!! 
+[    7.147784][fe-A][6oo1]
+[    7.147832][fe-A][6oo1]  drawWarning[-1] 
+[    7.692244][fe-A][6oo1]
+[    7.692290][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    7.692342][fe-A][6oo1]
+[    7.692380][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    7.692433][fe-A][6oo1]
+[    7.692471][fe-A][6oo1]  FRP Enabled!! 
+[    7.717677][fe-A][6oo1]
+[    7.717717][fe-A][6oo1]  drawWarning[-1] 
+[    7.971975][fe-A][6oo1]
+[    7.972031][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    7.972092][fe-A][6oo1]
+[    7.972136][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    7.972199][fe-A][6oo1]
+[    7.972242][fe-A][6oo1]  FRP Enabled!! 
+[    7.997716][fe-A][6oo1]
+[    7.997762][fe-A][6oo1]  drawWarning[-1] 
+[    8.797395][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    8.798778][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    8.798876][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    8.823757][fe-A][6oo1] RECOVERY_DBG: [fe | 2017/01/01 00:44:27 | T835JXS5CUC2]
+[    8.823868][fe-A][6oo1] RECOVERY_DBG: NP
+[    8.823922][fe-A][6oo1] RECOVERY_DBG: reboot_reason=UNKNOWN
+[    8.823986][fe-A][6oo1] E:choose_recovery_file has_cache
+[    9.278734][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/mmcblk0p1,target=/sdcard,type=sdfat)=0: Success
+[    9.278916][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=mmcblk0p1,target=/sdcard,type=sdfat,flags=0,options=): Success
+[    9.312272][fe-A][6oo1]
+[    9.312348][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[    9.312421][fe-A][6oo1]
+[    9.312473][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    9.312548][fe-A][6oo1]
+[    9.312600][fe-A][6oo1]  FRP Enabled!! 
+[    9.384764][fe-A][6oo1]
+[    9.384811][fe-A][6oo1]  drawWarning[-1] 
+[   11.589740][fe-A][6oo1]
+[   11.589781][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[   11.589832][fe-A][6oo1]
+[   11.589869][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[   11.589923][fe-A][6oo1]
+[   11.589960][fe-A][6oo1]  FRP Enabled!! 
+[   11.662761][fe-A][6oo1]
+[   11.662801][fe-A][6oo1]  drawWarning[-1] 
+[   12.349607][fe-A][6oo1]
+[   12.349658][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[   12.349719][fe-A][6oo1]
+[   12.349763][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[   12.349822][fe-A][6oo1]
+[   12.349859][fe-A][6oo1]  FRP Enabled!! 
+[   12.421930][fe-A][6oo1]
+[   12.421970][fe-A][6oo1]  drawWarning[-1] 
+[   13.925839][fe-A][6oo1]
+[   13.925898][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[   13.931026][fe-A][6oo1]
+[   13.931099][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[   13.931177][fe-A][6oo1]
+[   13.931234][fe-A][6oo1]  FRP Enabled!! 
+[   13.999152][fe-A][6oo1]
+[   13.999206][fe-A][6oo1]  drawWarning[-1] 
+[   14.537880][fe-A][6oo1]
+[   14.537925][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[   14.537978][fe-A][6oo1]
+[   14.538017][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[   14.538072][fe-A][6oo1]
+[   14.538110][fe-A][6oo1]  FRP Enabled!! 
+[   14.610170][fe-A][6oo1]
+[   14.610216][fe-A][6oo1]  drawWarning[-1] 
+[   15.819721][fe-A][6oo1]
+[   15.819773][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[   15.819834][fe-A][6oo1]
+[   15.819876][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[   15.819929][fe-A][6oo1]
+[   15.819967][fe-A][6oo1]  FRP Enabled!! 
+[   15.892753][fe-A][6oo1]
+[   15.892792][fe-A][6oo1]  drawWarning[-1] 
+[   19.209354][fe-A][6oo1]
+[   19.209412][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[   19.209473][fe-A][6oo1]
+[   19.209517][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[   19.209581][fe-A][6oo1]
+[   19.209624][fe-A][6oo1]  FRP Enabled!! 
+[   19.281793][fe-A][6oo1]
+[   19.281839][fe-A][6oo1]  drawWarning[-1] 
+[  109.263260][fe-A][6oo1]
+[  109.263334][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  109.263397][fe-A][6oo1]
+[  109.263443][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  109.263507][fe-A][6oo1]
+[  109.263544][fe-A][6oo1]  FRP Enabled!! 
+[  109.335525][fe-A][6oo1]
+[  109.335567][fe-A][6oo1]  drawWarning[-1] 
+[  110.789717][fe-A][6oo1]
+[  110.789760][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  110.789811][fe-A][6oo1]
+[  110.789853][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  110.789916][fe-A][6oo1]
+[  110.789959][fe-A][6oo1]  FRP Enabled!! 
+[  110.862731][fe-A][6oo1]
+[  110.862777][fe-A][6oo1]  drawWarning[-1] 
+[  111.399366][fe-A][6oo1]
+[  111.399414][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  111.399465][fe-A][6oo1]
+[  111.399502][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  111.399555][fe-A][6oo1]
+[  111.399592][fe-A][6oo1]  FRP Enabled!! 
+[  111.471882][fe-A][6oo1]
+[  111.471921][fe-A][6oo1]  drawWarning[-1] 
+[  112.029761][fe-A][6oo1]
+[  112.029811][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  112.029871][fe-A][6oo1]
+[  112.029915][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  112.029970][fe-A][6oo1]
+[  112.030007][fe-A][6oo1]  FRP Enabled!! 
+[  112.102871][fe-A][6oo1]
+[  112.102910][fe-A][6oo1]  drawWarning[-1] 
+[  112.984180][fe-A][6oo1]
+[  112.984221][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  112.984279][fe-A][6oo1]
+[  112.984322][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  112.984385][fe-A][6oo1]
+[  112.984428][fe-A][6oo1]  FRP Enabled!! 
+[  113.056665][fe-A][6oo1]
+[  113.056711][fe-A][6oo1]  drawWarning[-1] 
+[  113.709724][fe-A][6oo1]
+[  113.709773][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  113.709833][fe-A][6oo1]
+[  113.709872][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  113.709925][fe-A][6oo1]
+[  113.709960][fe-A][6oo1]  FRP Enabled!! 
+[  113.782745][fe-A][6oo1]
+[  113.782783][fe-A][6oo1]  drawWarning[-1] 
+[  114.239525][fe-A][6oo1]
+[  114.239576][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  114.239636][fe-A][6oo1]
+[  114.239680][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  114.239743][fe-A][6oo1]
+[  114.239786][fe-A][6oo1]  FRP Enabled!! 
+[  114.311812][fe-A][6oo1]
+[  114.311867][fe-A][6oo1]  drawWarning[-1] 
+[  114.569786][fe-A][6oo1]
+[  114.569832][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  114.569883][fe-A][6oo1]
+[  114.569919][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  114.569972][fe-A][6oo1]
+[  114.570008][fe-A][6oo1]  FRP Enabled!! 
+[  114.642794][fe-A][6oo1]
+[  114.642837][fe-A][6oo1]  drawWarning[-1] 
+[  114.859529][fe-A][6oo1]
+[  114.859579][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  114.859639][fe-A][6oo1]
+[  114.859682][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  114.859737][fe-A][6oo1]
+[  114.859773][fe-A][6oo1]  FRP Enabled!! 
+[  114.931833][fe-A][6oo1]
+[  114.931871][fe-A][6oo1]  drawWarning[-1] 
+[  115.159791][fe-A][6oo1]
+[  115.159841][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  115.159901][fe-A][6oo1]
+[  115.159944][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  115.160007][fe-A][6oo1]
+[  115.160050][fe-A][6oo1]  FRP Enabled!! 
+[  115.232707][fe-A][6oo1]
+[  115.232752][fe-A][6oo1]  drawWarning[-1] 
+[  115.659477][fe-A][6oo1]
+[  115.659518][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  115.659568][fe-A][6oo1]
+[  115.659604][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  115.659656][fe-A][6oo1]
+[  115.659692][fe-A][6oo1]  FRP Enabled!! 
+[  115.731792][fe-A][6oo1]
+[  115.731831][fe-A][6oo1]  drawWarning[-1] 
+[  116.199686][fe-A][6oo1]
+[  116.199736][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  116.199795][fe-A][6oo1]
+[  116.199838][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  116.199899][fe-A][6oo1]
+[  116.199936][fe-A][6oo1]  FRP Enabled!! 
+[  116.272726][fe-A][6oo1]
+[  116.272765][fe-A][6oo1]  drawWarning[-1] 
+[  116.970859][fe-A][6oo1]
+[  116.970910][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  116.970970][fe-A][6oo1]
+[  116.971013][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  116.971077][fe-A][6oo1]
+[  116.971120][fe-A][6oo1]  FRP Enabled!! 
+[  117.043318][fe-A][6oo1]
+[  117.043364][fe-A][6oo1]  drawWarning[-1] 
+[  117.297311][fe-A][6oo1]
+[  117.297351][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  117.297401][fe-A][6oo1]
+[  117.297437][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  117.297489][fe-A][6oo1]
+[  117.297525][fe-A][6oo1]  FRP Enabled!! 
+[  117.370318][fe-A][6oo1]
+[  117.370357][fe-A][6oo1]  drawWarning[-1] 
+[  117.573756][fe-A][6oo1]
+[  117.573806][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  117.573866][fe-A][6oo1]
+[  117.573909][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  117.573975][fe-A][6oo1]
+[  117.574013][fe-A][6oo1]  FRP Enabled!! 
+[  117.646215][fe-A][6oo1]
+[  117.646254][fe-A][6oo1]  drawWarning[-1] 
+[  117.864175][fe-A][6oo1]
+[  117.864220][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  117.864280][fe-A][6oo1]
+[  117.864323][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  117.864385][fe-A][6oo1]
+[  117.864428][fe-A][6oo1]  FRP Enabled!! 
+[  117.937235][fe-A][6oo1]
+[  117.937280][fe-A][6oo1]  drawWarning[-1] 
+[  118.149553][fe-A][6oo1]
+[  118.149595][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  118.149646][fe-A][6oo1]
+[  118.149683][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  118.149735][fe-A][6oo1]
+[  118.149772][fe-A][6oo1]  FRP Enabled!! 
+[  118.221843][fe-A][6oo1]
+[  118.221882][fe-A][6oo1]  drawWarning[-1] 
+[  118.395226][fe-A][6oo1]
+[  118.395275][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  118.395335][fe-A][6oo1]
+[  118.395377][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  118.395440][fe-A][6oo1]
+[  118.395483][fe-A][6oo1]  FRP Enabled!! 
+[  118.468274][fe-A][6oo1]
+[  118.468318][fe-A][6oo1]  drawWarning[-1] 
+[  118.706384][fe-A][6oo1]
+[  118.706428][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  118.706484][fe-A][6oo1]
+[  118.706527][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  118.706590][fe-A][6oo1]
+[  118.706633][fe-A][6oo1]  FRP Enabled!! 
+[  118.778814][fe-A][6oo1]
+[  118.778860][fe-A][6oo1]  drawWarning[-1] 
+[  119.216243][fe-A][6oo1]
+[  119.216302][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  119.216358][fe-A][6oo1]
+[  119.216399][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  119.216456][fe-A][6oo1]
+[  119.216495][fe-A][6oo1]  FRP Enabled!! 
+[  119.289337][fe-A][6oo1]
+[  119.289379][fe-A][6oo1]  drawWarning[-1] 
+[  119.520047][fe-A][6oo1]
+[  119.520113][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  119.525089][fe-A][6oo1]
+[  119.525160][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  119.525237][fe-A][6oo1]
+[  119.525294][fe-A][6oo1]  FRP Enabled!! 
+[  119.592554][fe-A][6oo1]
+[  119.592607][fe-A][6oo1]  drawWarning[-1] 
+[  119.776849][fe-A][6oo1]
+[  119.776891][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  119.776941][fe-A][6oo1]
+[  119.776978][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  119.777034][fe-A][6oo1]
+[  119.777077][fe-A][6oo1]  FRP Enabled!! 
+[  119.849896][fe-A][6oo1]
+[  119.849942][fe-A][6oo1]  drawWarning[-1] 
+[  120.421285][fe-A][6oo1]
+[  120.421333][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  120.421384][fe-A][6oo1]
+[  120.421421][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  120.421474][fe-A][6oo1]
+[  120.421511][fe-A][6oo1]  FRP Enabled!! 
+[  120.493698][fe-A][6oo1]
+[  120.493738][fe-A][6oo1]  drawWarning[-1] 
+[  122.642091][fe-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[  122.642168][fe-A][6oo1] I:Saving locale "en_US"
+[  122.645056][fe-A][6oo1] I:## clear BCB message
+[  122.645196][fe-A][6oo1] I:## unlink /cache/recovery/command
+[  122.648892][fe-A][6oo1] save_current_log true, has_cashe true.
+[  122.649504][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  122.650983][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  122.651061][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  122.681246][fe-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[  122.681323][fe-A][6oo1] copy_log_files_to_cache :: klog : 1
+[  122.681438][fe-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[  122.689063][fe-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[  122.689145][fe-A][6oo1] append_file offset 1145734
+[  122.689246][fe-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[  122.712090][fe-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[  122.789736][fe-A][6oo1]
+[  122.789798][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  122.789881][fe-A][6oo1]
+[  122.789932][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  122.790006][fe-A][6oo1]
+[  122.790056][fe-A][6oo1]  FRP Enabled!! 
+[  122.815118][fe-A][6oo1]
+[  122.815159][fe-A][6oo1]  drawWarning[-1] 
+[  125.602108][fe-A][6oo1]
+[  125.602159][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  125.602213][fe-A][6oo1]
+[  125.602251][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  125.602317][fe-A][6oo1]
+[  125.602367][fe-A][6oo1]  FRP Enabled!! 
+[  125.627802][fe-A][6oo1]
+[  125.627848][fe-A][6oo1]  drawWarning[-1] 
+[  125.713512][fe-A][6oo1]
+[  125.713565][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  125.713626][fe-A][6oo1]
+[  125.713670][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  125.713728][fe-A][6oo1]
+[  125.713765][fe-A][6oo1]  FRP Enabled!! 
+[  125.739044][fe-A][6oo1]
+[  125.739083][fe-A][6oo1]  drawWarning[-1] 
+[  126.314537][fe-A][6oo1]
+[  126.314588][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  126.314648][fe-A][6oo1]
+[  126.314691][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  126.314755][fe-A][6oo1]
+[  126.314798][fe-A][6oo1]  FRP Enabled!! 
+[  126.340405][fe-A][6oo1]
+[  126.340450][fe-A][6oo1]  drawWarning[-1] 
+[  126.644041][fe-A][6oo1]
+[  126.644083][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  126.644133][fe-A][6oo1]
+[  126.644170][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  126.644231][fe-A][6oo1]
+[  126.644274][fe-A][6oo1]  FRP Enabled!! 
+[  126.669472][fe-A][6oo1]
+[  126.669517][fe-A][6oo1]  drawWarning[-1] 
+[  127.330886][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  127.332289][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  127.332366][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  127.368079][fe-A][6oo1]
+[  127.368122][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  127.368175][fe-A][6oo1]
+[  127.368214][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  127.368279][fe-A][6oo1]
+[  127.368328][fe-A][6oo1]  FRP Enabled!! 
+[  127.390735][fe-A][6oo1]
+[  127.390781][fe-A][6oo1]  drawWarning[-1] 
+[  131.087580][fe-A][6oo1] E:
+[  131.106483][fe-A][6oo1] E:-- No package file selected.
+[  131.128435][fe-A][6oo1] E:
+[  131.159931][fe-A][6oo1]
+[  131.159982][fe-A][6oo1] Install from SD card completed with status 1.
+[  131.215411][fe-A][6oo1] Installation aborted.#1
+[  131.283790][fe-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[  131.283868][fe-A][6oo1] I:Saving locale "en_US"
+[  131.285465][fe-A][6oo1] I:## clear BCB message
+[  131.285582][fe-A][6oo1] I:## unlink /cache/recovery/command
+[  131.291007][fe-A][6oo1] save_current_log true, has_cashe true.
+[  131.291715][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  131.293046][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  131.293139][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  131.321453][fe-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[  131.321532][fe-A][6oo1] copy_log_files_to_cache :: klog : 1
+[  131.321628][fe-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[  131.330461][fe-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[  131.330529][fe-A][6oo1] append_file offset 1211057
+[  131.330660][fe-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[  131.353882][fe-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[  131.446140][fe-A][6oo1]
+[  131.446193][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  131.446261][fe-A][6oo1]
+[  131.446313][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  131.446388][fe-A][6oo1]
+[  131.446439][fe-A][6oo1]  FRP Enabled!! 
+[  131.471698][fe-A][6oo1]
+[  131.471744][fe-A][6oo1]  drawWarning[-1] 
+[  133.467289][fe-A][6oo1]
+[  133.467350][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  133.467402][fe-A][6oo1]
+[  133.467439][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  133.467492][fe-A][6oo1]
+[  133.467528][fe-A][6oo1]  FRP Enabled!! 
+[  133.493005][fe-A][6oo1]
+[  133.493044][fe-A][6oo1]  drawWarning[-1] 
+[  134.187014][fe-A][6oo1]
+[  134.187064][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  134.187124][fe-A][6oo1]
+[  134.187168][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  134.187230][fe-A][6oo1]
+[  134.187273][fe-A][6oo1]  FRP Enabled!! 
+[  134.212405][fe-A][6oo1]
+[  134.212444][fe-A][6oo1]  drawWarning[-1] 
+[  134.607255][fe-A][6oo1]
+[  134.607295][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  134.607351][fe-A][6oo1]
+[  134.607394][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  134.607456][fe-A][6oo1]
+[  134.607499][fe-A][6oo1]  FRP Enabled!! 
+[  134.632947][fe-A][6oo1]
+[  134.632992][fe-A][6oo1]  drawWarning[-1] 
+[  134.967021][fe-A][6oo1]
+[  134.967065][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  134.967116][fe-A][6oo1]
+[  134.967153][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  134.967206][fe-A][6oo1]
+[  134.967242][fe-A][6oo1]  FRP Enabled!! 
+[  134.992438][fe-A][6oo1]
+[  134.992477][fe-A][6oo1]  drawWarning[-1] 
+[  136.357422][fe-A][6oo1]
+[  136.357485][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  136.364835][fe-A][6oo1]
+[  136.364909][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  136.364985][fe-A][6oo1]
+[  136.365040][fe-A][6oo1]  FRP Enabled!! 
+[  136.383304][fe-A][6oo1]
+[  136.383352][fe-A][6oo1]  drawWarning[-1] 
+[  136.737117][fe-A][6oo1]
+[  136.737158][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  136.737211][fe-A][6oo1]
+[  136.737254][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  136.737317][fe-A][6oo1]
+[  136.737359][fe-A][6oo1]  FRP Enabled!! 
+[  136.762538][fe-A][6oo1]
+[  136.762584][fe-A][6oo1]  drawWarning[-1] 
+[  137.447454][fe-A][6oo1]
+[  137.447495][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  137.447545][fe-A][6oo1]
+[  137.447582][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  137.447635][fe-A][6oo1]
+[  137.447672][fe-A][6oo1]  FRP Enabled!! 
+[  137.473148][fe-A][6oo1]
+[  137.473190][fe-A][6oo1]  drawWarning[1] 
+[  137.887011][fe-A][6oo1]
+[  137.887061][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  137.887121][fe-A][6oo1]
+[  137.887164][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  137.887227][fe-A][6oo1]
+[  137.887271][fe-A][6oo1]  FRP Enabled!! 
+[  137.912403][fe-A][6oo1]
+[  137.912449][fe-A][6oo1]  drawWarning[-1] 
+[  139.299278][fe-A][6oo1]
+[  139.299319][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  139.299369][fe-A][6oo1]
+[  139.299406][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  139.299462][fe-A][6oo1]
+[  139.299505][fe-A][6oo1]  FRP Enabled!! 
+[  139.324965][fe-A][6oo1]
+[  139.325010][fe-A][6oo1]  drawWarning[1] 
+[  141.196991][fe-A][6oo1]
+[  141.197039][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  141.197088][fe-A][6oo1]
+[  141.197125][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  141.197177][fe-A][6oo1]
+[  141.197213][fe-A][6oo1]  FRP Enabled!! 
+[  141.222382][fe-A][6oo1]
+[  141.222421][fe-A][6oo1]  drawWarning[-1] 
+[  141.557392][fe-A][6oo1]
+[  141.557453][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  141.564804][fe-A][6oo1]
+[  141.564877][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  141.564954][fe-A][6oo1]
+[  141.565010][fe-A][6oo1]  FRP Enabled!! 
+[  141.583303][fe-A][6oo1]
+[  141.583352][fe-A][6oo1]  drawWarning[-1] 
+[  141.916977][fe-A][6oo1]
+[  141.917018][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  141.917068][fe-A][6oo1]
+[  141.917104][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  141.917156][fe-A][6oo1]
+[  141.917200][fe-A][6oo1]  FRP Enabled!! 
+[  141.942491][fe-A][6oo1]
+[  141.942536][fe-A][6oo1]  drawWarning[-1] 
+[  142.487310][fe-A][6oo1]
+[  142.487352][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  142.487404][fe-A][6oo1]
+[  142.487443][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  142.487508][fe-A][6oo1]
+[  142.487547][fe-A][6oo1]  FRP Enabled!! 
+[  142.512995][fe-A][6oo1]
+[  142.513034][fe-A][6oo1]  drawWarning[-1] 
+[  144.170593][fe-A][6oo1]
+[  144.170645][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  144.170705][fe-A][6oo1]
+[  144.170749][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  144.170812][fe-A][6oo1]
+[  144.170856][fe-A][6oo1]  FRP Enabled!! 
+[  144.196005][fe-A][6oo1]
+[  144.196050][fe-A][6oo1]  drawWarning[-1] 
+[  144.478718][fe-A][6oo1]
+[  144.478759][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  144.478809][fe-A][6oo1]
+[  144.478846][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  144.478898][fe-A][6oo1]
+[  144.478939][fe-A][6oo1]  FRP Enabled!! 
+[  144.504435][fe-A][6oo1]
+[  144.504480][fe-A][6oo1]  drawWarning[-1] 
+[  144.766044][fe-A][6oo1]
+[  144.766085][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  144.766136][fe-A][6oo1]
+[  144.766173][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  144.766225][fe-A][6oo1]
+[  144.766262][fe-A][6oo1]  FRP Enabled!! 
+[  144.791433][fe-A][6oo1]
+[  144.791472][fe-A][6oo1]  drawWarning[-1] 
+[  145.096340][fe-A][6oo1]
+[  145.096389][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[  145.096449][fe-A][6oo1]
+[  145.096492][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  145.096554][fe-A][6oo1]
+[  145.096596][fe-A][6oo1]  FRP Enabled!! 
+[  145.122072][fe-A][6oo1]
+[  145.122117][fe-A][6oo1]  drawWarning[1] 
+[  265.170096][fe-A][6oo1] I:Brightness: 60 (25%)
+[  385.171237][fe-A][6oo1] I:Brightness: 0 (off)
+[ 1090.355710][fe-A][6oo1] I:Brightness: 120 (50%)
+[ 1091.402436][fe-A][6oo1]
+[ 1091.402493][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1091.402546][fe-A][6oo1]
+[ 1091.402584][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1091.402637][fe-A][6oo1]
+[ 1091.402676][fe-A][6oo1]  FRP Enabled!! 
+[ 1091.427873][fe-A][6oo1]
+[ 1091.427922][fe-A][6oo1]  drawWarning[-1] 
+[ 1092.002991][fe-A][6oo1]
+[ 1092.003042][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1092.003096][fe-A][6oo1]
+[ 1092.003134][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1092.003187][fe-A][6oo1]
+[ 1092.003225][fe-A][6oo1]  FRP Enabled!! 
+[ 1092.028688][fe-A][6oo1]
+[ 1092.028727][fe-A][6oo1]  drawWarning[-1] 
+[ 1092.896423][fe-A][6oo1]
+[ 1092.896473][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1092.896534][fe-A][6oo1]
+[ 1092.896578][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1092.896642][fe-A][6oo1]
+[ 1092.896685][fe-A][6oo1]  FRP Enabled!! 
+[ 1092.921843][fe-A][6oo1]
+[ 1092.921888][fe-A][6oo1]  drawWarning[-1] 
+[ 1096.127296][fe-A][6oo1]
+[ 1096.127342][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1096.127393][fe-A][6oo1]
+[ 1096.127430][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1096.127482][fe-A][6oo1]
+[ 1096.127523][fe-A][6oo1]  FRP Enabled!! 
+[ 1096.153146][fe-A][6oo1]
+[ 1096.153191][fe-A][6oo1]  drawWarning[-1] 
+[ 1096.796991][fe-A][6oo1]
+[ 1096.797040][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1096.797095][fe-A][6oo1]
+[ 1096.797132][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1096.797184][fe-A][6oo1]
+[ 1096.797221][fe-A][6oo1]  FRP Enabled!! 
+[ 1096.822396][fe-A][6oo1]
+[ 1096.822435][fe-A][6oo1]  drawWarning[-1] 
+[ 1097.347437][fe-A][6oo1]
+[ 1097.347487][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1097.347548][fe-A][6oo1]
+[ 1097.347591][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1097.347655][fe-A][6oo1]
+[ 1097.347698][fe-A][6oo1]  FRP Enabled!! 
+[ 1097.373180][fe-A][6oo1]
+[ 1097.373226][fe-A][6oo1]  drawWarning[1] 
+[ 1097.796988][fe-A][6oo1]
+[ 1097.797029][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1097.797079][fe-A][6oo1]
+[ 1097.797116][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1097.797170][fe-A][6oo1]
+[ 1097.797214][fe-A][6oo1]  FRP Enabled!! 
+[ 1097.822394][fe-A][6oo1]
+[ 1097.822440][fe-A][6oo1]  drawWarning[-1] 
+[ 1098.267260][fe-A][6oo1]
+[ 1098.267301][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1098.267351][fe-A][6oo1]
+[ 1098.267387][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1098.267439][fe-A][6oo1]
+[ 1098.267488][fe-A][6oo1]  FRP Enabled!! 
+[ 1098.292945][fe-A][6oo1]
+[ 1098.292984][fe-A][6oo1]  drawWarning[-1] 
+[ 1099.401205][fe-A][6oo1]
+[ 1099.401256][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1099.401316][fe-A][6oo1]
+[ 1099.401359][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1099.401422][fe-A][6oo1]
+[ 1099.401465][fe-A][6oo1]  FRP Enabled!! 
+[ 1099.426608][fe-A][6oo1]
+[ 1099.426647][fe-A][6oo1]  drawWarning[-1] 
+[ 1100.555362][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1100.557085][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1100.557181][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1100.987489][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/mmcblk0p1,target=/sdcard,type=sdfat)=0: Success
+[ 1100.987615][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=mmcblk0p1,target=/sdcard,type=sdfat,flags=0,options=): Success
+[ 1101.027466][fe-A][6oo1]
+[ 1101.027515][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1101.027569][fe-A][6oo1]
+[ 1101.027608][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1101.027681][fe-A][6oo1]
+[ 1101.027732][fe-A][6oo1]  FRP Enabled!! 
+[ 1101.050244][fe-A][6oo1]
+[ 1101.050290][fe-A][6oo1]  drawWarning[-1] 
+[ 1102.626097][fe-A][6oo1]
+[ 1102.626162][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1102.626215][fe-A][6oo1]
+[ 1102.626252][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1102.626305][fe-A][6oo1]
+[ 1102.626342][fe-A][6oo1]  FRP Enabled!! 
+[ 1102.649061][fe-A][6oo1]
+[ 1102.649101][fe-A][6oo1]  drawWarning[-1] 
+[ 1103.444784][fe-A][6oo1]
+[ 1103.444840][fe-A][6oo1] -- Install /sdcard/uninmod_magisk-v4-20180922.zip ...
+[ 1104.526202][fe-A][6oo1] Finding update package...
+[ 1104.647668][fe-A][6oo1] I:Update location: /sideload/package.zip
+[ 1104.647733][fe-A][6oo1] Opening update package...
+[ 1104.738299][fe-A][6oo1] I:MDF_RECOVERY : CC mode is not enabled.
+[ 1104.738385][fe-A][6oo1] unknown fuse request opcode 22
+[ 1104.738445][fe-A][6oo1] unknown fuse request opcode 2016
+[ 1104.739112][fe-A][6oo1] I:2 key(s) loaded from /system/etc/security/otacerts.zip
+[ 1104.739192][fe-A][6oo1] Verifying update package...
+[ 1104.831091][fe-A][6oo1] E:footer is wrong
+[ 1104.922738][fe-A][6oo1] Update package verification took 0.1 s (result 1).
+[ 1105.027102][fe-A][6oo1] E:Signature verification failed
+[ 1105.141697][fe-A][6oo1] E:error: 21
+[ 1105.264576][fe-A][6oo1] W:failed to read uncrypt status: No such file or directory
+[ 1105.264657][fe-A][6oo1] I:/sideload/package.zip
+[ 1105.264723][fe-A][6oo1] I:0
+[ 1105.264776][fe-A][6oo1] I:time_total: 0
+[ 1105.264836][fe-A][6oo1] I:retry: 0
+[ 1105.264895][fe-A][6oo1] I:error: 21
+[ 1105.264951][fe-A][6oo1] I:
+[ 1105.296959][fe-A][6oo1]
+[ 1105.297007][fe-A][6oo1] Install from SD card completed with status 2.
+[ 1105.455340][fe-A][6oo1] Installation aborted.#1
+[ 1105.629871][fe-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[ 1105.629952][fe-A][6oo1] I:Saving locale "en_US"
+[ 1105.631451][fe-A][6oo1] I:## clear BCB message
+[ 1105.631567][fe-A][6oo1] I:## unlink /cache/recovery/command
+[ 1105.635520][fe-A][6oo1] save_current_log true, has_cashe true.
+[ 1105.636242][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1105.637699][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1105.637782][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1105.677088][fe-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[ 1105.677195][fe-A][6oo1] copy_log_files_to_cache :: klog : 1
+[ 1105.677260][fe-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[ 1105.686824][fe-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[ 1105.686907][fe-A][6oo1] append_file offset 1280185
+[ 1105.687043][fe-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[ 1105.711486][fe-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[ 1105.922171][fe-A][6oo1]
+[ 1105.922240][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1105.922297][fe-A][6oo1]
+[ 1105.922337][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1105.922394][fe-A][6oo1]
+[ 1105.922434][fe-A][6oo1]  FRP Enabled!! 
+[ 1105.948024][fe-A][6oo1]
+[ 1105.948065][fe-A][6oo1]  drawWarning[-1] 
+[ 1109.332782][fe-A][6oo1]
+[ 1109.332838][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1109.332900][fe-A][6oo1]
+[ 1109.332945][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1109.333009][fe-A][6oo1]
+[ 1109.333052][fe-A][6oo1]  FRP Enabled!! 
+[ 1109.358358][fe-A][6oo1]
+[ 1109.358398][fe-A][6oo1]  drawWarning[-1] 
+[ 1109.847299][fe-A][6oo1]
+[ 1109.847341][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1109.847402][fe-A][6oo1]
+[ 1109.847446][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1109.847510][fe-A][6oo1]
+[ 1109.847553][fe-A][6oo1]  FRP Enabled!! 
+[ 1109.872994][fe-A][6oo1]
+[ 1109.873040][fe-A][6oo1]  drawWarning[-1] 
+[ 1110.401887][fe-A][6oo1]
+[ 1110.401929][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1110.401979][fe-A][6oo1]
+[ 1110.402017][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1110.402073][fe-A][6oo1]
+[ 1110.402110][fe-A][6oo1]  FRP Enabled!! 
+[ 1110.427286][fe-A][6oo1]
+[ 1110.427325][fe-A][6oo1]  drawWarning[-1] 
+[ 1111.847465][fe-A][6oo1]
+[ 1111.847522][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1111.847583][fe-A][6oo1]
+[ 1111.847627][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1111.847690][fe-A][6oo1]
+[ 1111.847728][fe-A][6oo1]  FRP Enabled!! 
+[ 1111.873162][fe-A][6oo1]
+[ 1111.873201][fe-A][6oo1]  drawWarning[-1] 
+[ 1112.568030][fe-A][6oo1]
+[ 1112.568075][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1112.568134][fe-A][6oo1]
+[ 1112.568178][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1112.568242][fe-A][6oo1]
+[ 1112.568285][fe-A][6oo1]  FRP Enabled!! 
+[ 1112.593448][fe-A][6oo1]
+[ 1112.593495][fe-A][6oo1]  drawWarning[-1] 
+[ 1113.737383][fe-A][6oo1]
+[ 1113.737424][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1113.737475][fe-A][6oo1]
+[ 1113.737512][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1113.737566][fe-A][6oo1]
+[ 1113.737603][fe-A][6oo1]  FRP Enabled!! 
+[ 1113.763078][fe-A][6oo1]
+[ 1113.763117][fe-A][6oo1]  drawWarning[-1] 
+[ 1114.283417][fe-A][6oo1]
+[ 1114.283479][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1114.283541][fe-A][6oo1]
+[ 1114.283586][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1114.283648][fe-A][6oo1]
+[ 1114.283688][fe-A][6oo1]  FRP Enabled!! 
+[ 1114.308838][fe-A][6oo1]
+[ 1114.308882][fe-A][6oo1]  drawWarning[-1] 
+[ 1115.232543][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1115.233982][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1115.234078][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1115.663657][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/mmcblk0p1,target=/sdcard,type=sdfat)=0: Success
+[ 1115.663827][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=mmcblk0p1,target=/sdcard,type=sdfat,flags=0,options=): Success
+[ 1115.702908][fe-A][6oo1]
+[ 1115.702965][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1115.703036][fe-A][6oo1]
+[ 1115.703087][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1115.703162][fe-A][6oo1]
+[ 1115.703212][fe-A][6oo1]  FRP Enabled!! 
+[ 1115.725549][fe-A][6oo1]
+[ 1115.725596][fe-A][6oo1]  drawWarning[-1] 
+[ 1116.386875][fe-A][6oo1]
+[ 1116.386918][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1116.386968][fe-A][6oo1]
+[ 1116.387006][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1116.387059][fe-A][6oo1]
+[ 1116.387096][fe-A][6oo1]  FRP Enabled!! 
+[ 1116.409702][fe-A][6oo1]
+[ 1116.409740][fe-A][6oo1]  drawWarning[-1] 
+[ 1116.886595][fe-A][6oo1]
+[ 1116.886660][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1116.889011][fe-A][6oo1]
+[ 1116.889114][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1116.889191][fe-A][6oo1]
+[ 1116.889247][fe-A][6oo1]  FRP Enabled!! 
+[ 1116.909411][fe-A][6oo1]
+[ 1116.909454][fe-A][6oo1]  drawWarning[-1] 
+[ 1117.207941][fe-A][6oo1]
+[ 1117.207985][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1117.208045][fe-A][6oo1]
+[ 1117.208088][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1117.208151][fe-A][6oo1]
+[ 1117.208194][fe-A][6oo1]  FRP Enabled!! 
+[ 1117.230773][fe-A][6oo1]
+[ 1117.230818][fe-A][6oo1]  drawWarning[-1] 
+[ 1120.802609][fe-A][6oo1]
+[ 1120.802662][fe-A][6oo1] -- Install /sdcard/uninstall.zip ...
+[ 1121.961235][fe-A][6oo1] Finding update package...
+[ 1122.191888][fe-A][6oo1] I:Update location: /sideload/package.zip
+[ 1122.191955][fe-A][6oo1] Opening update package...
+[ 1122.352095][fe-A][6oo1] I:MDF_RECOVERY : CC mode is not enabled.
+[ 1122.352177][fe-A][6oo1] unknown fuse request opcode 22
+[ 1122.352239][fe-A][6oo1] unknown fuse request opcode 2016
+[ 1122.352830][fe-A][6oo1] I:2 key(s) loaded from /system/etc/security/otacerts.zip
+[ 1122.352915][fe-A][6oo1] Verifying update package...
+[ 1122.519533][fe-A][6oo1] E:footer is wrong
+[ 1122.681670][fe-A][6oo1] Update package verification took 0.2 s (result 1).
+[ 1122.858747][fe-A][6oo1] E:Signature verification failed
+[ 1123.046040][fe-A][6oo1] E:error: 21
+[ 1123.241653][fe-A][6oo1] W:failed to read uncrypt status: No such file or directory
+[ 1123.241728][fe-A][6oo1] I:/sideload/package.zip
+[ 1123.241787][fe-A][6oo1] I:0
+[ 1123.241834][fe-A][6oo1] I:time_total: 1
+[ 1123.241887][fe-A][6oo1] I:retry: 0
+[ 1123.241935][fe-A][6oo1] I:error: 21
+[ 1123.241982][fe-A][6oo1] I:
+[ 1123.258812][fe-A][6oo1]
+[ 1123.258854][fe-A][6oo1] Install from SD card completed with status 2.
+[ 1123.541242][fe-A][6oo1] Installation aborted.#1
+[ 1123.790402][fe-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[ 1123.790503][fe-A][6oo1] I:Saving locale "en_US"
+[ 1123.792265][fe-A][6oo1] I:## clear BCB message
+[ 1123.792381][fe-A][6oo1] I:## unlink /cache/recovery/command
+[ 1123.796371][fe-A][6oo1] save_current_log true, has_cashe true.
+[ 1123.797157][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1123.798710][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1123.798789][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1123.839254][fe-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[ 1123.839331][fe-A][6oo1] copy_log_files_to_cache :: klog : 1
+[ 1123.839442][fe-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[ 1123.849456][fe-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[ 1123.849525][fe-A][6oo1] append_file offset 1362077
+[ 1123.849699][fe-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[ 1123.873214][fe-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[ 1124.115353][fe-A][6oo1]
+[ 1124.115428][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1124.115501][fe-A][6oo1]
+[ 1124.115552][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1124.115627][fe-A][6oo1]
+[ 1124.115678][fe-A][6oo1]  FRP Enabled!! 
+[ 1124.140753][fe-A][6oo1]
+[ 1124.140803][fe-A][6oo1]  drawWarning[-1] 
+[ 1244.242840][fe-A][6oo1] I:Brightness: 60 (25%)
+[ 1364.243989][fe-A][6oo1] I:Brightness: 0 (off)
+[ 1435.315694][fe-A][6oo1] I:Brightness: 120 (50%)
+[ 1439.012484][fe-A][6oo1]
+[ 1439.012534][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1439.012592][fe-A][6oo1]
+[ 1439.012637][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1439.012700][fe-A][6oo1]
+[ 1439.012745][fe-A][6oo1]  FRP Enabled!! 
+[ 1439.038212][fe-A][6oo1]
+[ 1439.038260][fe-A][6oo1]  drawWarning[-1] 
+[ 1439.702095][fe-A][6oo1]
+[ 1439.702141][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1439.702193][fe-A][6oo1]
+[ 1439.702231][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1439.702284][fe-A][6oo1]
+[ 1439.702321][fe-A][6oo1]  FRP Enabled!! 
+[ 1439.727484][fe-A][6oo1]
+[ 1439.727525][fe-A][6oo1]  drawWarning[-1] 
+[ 1440.617295][fe-A][6oo1]
+[ 1440.617360][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1440.624578][fe-A][6oo1]
+[ 1440.624650][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1440.624729][fe-A][6oo1]
+[ 1440.624781][fe-A][6oo1]  FRP Enabled!! 
+[ 1440.643015][fe-A][6oo1]
+[ 1440.643060][fe-A][6oo1]  drawWarning[-1] 
+[ 1441.087007][fe-A][6oo1]
+[ 1441.087063][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1441.087135][fe-A][6oo1]
+[ 1441.087185][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1441.087259][fe-A][6oo1]
+[ 1441.087309][fe-A][6oo1]  FRP Enabled!! 
+[ 1441.112390][fe-A][6oo1]
+[ 1441.112437][fe-A][6oo1]  drawWarning[-1] 
+[ 1561.214492][fe-A][6oo1] I:Brightness: 60 (25%)
+[ 1638.969694][fe-A][6oo1] I:Brightness: 120 (50%)
+[ 1639.000822][fe-A][6oo1]
+[ 1639.000877][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1639.000929][fe-A][6oo1]
+[ 1639.000967][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1639.001020][fe-A][6oo1]
+[ 1639.001057][fe-A][6oo1]  FRP Enabled!! 
+[ 1639.026548][fe-A][6oo1]
+[ 1639.026588][fe-A][6oo1]  drawWarning[-1] 
+[ 1639.703464][fe-A][6oo1]
+[ 1639.703520][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1639.703581][fe-A][6oo1]
+[ 1639.703626][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1639.703686][fe-A][6oo1]
+[ 1639.703723][fe-A][6oo1]  FRP Enabled!! 
+[ 1639.728858][fe-A][6oo1]
+[ 1639.728898][fe-A][6oo1]  drawWarning[-1] 
+[ 1640.328259][fe-A][6oo1]
+[ 1640.328314][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1640.328376][fe-A][6oo1]
+[ 1640.328420][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1640.328484][fe-A][6oo1]
+[ 1640.328528][fe-A][6oo1]  FRP Enabled!! 
+[ 1640.353987][fe-A][6oo1]
+[ 1640.354036][fe-A][6oo1]  drawWarning[-1] 
+[ 1641.130672][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1641.132444][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1641.132523][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1641.567082][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/mmcblk0p1,target=/sdcard,type=sdfat)=0: Success
+[ 1641.567204][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=mmcblk0p1,target=/sdcard,type=sdfat,flags=0,options=): Success
+[ 1641.607568][fe-A][6oo1]
+[ 1641.607635][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1641.607691][fe-A][6oo1]
+[ 1641.607730][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1641.607786][fe-A][6oo1]
+[ 1641.607824][fe-A][6oo1]  FRP Enabled!! 
+[ 1641.630388][fe-A][6oo1]
+[ 1641.630429][fe-A][6oo1]  drawWarning[-1] 
+[ 1642.553654][fe-A][6oo1]
+[ 1642.553708][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1642.553769][fe-A][6oo1]
+[ 1642.553813][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1642.553877][fe-A][6oo1]
+[ 1642.553920][fe-A][6oo1]  FRP Enabled!! 
+[ 1642.576316][fe-A][6oo1]
+[ 1642.576356][fe-A][6oo1]  drawWarning[-1] 
+[ 1677.096206][fe-A][6oo1]
+[ 1677.096276][fe-A][6oo1] -- Install /sdcard/uninmod_magisk-v4-20180922.zip ...
+[ 1678.332165][fe-A][6oo1] Finding update package...
+[ 1678.678302][fe-A][6oo1] I:Update location: /sideload/package.zip
+[ 1678.678362][fe-A][6oo1] Opening update package...
+[ 1678.913020][fe-A][6oo1] I:MDF_RECOVERY : CC mode is not enabled.
+[ 1678.913107][fe-A][6oo1] unknown fuse request opcode 22
+[ 1678.913171][fe-A][6oo1] unknown fuse request opcode 2016
+[ 1678.913740][fe-A][6oo1] I:2 key(s) loaded from /system/etc/security/otacerts.zip
+[ 1678.913824][fe-A][6oo1] Verifying update package...
+[ 1679.155212][fe-A][6oo1] E:footer is wrong
+[ 1679.396736][fe-A][6oo1] Update package verification took 0.2 s (result 1).
+[ 1679.650774][fe-A][6oo1] E:Signature verification failed
+[ 1679.914986][fe-A][6oo1] E:error: 21
+[ 1680.187631][fe-A][6oo1] W:failed to read uncrypt status: No such file or directory
+[ 1680.187696][fe-A][6oo1] I:/sideload/package.zip
+[ 1680.187746][fe-A][6oo1] I:0
+[ 1680.187787][fe-A][6oo1] I:time_total: 1
+[ 1680.187848][fe-A][6oo1] I:retry: 0
+[ 1680.187898][fe-A][6oo1] I:error: 21
+[ 1680.187953][fe-A][6oo1] I:
+[ 1680.205269][fe-A][6oo1]
+[ 1680.205310][fe-A][6oo1] Install from SD card completed with status 2.
+[ 1680.603016][fe-A][6oo1] Installation aborted.#1
+[ 1680.932310][fe-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[ 1680.932403][fe-A][6oo1] I:Saving locale "en_US"
+[ 1680.934180][fe-A][6oo1] I:## clear BCB message
+[ 1680.934298][fe-A][6oo1] I:## unlink /cache/recovery/command
+[ 1680.938741][fe-A][6oo1] save_current_log true, has_cashe true.
+[ 1680.939517][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1680.941089][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1680.941168][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1680.985301][fe-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[ 1680.985378][fe-A][6oo1] copy_log_files_to_cache :: klog : 1
+[ 1680.985491][fe-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[ 1680.989644][fe-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[ 1680.989715][fe-A][6oo1] append_file offset 1450994
+[ 1680.989900][fe-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[ 1681.011697][fe-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[ 1681.355581][fe-A][6oo1]
+[ 1681.355665][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1681.355738][fe-A][6oo1]
+[ 1681.355790][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1681.355865][fe-A][6oo1]
+[ 1681.355915][fe-A][6oo1]  FRP Enabled!! 
+[ 1681.381284][fe-A][6oo1]
+[ 1681.381332][fe-A][6oo1]  drawWarning[-1] 
+[ 1687.039946][fe-A][6oo1]
+[ 1687.040011][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1687.040064][fe-A][6oo1]
+[ 1687.040103][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1687.040157][fe-A][6oo1]
+[ 1687.040196][fe-A][6oo1]  FRP Enabled!! 
+[ 1687.065320][fe-A][6oo1]
+[ 1687.065367][fe-A][6oo1]  drawWarning[-1] 
+[ 1687.889596][fe-A][6oo1]
+[ 1687.889651][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1687.889712][fe-A][6oo1]
+[ 1687.889757][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1687.889810][fe-A][6oo1]
+[ 1687.889847][fe-A][6oo1]  FRP Enabled!! 
+[ 1687.915287][fe-A][6oo1]
+[ 1687.915327][fe-A][6oo1]  drawWarning[-1] 
+[ 1688.481737][fe-A][6oo1]
+[ 1688.481793][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1688.481855][fe-A][6oo1]
+[ 1688.481900][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1688.481964][fe-A][6oo1]
+[ 1688.482009][fe-A][6oo1]  FRP Enabled!! 
+[ 1688.507192][fe-A][6oo1]
+[ 1688.507241][fe-A][6oo1]  drawWarning[-1] 
+[ 1689.475291][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1689.476734][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1689.476827][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1689.909815][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/mmcblk0p1,target=/sdcard,type=sdfat)=0: Success
+[ 1689.909936][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=mmcblk0p1,target=/sdcard,type=sdfat,flags=0,options=): Success
+[ 1689.945977][fe-A][6oo1]
+[ 1689.946046][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1689.946104][fe-A][6oo1]
+[ 1689.946145][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1689.946210][fe-A][6oo1]
+[ 1689.946260][fe-A][6oo1]  FRP Enabled!! 
+[ 1689.968675][fe-A][6oo1]
+[ 1689.968725][fe-A][6oo1]  drawWarning[-1] 
+[ 1691.183203][fe-A][6oo1]
+[ 1691.183257][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1691.183312][fe-A][6oo1]
+[ 1691.183352][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1691.183411][fe-A][6oo1]
+[ 1691.183450][fe-A][6oo1]  FRP Enabled!! 
+[ 1691.206048][fe-A][6oo1]
+[ 1691.206092][fe-A][6oo1]  drawWarning[-1] 
+[ 1691.767123][fe-A][6oo1]
+[ 1691.767174][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1691.767247][fe-A][6oo1]
+[ 1691.767291][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1691.767355][fe-A][6oo1]
+[ 1691.767398][fe-A][6oo1]  FRP Enabled!! 
+[ 1691.789765][fe-A][6oo1]
+[ 1691.789807][fe-A][6oo1]  drawWarning[-1] 
+[ 1693.609120][fe-A][6oo1]
+[ 1693.609174][fe-A][6oo1] -- Install /sdcard/uninstall-mod-magisk.zip ...
+[ 1694.915856][fe-A][6oo1] Finding update package...
+[ 1695.375185][fe-A][6oo1] I:Update location: /sideload/package.zip
+[ 1695.375258][fe-A][6oo1] Opening update package...
+[ 1695.690326][fe-A][6oo1] I:MDF_RECOVERY : CC mode is not enabled.
+[ 1695.690404][fe-A][6oo1] unknown fuse request opcode 22
+[ 1695.690465][fe-A][6oo1] unknown fuse request opcode 2016
+[ 1695.691042][fe-A][6oo1] I:2 key(s) loaded from /system/etc/security/otacerts.zip
+[ 1695.691124][fe-A][6oo1] Verifying update package...
+[ 1696.008275][fe-A][6oo1] E:footer is wrong
+[ 1696.325753][fe-A][6oo1] Update package verification took 0.3 s (result 1).
+[ 1696.655588][fe-A][6oo1] E:Signature verification failed
+[ 1696.995451][fe-A][6oo1] E:error: 21
+[ 1697.343557][fe-A][6oo1] W:failed to read uncrypt status: No such file or directory
+[ 1697.343634][fe-A][6oo1] I:/sideload/package.zip
+[ 1697.343693][fe-A][6oo1] I:0
+[ 1697.343740][fe-A][6oo1] I:time_total: 2
+[ 1697.343798][fe-A][6oo1] I:retry: 0
+[ 1697.343854][fe-A][6oo1] I:error: 21
+[ 1697.343914][fe-A][6oo1] I:
+[ 1697.360887][fe-A][6oo1]
+[ 1697.360936][fe-A][6oo1] Install from SD card completed with status 2.
+[ 1697.872179][fe-A][6oo1] Installation aborted.#1
+[ 1698.282203][fe-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[ 1698.282300][fe-A][6oo1] I:Saving locale "en_US"
+[ 1698.283969][fe-A][6oo1] I:## clear BCB message
+[ 1698.284084][fe-A][6oo1] I:## unlink /cache/recovery/command
+[ 1698.288312][fe-A][6oo1] save_current_log true, has_cashe true.
+[ 1698.289059][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1698.293500][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1698.293588][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1698.342932][fe-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[ 1698.343016][fe-A][6oo1] copy_log_files_to_cache :: klog : 1
+[ 1698.343111][fe-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[ 1698.344804][fe-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[ 1698.344884][fe-A][6oo1] append_file offset 1546548
+[ 1698.345071][fe-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[ 1698.370378][fe-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[ 1698.817298][fe-A][6oo1]
+[ 1698.817376][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1698.817443][fe-A][6oo1]
+[ 1698.817483][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1698.817539][fe-A][6oo1]
+[ 1698.817578][fe-A][6oo1]  FRP Enabled!! 
+[ 1698.843083][fe-A][6oo1]
+[ 1698.843124][fe-A][6oo1]  drawWarning[-1] 
+[ 1702.785262][fe-A][6oo1]
+[ 1702.785320][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1702.785381][fe-A][6oo1]
+[ 1702.785426][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1702.785490][fe-A][6oo1]
+[ 1702.785534][fe-A][6oo1]  FRP Enabled!! 
+[ 1702.810668][fe-A][6oo1]
+[ 1702.810715][fe-A][6oo1]  drawWarning[-1] 
+[ 1703.395346][fe-A][6oo1]
+[ 1703.395399][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1703.395458][fe-A][6oo1]
+[ 1703.395496][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1703.395548][fe-A][6oo1]
+[ 1703.395587][fe-A][6oo1]  FRP Enabled!! 
+[ 1703.421242][fe-A][6oo1]
+[ 1703.421288][fe-A][6oo1]  drawWarning[-1] 
+[ 1704.887256][fe-A][6oo1]
+[ 1704.887301][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1704.887353][fe-A][6oo1]
+[ 1704.887391][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1704.887445][fe-A][6oo1]
+[ 1704.887482][fe-A][6oo1]  FRP Enabled!! 
+[ 1704.912636][fe-A][6oo1]
+[ 1704.912676][fe-A][6oo1]  drawWarning[-1] 
+[ 1706.739806][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1706.741371][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1706.741465][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1707.172362][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/mmcblk0p1,target=/sdcard,type=sdfat)=0: Success
+[ 1707.172637][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=mmcblk0p1,target=/sdcard,type=sdfat,flags=0,options=): Success
+[ 1707.210928][fe-A][6oo1]
+[ 1707.210993][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1707.211064][fe-A][6oo1]
+[ 1707.211115][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1707.211190][fe-A][6oo1]
+[ 1707.211239][fe-A][6oo1]  FRP Enabled!! 
+[ 1707.233561][fe-A][6oo1]
+[ 1707.233607][fe-A][6oo1]  drawWarning[-1] 
+[ 1708.338280][fe-A][6oo1]
+[ 1708.338321][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1708.338371][fe-A][6oo1]
+[ 1708.338408][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1708.338460][fe-A][6oo1]
+[ 1708.338497][fe-A][6oo1]  FRP Enabled!! 
+[ 1708.361112][fe-A][6oo1]
+[ 1708.361155][fe-A][6oo1]  drawWarning[-1] 
+[ 1709.677373][fe-A][6oo1]
+[ 1709.677431][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1709.677482][fe-A][6oo1]
+[ 1709.677519][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1709.677573][fe-A][6oo1]
+[ 1709.677610][fe-A][6oo1]  FRP Enabled!! 
+[ 1709.700025][fe-A][6oo1]
+[ 1709.700064][fe-A][6oo1]  drawWarning[-1] 
+[ 1714.332052][fe-A][6oo1]
+[ 1714.332111][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1714.332172][fe-A][6oo1]
+[ 1714.332216][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1714.332279][fe-A][6oo1]
+[ 1714.332323][fe-A][6oo1]  FRP Enabled!! 
+[ 1714.355060][fe-A][6oo1]
+[ 1714.355106][fe-A][6oo1]  drawWarning[-1] 
+[ 1720.409104][fe-A][6oo1]
+[ 1720.409168][fe-A][6oo1] -- Install /sdcard/uninstall.zip ...
+[ 1721.788649][fe-A][6oo1] Finding update package...
+[ 1722.357786][fe-A][6oo1] I:Update location: /sideload/package.zip
+[ 1722.357858][fe-A][6oo1] Opening update package...
+[ 1722.746443][fe-A][6oo1] I:MDF_RECOVERY : CC mode is not enabled.
+[ 1722.746520][fe-A][6oo1] unknown fuse request opcode 22
+[ 1722.746581][fe-A][6oo1] unknown fuse request opcode 2016
+[ 1722.747149][fe-A][6oo1] I:2 key(s) loaded from /system/etc/security/otacerts.zip
+[ 1722.747228][fe-A][6oo1] Verifying update package...
+[ 1723.139416][fe-A][6oo1] E:footer is wrong
+[ 1723.527123][fe-A][6oo1] Update package verification took 0.4 s (result 1).
+[ 1723.929645][fe-A][6oo1] E:Signature verification failed
+[ 1724.342531][fe-A][6oo1] E:error: 21
+[ 1724.763558][fe-A][6oo1] W:failed to read uncrypt status: No such file or directory
+[ 1724.763634][fe-A][6oo1] I:/sideload/package.zip
+[ 1724.763694][fe-A][6oo1] I:0
+[ 1724.763748][fe-A][6oo1] I:time_total: 3
+[ 1724.763808][fe-A][6oo1] I:retry: 0
+[ 1724.763865][fe-A][6oo1] I:error: 21
+[ 1724.763927][fe-A][6oo1] I:
+[ 1724.780639][fe-A][6oo1]
+[ 1724.780687][fe-A][6oo1] Install from SD card completed with status 2.
+[ 1725.401206][fe-A][6oo1] Installation aborted.#1
+[ 1725.883932][fe-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[ 1725.884022][fe-A][6oo1] I:Saving locale "en_US"
+[ 1725.887664][fe-A][6oo1] I:## clear BCB message
+[ 1725.887780][fe-A][6oo1] I:## unlink /cache/recovery/command
+[ 1725.891922][fe-A][6oo1] save_current_log true, has_cashe true.
+[ 1725.892635][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1725.894165][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1725.894243][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1725.995747][fe-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[ 1725.995838][fe-A][6oo1] copy_log_files_to_cache :: klog : 1
+[ 1725.995936][fe-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[ 1725.998008][fe-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[ 1725.998090][fe-A][6oo1] append_file offset 1647498
+[ 1725.998283][fe-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[ 1726.023974][fe-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[ 1726.527835][fe-A][6oo1]
+[ 1726.527937][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1726.528008][fe-A][6oo1]
+[ 1726.528048][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1726.528105][fe-A][6oo1]
+[ 1726.528144][fe-A][6oo1]  FRP Enabled!! 
+[ 1726.553214][fe-A][6oo1]
+[ 1726.553258][fe-A][6oo1]  drawWarning[-1] 
+[ 1734.929246][fe-A][6oo1]
+[ 1734.929316][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1734.929379][fe-A][6oo1]
+[ 1734.929423][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1734.929487][fe-A][6oo1]
+[ 1734.929530][fe-A][6oo1]  FRP Enabled!! 
+[ 1734.954963][fe-A][6oo1]
+[ 1734.955009][fe-A][6oo1]  drawWarning[-1] 
+[ 1735.480462][fe-A][6oo1]
+[ 1735.480508][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1735.480562][fe-A][6oo1]
+[ 1735.480607][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1735.480670][fe-A][6oo1]
+[ 1735.480714][fe-A][6oo1]  FRP Enabled!! 
+[ 1735.505886][fe-A][6oo1]
+[ 1735.505933][fe-A][6oo1]  drawWarning[-1] 
+[ 1735.789106][fe-A][6oo1]
+[ 1735.789152][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1735.789204][fe-A][6oo1]
+[ 1735.789242][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1735.789295][fe-A][6oo1]
+[ 1735.789333][fe-A][6oo1]  FRP Enabled!! 
+[ 1735.814784][fe-A][6oo1]
+[ 1735.814823][fe-A][6oo1]  drawWarning[-1] 
+[ 1736.158147][fe-A][6oo1]
+[ 1736.158211][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1736.158273][fe-A][6oo1]
+[ 1736.158318][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1736.158382][fe-A][6oo1]
+[ 1736.158425][fe-A][6oo1]  FRP Enabled!! 
+[ 1736.183561][fe-A][6oo1]
+[ 1736.183605][fe-A][6oo1]  drawWarning[1] 
+[ 1736.627691][fe-A][6oo1]
+[ 1736.627736][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1736.627788][fe-A][6oo1]
+[ 1736.627825][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1736.627886][fe-A][6oo1]
+[ 1736.627930][fe-A][6oo1]  FRP Enabled!! 
+[ 1736.653407][fe-A][6oo1]
+[ 1736.653456][fe-A][6oo1]  drawWarning[-1] 
+[ 1737.817004][fe-A][6oo1]
+[ 1737.817051][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1737.817102][fe-A][6oo1]
+[ 1737.817139][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1737.817192][fe-A][6oo1]
+[ 1737.817229][fe-A][6oo1]  FRP Enabled!! 
+[ 1737.842412][fe-A][6oo1]
+[ 1737.842454][fe-A][6oo1]  drawWarning[1] 
+[ 1738.327306][fe-A][6oo1]
+[ 1738.327360][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1738.327422][fe-A][6oo1]
+[ 1738.327467][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1738.327531][fe-A][6oo1]
+[ 1738.327575][fe-A][6oo1]  FRP Enabled!! 
+[ 1738.353017][fe-A][6oo1]
+[ 1738.353066][fe-A][6oo1]  drawWarning[-1] 
+[ 1739.354689][fe-A][6oo1]
+[ 1739.354736][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1739.354788][fe-A][6oo1]
+[ 1739.354830][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1739.354894][fe-A][6oo1]
+[ 1739.354937][fe-A][6oo1]  FRP Enabled!! 
+[ 1739.380119][fe-A][6oo1]
+[ 1739.380165][fe-A][6oo1]  drawWarning[1] 
+[ 1740.661534][fe-A][6oo1]
+[ 1740.661585][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1740.661637][fe-A][6oo1]
+[ 1740.661675][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1740.661729][fe-A][6oo1]
+[ 1740.661766][fe-A][6oo1]  FRP Enabled!! 
+[ 1740.687267][fe-A][6oo1]
+[ 1740.687307][fe-A][6oo1]  drawWarning[-1] 
+[ 1741.160044][fe-A][6oo1]
+[ 1741.160099][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1741.160161][fe-A][6oo1]
+[ 1741.160205][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1741.160269][fe-A][6oo1]
+[ 1741.160306][fe-A][6oo1]  FRP Enabled!! 
+[ 1741.185437][fe-A][6oo1]
+[ 1741.185483][fe-A][6oo1]  drawWarning[-1] 
+[ 1741.539050][fe-A][6oo1]
+[ 1741.539096][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1741.539157][fe-A][6oo1]
+[ 1741.539202][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1741.539275][fe-A][6oo1]
+[ 1741.539320][fe-A][6oo1]  FRP Enabled!! 
+[ 1741.564762][fe-A][6oo1]
+[ 1741.564808][fe-A][6oo1]  drawWarning[-1] 
+[ 1742.423349][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 1742.424988][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 1742.425066][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 1742.473437][fe-A][6oo1] RECOVERY_DBG: [fe | 2017/01/01 00:44:27 | T835JXS5CUC2]
+[ 1742.473543][fe-A][6oo1] RECOVERY_DBG: NP
+[ 1742.473601][fe-A][6oo1] RECOVERY_DBG: reboot_reason=UNKNOWN
+[ 1742.473664][fe-A][6oo1] E:choose_recovery_file has_cache
+[ 1743.136726][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/mmcblk0p1,target=/sdcard,type=sdfat)=0: Success
+[ 1743.136882][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=mmcblk0p1,target=/sdcard,type=sdfat,flags=0,options=): Success
+[ 1743.174946][fe-A][6oo1]
+[ 1743.175015][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1743.175071][fe-A][6oo1]
+[ 1743.175110][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1743.175168][fe-A][6oo1]
+[ 1743.175214][fe-A][6oo1]  FRP Enabled!! 
+[ 1743.247435][fe-A][6oo1]
+[ 1743.247483][fe-A][6oo1]  drawWarning[-1] 
+[ 1961.051116][fe-A][6oo1]
+[ 1961.051224][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1961.051297][fe-A][6oo1]
+[ 1961.051348][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1961.051423][fe-A][6oo1]
+[ 1961.051474][fe-A][6oo1]  FRP Enabled!! 
+[ 1961.123381][fe-A][6oo1]
+[ 1961.123429][fe-A][6oo1]  drawWarning[-1] 
+[ 1962.720396][fe-A][6oo1]
+[ 1962.720446][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 1962.720503][fe-A][6oo1]
+[ 1962.720543][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 1962.720601][fe-A][6oo1]
+[ 1962.720644][fe-A][6oo1]  FRP Enabled!! 
+[ 1962.793278][fe-A][6oo1]
+[ 1962.793326][fe-A][6oo1]  drawWarning[-1] 
+[ 2136.554954][fe-A][6oo1]
+[ 2136.555025][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2136.555088][fe-A][6oo1]
+[ 2136.555132][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2136.555196][fe-A][6oo1]
+[ 2136.555240][fe-A][6oo1]  FRP Enabled!! 
+[ 2136.627851][fe-A][6oo1]
+[ 2136.627897][fe-A][6oo1]  drawWarning[-1] 
+[ 2138.659278][fe-A][6oo1]
+[ 2138.659338][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2138.659400][fe-A][6oo1]
+[ 2138.659442][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2138.659495][fe-A][6oo1]
+[ 2138.659532][fe-A][6oo1]  FRP Enabled!! 
+[ 2138.731753][fe-A][6oo1]
+[ 2138.731805][fe-A][6oo1]  drawWarning[-1] 
+[ 2139.758589][fe-A][6oo1]
+[ 2139.758637][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2139.758689][fe-A][6oo1]
+[ 2139.758727][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2139.758780][fe-A][6oo1]
+[ 2139.758817][fe-A][6oo1]  FRP Enabled!! 
+[ 2139.831507][fe-A][6oo1]
+[ 2139.831548][fe-A][6oo1]  drawWarning[-1] 
+[ 2150.919436][fe-A][6oo1]
+[ 2150.919501][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2150.919555][fe-A][6oo1]
+[ 2150.919593][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2150.919647][fe-A][6oo1]
+[ 2150.919684][fe-A][6oo1]  FRP Enabled!! 
+[ 2150.991736][fe-A][6oo1]
+[ 2150.991779][fe-A][6oo1]  drawWarning[-1] 
+[ 2151.279682][fe-A][6oo1]
+[ 2151.279736][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2151.279797][fe-A][6oo1]
+[ 2151.279841][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2151.279905][fe-A][6oo1]
+[ 2151.279949][fe-A][6oo1]  FRP Enabled!! 
+[ 2151.352577][fe-A][6oo1]
+[ 2151.352626][fe-A][6oo1]  drawWarning[-1] 
+[ 2151.579361][fe-A][6oo1]
+[ 2151.579407][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2151.579462][fe-A][6oo1]
+[ 2151.579501][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2151.579558][fe-A][6oo1]
+[ 2151.579598][fe-A][6oo1]  FRP Enabled!! 
+[ 2151.651642][fe-A][6oo1]
+[ 2151.651689][fe-A][6oo1]  drawWarning[-1] 
+[ 2151.819651][fe-A][6oo1]
+[ 2151.819703][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2151.819765][fe-A][6oo1]
+[ 2151.819809][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2151.819877][fe-A][6oo1]
+[ 2151.819915][fe-A][6oo1]  FRP Enabled!! 
+[ 2151.892584][fe-A][6oo1]
+[ 2151.892625][fe-A][6oo1]  drawWarning[-1] 
+[ 2152.987803][fe-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[ 2152.987886][fe-A][6oo1] I:Saving locale "en_US"
+[ 2152.998951][fe-A][6oo1] I:## clear BCB message
+[ 2152.999100][fe-A][6oo1] I:## unlink /cache/recovery/command
+[ 2153.003149][fe-A][6oo1] save_current_log true, has_cashe true.
+[ 2153.003929][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 2153.005415][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 2153.005502][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 2153.107952][fe-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[ 2153.108035][fe-A][6oo1] copy_log_files_to_cache :: klog : 1
+[ 2153.108176][fe-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[ 2153.109807][fe-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[ 2153.109878][fe-A][6oo1] append_file offset 1754161
+[ 2153.110103][fe-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[ 2153.137590][fe-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[ 2153.617908][fe-A][6oo1]
+[ 2153.618018][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2153.618092][fe-A][6oo1]
+[ 2153.618142][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2153.618217][fe-A][6oo1]
+[ 2153.618269][fe-A][6oo1]  FRP Enabled!! 
+[ 2153.643739][fe-A][6oo1]
+[ 2153.643786][fe-A][6oo1]  drawWarning[-1] 
+[ 2155.608664][fe-A][6oo1]
+[ 2155.608712][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2155.608764][fe-A][6oo1]
+[ 2155.608802][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2155.608856][fe-A][6oo1]
+[ 2155.608893][fe-A][6oo1]  FRP Enabled!! 
+[ 2155.634040][fe-A][6oo1]
+[ 2155.634087][fe-A][6oo1]  drawWarning[-1] 
+[ 2169.141998][fe-A][6oo1]
+[ 2169.142066][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2169.142119][fe-A][6oo1]
+[ 2169.142157][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2169.142211][fe-A][6oo1]
+[ 2169.142249][fe-A][6oo1]  FRP Enabled!! 
+[ 2169.167709][fe-A][6oo1]
+[ 2169.167749][fe-A][6oo1]  drawWarning[-1] 
+[ 2171.426997][fe-A][6oo1]
+[ 2171.427042][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2171.427094][fe-A][6oo1]
+[ 2171.427132][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2171.427185][fe-A][6oo1]
+[ 2171.427223][fe-A][6oo1]  FRP Enabled!! 
+[ 2171.452556][fe-A][6oo1]
+[ 2171.452596][fe-A][6oo1]  drawWarning[-1] 
+[ 2171.967287][fe-A][6oo1]
+[ 2171.967341][fe-A][6oo1]  check_ReactivationLock_Support[] 
+[ 2171.967411][fe-A][6oo1]
+[ 2171.967462][fe-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[ 2171.967536][fe-A][6oo1]
+[ 2171.967587][fe-A][6oo1]  FRP Enabled!! 
+[ 2171.992991][fe-A][6oo1]
+[ 2171.993035][fe-A][6oo1]  drawWarning[-1] 
+[ 2173.111165][fe-A][6oo1]
+[ 2173.111208][fe-A][6oo1] [out-recovery]
+[ 2173.111832][fe-A][6oo1] running out-recovery time : 0.000s
+[ 2173.111894][fe-A][6oo1] copy_avc_msg_to_data(0)
+[ 2173.119083][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 2173.120698][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 2173.120793][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 2173.120880][fe-A][6oo1] copy_file '/proc/avc_msg' '/cache/recovery/last_avc_msg_recovery'
+[ 2173.126142][fe-A][6oo1] !__RECOVERY_FOR_ASSAMBLY
+[ 2173.126646][fe-A][6oo1] start_recovery() : del_recovery_command = yes
+[ 2173.126703][fe-A][6oo1] main() : del_recovery_command(recovery.delete.command) = yes
+[ 2173.126764][fe-A][6oo1] Rebooting...
+[ 2173.350413][fe-A][6oo1] ## sec_reboot(del=1, cmd=reboot,, clear_BCB=1)
+[ 2173.350478][fe-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=1)
+[ 2173.352886][fe-A][6oo1] I:Saving locale "en_US"
+[ 2173.352980][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 2173.354443][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 2173.354540][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[ 2173.356750][fe-A][6oo1] I:## clear BCB message
+[ 2173.356877][fe-A][6oo1] I:## unlink /cache/recovery/command
+[ 2173.359746][fe-A][6oo1] save_current_log true, has_cashe true.
+[ 2173.360428][fe-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[ 2173.361766][fe-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[ 2173.361844][fe-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success

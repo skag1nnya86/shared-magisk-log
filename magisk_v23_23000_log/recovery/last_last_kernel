@@ -1,0 +1,1385 @@
+
+
+{524905} ** XBL(0) **
+{524935} 
+Format: Log Type - Time(microsec) - Message - Optional Info
+Log Type: B - Since Boot(Power On Reset),  D - Delta,  S - Statistic
+Cable type: 3
+S - QC_IMAGE_VERSION_STRING=BOOT.XF.1.2-00352
+S - IMAGE_VARIANT_STRING=Msm8998LA
+S - OEM_IMAGE_VERSION_STRING=SWDH4620
+S - Boot Interface: UFS
+S - Secure Boot: On
+S - Boot Config @ 0x00786070 = 0x000002c1
+S - JTAG ID @ 0x00786130 = 0x2005e0e1
+S - OEM ID @ 0x00786138 = 0x00200000
+S - Feature Config Row 0 @ 0x007841a0 = 0x0050200000000000
+S - Feature Config Row 1 @ 0x007841a8 = 0x0000000000000060
+S - Raw PTE Row 3 @ 0x00780148 = 0x41062120
+S - Raw PTE Row 0 @ 0x00780134 = 0x98286090
+S - Core 0 Frequency, 1305 MHz
+S - PBL Patch Ver: 2
+B -            0 - PBL, Start
+B -         9445 - bootable_media_detect_entry, Start
+B -        49908 - bootable_media_detect_success, Start
+B -        49915 - elf_loader_entry, Start
+B -        51198 - auth_hash_seg_entry, Start
+B -        73372 - auth_hash_seg_exit, Start
+B -       126948 - elf_segs_hash_verify_entry, Start
+B -       158683 - elf_segs_hash_verify_exit, Start
+B -       158701 - auth_xbl_sec_hash_seg_entry, Start
+B -       182541 - auth_xbl_sec_hash_seg_exit, Start
+B -       182544 - xbl_sec_segs_hash_verify_entry, Start
+B -       188045 - xbl_sec_segs_hash_verify_exit, Start
+B -       188109 - PBL, End
+B -       221125 - SBL1, Start
+B -       233996 - boot_flash_init, Start
+D -           30 - boot_flash_init, Delta
+B -       234026 - sbl1_ddr_set_default_params, Start
+D -          152 - sbl1_ddr_set_default_params, Delta
+B -       234179 - boot_config_data_table_init, Start
+D -       108214 - boot_config_data_table_init, Delta - (0 Bytes)
+B -       342393 - CDT Version:3,Platform ID:8,Major ID:1,Minor ID:0,Subtype:0
+B -       342423 - Image Load, Start
+D -        18788 - Auth Metadata
+D -          549 - Segments hash check
+D -        22021 - PMIC Image Loaded, Delta - (45704 Bytes)
+B -       364444 - pm_device_init, Start
+B -       366732 - PM: PON REASON: PM0=0x8000028000000040:0x0 PM2=0x8000088000000020:0x0 
+B -       402661 - PM: SET_VAL:Skip
+D -        38704 - pm_device_init, Delta
+B -       403149 - pm_driver_init, Start
+D -         4270 - pm_driver_init, Delta
+B -       407419 - pm_driver_init, configuring PMIC to do a DVDD reset, Start
+D -         1037 - pm_driver_init, configuring PMIC to do a DVDD reset, Delta
+B -       408456 - pm_sbl_chg_init, Start
+D -            0 - pm_sbl_chg_init, Delta
+B -       408486 - vsense_init, Start
+D -            0 - vsense_init, Delta
+B -       460214 - Pre_DDR_clock_init, Start
+D -          213 - Pre_DDR_clock_init, Delta
+D -            0 - sbl1_ddr_set_params, Delta
+B -       465430 - DSF version = 108.9, DSF RPM version = 59.1
+B -       465430 - Max Frequency = 1804 MHz
+B -   
+{529327} Image Load, Start
+{570990} Auth Metadata
+{571661} Segments hash check
+{571753} APDP Image Loaded, Delta
+{572241} usb: UFS Serial
+{573369} QB link : https://android.qb.sec.samsung.net/build/39077605
+{573430} DEBUG LEVEL : LOW
+{573491} PWR[released] INT[released] DN[released] UP[released]
+{573552} Current PON value 0x8000028000000040
+{573644} 
+	OFF : POFF_SEQ 
+	POFF : PS_HOLD 
+	ON : PON_SEQ 
+	WARM : 
+	PON : CABLE 
+{574284} before [NP] now [NP]
+{576450} DDR vendor:Micron@0x860037d8
+{576480} store hw rev:7@0x86003838
+{576694} PM: 0: PON=0x40:CBLPWR_N: ON=0x80:PON_SEQ: POFF=0x2:PS_HOLD: OFF=0x80:POFF_SEQ
+{576816} PM: 2: PON=0x20:PON1: ON=0x80:PON_SEQ: POFF=0x8:GP1: OFF=0x80:POFF_SEQ
+{576907} PM: SMEM Chgr Info Write Success
+{577304} sbl1_efs_handle_cookies, Start
+{577365} sbl1_efs_handle_cookies, Delta
+{577822} Image Load, Start
+{600209} Auth Metadata
+{601948} Segments hash check
+{602070} QSEE Dev Config Image Loaded, Delta
+{602100} Image Load, Start
+{602680} SEC Image Loaded, Delta
+{602710} Image Load, Start
+{664991} Auth Metadata
+{692533} Segments hash check
+{693082} QSEE Image Loaded, Delta
+{693143} Image Load, Start
+{715469} Auth Metadata
+{724741} Segments hash check
+{725107} QHEE Image Loaded, Delta
+{725168} Image Load, Start
+{747677} Auth Metadata
+{754570} Segments hash check
+{754722} RPM Image Loaded, Delta
+{754814} Image Load, Start
+{754844} STI Image Loaded, Delta
+{755912} Image Load, Start
+{778329} Auth Metadata
+{802119} Segments hash check
+{802516} ABL Image Loaded, Delta
+{802699} Image Load, Start
+{824537} Auth Metadata
+{844789} Segments hash check
+{845094} APPSBL Image Loaded, Delta
+{845399} SBL1, End
+{845429} SBL1, Delta
+{845460} Flash Throughput, 167000 KB/s  (6343452 Bytes,  37963 us)
+{845521} DDR Frequency, 1353 MHz
+UEFI Ver    : 4.2.210325.BOOT.XF.1.2-00352
+Build Info  : 64b Mar 25 2021 15:43:52
+Boot Device : UFS
+UsbConfigPortsQueryConnectionChange: Failed to get UsbCGetPortState with error: Device Error
+GetChargerPortType: Failed to call PMIC ChargerPort Status =  (0x3)
+HandlePortPartnerXtach: Error encountered in UsbPortStateCbGetCcStatus
+ccic_init
+i2c driver is not initialized
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+init_ccic_ic() done. test_rid =7
+GPIO I2C : NO ACKpcal6524_gpio_init fail
+i2c driver is not initialized
+[s2mu004_init]
+[MUIC] Disable RID
+GPIO I2C : NO ACKpcal6524_gpio_init fail
+charging_func_init 
+[charger_i2c_init]
+[S2MU004 CHG]
+i2c driver is not initialized
+[fuel_gauge_i2c_init]
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+[set_input_current]
+s2mu004_chg_set_input_limit: input_limit=1500
+DisplayDriverLib: displaydriverlib_init++
+ANA38401_AMSA05RB01_WQXGA_octa_init++
+ANA38401_AMSA05RB01_WQXGA_octa_init--
+PBA_BOOTING_FHD_init
+DisplayDriverLib: displaydriverlib_init--
+DisplayDxe: PMIC Type is DISPLAY_PMIC, bPowerUp=1
+DisplayDriverLib: display_panel_power_up, power_state=1
+display_panel_power_up_ANA38401_AMSA05RB01 ++
+display_panel_power_up_ANA38401_AMSA05RB01 --
+DisplayDriverLib: select_panel_xml_data ++
+ANA38401_AMSA05RB01 panel is supported
+DisplayDriverLib: Selected - Panel ID : 30 
+DisplayDriverLib: select_panel_xml_data --
+offset : 0 :	0, 1000C8, FFFF, 0
+offset : 10 :	640, 0, 50004, 640
+offset : 20 :	1, 640, 0, 0
+offset : 30 :	2, 0, 0, 0
+offset : 40 :	0, 0, 0, 0
+offset : 50 :	0, 0, 0, 0
+offset : 60 :	0, 0, 0, 0
+offset : 70 :	0, 0, 0, 0
+offset : 80 :	0, 0, 0, 0
+offset : 90 :	0, 0, 0, 0
+offset : A0 :	0, 0, 0, 2C688
+offset : B0 :	0, 0, 0, 0
+offset : C0 :	0, 0, 2C688, 0
+offset : D0 :	0, 0, 0, 0
+offset : E0 :	0, 0, 0, 0
+offset : 0 :	0, 1000C8, FFFF, 0
+offset : 10 :	640, 0, 50004, 640
+offset : 20 :	1, 640, 0, 0
+offset : 30 :	2, 0, 0, 0
+offset : 40 :	0, 0, 0, 0
+offset : 50 :	0, 0, 0, 0
+offset : 60 :	0, 0, 0, 0
+offset : 70 :	0, 0, 0, 0
+offset : 80 :	0, 0, 0, 0
+offset : 90 :	0, 0, 0, 0
+offset : A0 :	0, 0, 0, 2C688
+offset : B0 :	0, 0, 0, 0
+offset : C0 :	0, 0, 2C688, 0
+offset : D0 :	0, 0, 0, 0
+offset : E0 :	0, 0, 0, 0
+DisplayDriverLib: display_panel_reset ++
+DisplayDriverLib: Reset_N state : 0 , gpio_num : 23 delay : 0
+DisplayDriverLib: Reset_N state : 0 , gpio_num : 23 delay : 75
+DisplayDriverLib: Reset_N state : 1 , gpio_num : 23 delay : 0
+DisplayDxe: Configure GPIO 12 for TE line 4
+display_panel_reset TCON ready success! GPIO : 122 cnt : 7
+DisplayDriverLib: display_panel_reset --
+DisplayDxe: Success to reset!
+DisplayDxe: DSIDriver_SetMode++ 
+DisplayDxe: Panel type is DSI_CMD
+DSIDriver: DSI0 PLL can be locked (Freq:898020000Hz)!
+HAL_DSI_Phy_CommitTimingParams- DSIPHY_T_TA_SURE - reg : 0
+CTRL_0 : 0, CTRL_1 : 1E, CTRL_2 : 8, CTRL_3 : 8, CTRL_4 : 24, CTRL_9 : 3
+CTRL_6 : 8, CTRL_7 : 8, CTRL_8 : 5, CTRL_5 : 22, CTRL_10 : 4, CLK_POST : D, CLK_PRE : 2F
+DisplayDxe: Panel type is DSI_CMD
+DSIDriver: DSI1 PLL can be locked (Freq:898020000Hz)!
+HAL_DSI_Phy_CommitTimingParams- DSIPHY_T_TA_SURE - reg : 0
+CTRL_0 : 0, CTRL_1 : 1E, CTRL_2 : 8, CTRL_3 : 8, CTRL_4 : 24, CTRL_9 : 3
+CTRL_6 : 8, CTRL_7 : 8, CTRL_8 : 5, CTRL_5 : 22, CTRL_10 : 4, CLK_POST : D, CLK_PRE : 2F
+DisplayDxe: DSIDriver_SetMode--(0) 
+read_ddi_id ++
+Sent max package command
+Sent max package command
+Sent max package command
+read_ddi_id: id1: 0x40, id2: 0x00, id3: 0x18
+read_ddi_id --
+DisplayDriverLib: Append lcd_id : lcd_id=0x400018
+EnvDxe Render Callback
+LoadSecureApps: TZApps region 0x3400000@0x86D00000
+LoadSecureApps: Load app from partition(keymaster): Status = 0x0, AppId = 65537
+[sub_pmic_init: NULL]
+i2c driver is not initialized
+-----------------------------
+Platform Init  [ 1886] BDS
+UEFI Ver   : 4.2.210325.BOOT.XF.1.2-00352
+Platform   : MTP
+Chip Name  : MSM8998
+Chip Ver   : 2.1
+Core 0 Freq: 1555 MHz
+-----------------------------
+UEFI Total : 897 ms
+POST Time      [ 1897] OS Loader
+Loader Build Info: Mar 25 2021 15:42:52
+BoardRevisionInfo ADC value:854
+HW REV : 7 
+Model Name : SM-T835 
+[FMM]QseecomStartApp (vk) call Failed, status=14, vaultkeeperappid=0
+[FMM]GetFMMStatus Ret=(0xFBFB4362), Rsp status: -1
+Get FMM lock value from PARAM
+FMMLock is OFF
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0xA3
+chg_get_charger_status: cable_type(3), vbus_status(1)
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+dev_charging_init: cable_type(3), jig_type(0)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+get_battery_temperature: ADC VALUE[0] success[5]
+get_battery_temperature: ADC VALUE[9610]
+get_battery_temperature: Temp(179), Temp-ADC(9610)
+[charger_init_charger]
+s2mu004_init_charger: s2mu004 charger probe start
+s2mu004_init_charger: fastchg curr(0x11), chgin_ilim curr(0x3A), en_chg(0x83)
+s2mu004 0x38 (rev:0x3, ver:0x8)
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+s2mu004_set_watchdog_timer_time: 6
+s2mu004_set_watchdog_timer: 0 
+s2mu004 disable_cool_chgS2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0xA3
+chg_get_charger_status: cable_type(3), vbus_status(1)
+s2mu004_set_auto_current: get_charger_status(3)
+s2mu004_chg_set_input_limit: input_limit=1500
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+s2mu004_CHG_set_FAST_CHG_CURRENT: 0x11
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+s2mu004_init_charger: wc_chg_curr(0x11), wc_max_curr(0x3A), en_chg(0x83)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+ ReadAdc: 7
+CcicReadAdc: 7
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+ GetDeviceType: 3
+MuicGetDeviceType: 3
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+FgGetVoltage: 2609
+FgGetVoltage: 2609 mV
+s2mu004_fuel_gauge_read_soc: raw capacity (0x2534:5812)
+s2mu004_fuel_gauge_read_soc: SOC 2 digit accuracy: 58%
+FgGetSoc: 58
+FgGetSoc: 58
+PM 0:0x8000028000000040
+PowerOnReason : Cable 
+WarmResetReason : 
+PowerOffReason : PS_HOLD 
+OffReason : POFF_SEQ 
+BootType : ColdBoot
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+FgGetVoltage: 2609
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0xA3
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+ MuicGetJigType: 0
+CheckDeadBattery: rb=0, jig=0, ct=3, vcell=2609
+skip check low power
+[KEY] PWD(0) INT(0) DN(0) UP(0) :: 0
+BootReason: 0
+PARAM Flag is PARAM_BOOT_RECOVERY_ENTER:
+PiRclrEalCr[SAPA] EFI_PmicRTCGetAlarmValueRaw: err=0, temp=0
+[SAPA] RTC  =38
+[SAPA] ALARM=0
+[RPMB] QFPROM_CORR_ANTI_ROLLBACK_3 fuse value : 0x01000000
+[RPMB] RPMB fuse bit is blown
+[RPMB] RPMB_CHECK_PROV Status = 0x0, RpmbResult = 0x0
+[RPMB] RPMB is provisioned correctly
+[KnoxCustom] knoxcustom_value : FFFFFFFF 
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+FgGetVoltage: 2609
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0xA3
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+ MuicGetJigType: 0
+LPMModeChecker: cable_status = 3
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+FgGetVoltage: 2609
+get_battery_temperature: ADC VALUE[0] success[5]
+get_battery_temperature: ADC VALUE[9608]
+get_battery_temperature: Temp(179), Temp-ADC(9608)
+GetBattTemp: 179
+Temperature of target is good
+AST_POWERON
+==== GlibDrawBootImage Start(2133) ==== 
+GlibDrawBootImage : IMAGE_BLACK|IMAGE_CARRIER_DEFAULT 
+[VIB] VibStart: 100
+i2c driver is not initialized
+[2135] +[VIB] Timer Start
+==== GlibDrawBootImage Finish(2187) ====
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0xA3
+chg_get_charger_status: cable_type(3), vbus_status(1)
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+dev_charging_init: cable_type(3), jig_type(0)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+get_battery_temperature: ADC VALUE[0] success[5]
+get_battery_temperature: ADC VALUE[9605]
+get_battery_temperature: Temp(179), Temp-ADC(9605)
+[charger_init_charger]
+s2mu004_init_charger: s2mu004 charger probe start
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+[2226] -[VIB] Timer Stop
+dev_charging_init: vcell(2609), count(0)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(1)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(2)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(3)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(4)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(5)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(6)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(7)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(8)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(9)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(10)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(11)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(12)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(13)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(14)
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+dev_charging_init: vcell(2609), count(15)
+[set_charging_current_by_type]
+s2mu004_fuel_gauge_read_vcell: vbat(2609), src(0x00)
+s2mu004_CHG_set_FAST_CHG_CURRENT: 0x11
+[fuel_gauge_init]
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+GPIO_IFC_SENSE_INT_AP: 1
+jig_switch_control: 0x25 -> 0x10
+POR state = 0x10, data_ver = 0x0(0x3), gpio_val(1)
+GPIO I2C : NO ACKs2mu004_initialization_routine: init(0)
+s2mu004_initialization_routine: revision: 2, reg 0x48: 0x23
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0xA3
+chg_get_charger_status: cable_type(3), vbus_status(1)
+WA_0_issue_at_init: a = 0x34
+s2mu004_init_fuelgauge: Fuelgauge Reset
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+s2mu004_fuel_gauge_read_soc_four_digits: raw capacity (0x0:0)
+s2mu004_fuel_gauge_read_vcell: vbat(3255), src(0x01)
+s2mu004_init_fuelgauge: SOC(0), VCELL(3255)
+s2mu004_fuel_gauge_read_avg_current: ONOUT(0xFFC7)
+s2mu004_fuel_gauge_read_avg_current: current result (13)mA
+s2mu004_fuel_gauge_read_vcell: avg_vbat (3254)
+s2mu004_fuel_gauge_read_vcell: vbat(3255), src(0x01)
+s2mu004_fuel_gauge_read_current: rCUR_CC(0xF8F9)
+s2mu004_fuel_gauge_read_current: current result (439)mA
+s2mu004_fuel_gauge_read_soc_four_digits: raw capacity (0x0:0)
+s2mu004_get_soc_from_ocv: ocv (32530), soc (-193)
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0xA3
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3255), src(0x01)
+FgGetVoltage: 3255
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+ MuicGetJigType: 0
+s2mu004_fuel_gauge_read_soc: raw capacity (0x0:0)
+s2mu004_fuel_gauge_read_soc: SOC 2 digit accuracy: 0%
+FgGetSoc: 0
+CheckLowBattery : jig=0, vcell=3255, soc=0
+[set_charging_current_by_type]
+s2mu004_fuel_gauge_read_vcell: vbat(3255), src(0x01)
+s2mu004_CHG_set_FAST_CHG_CURRENT: 0x53
+[charger_enable_charging]
+s2mu004_set_charger_state: (1, 1)
+s2mu004_set_buck_enable: CTRL0(0x83)
+s2mu004_set_charge_enable: CTRL0(0x83)
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0xA3
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3255), src(0x01)
+FgGetVoltage: 3255
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3260), src(0x01)
+FgGetVoltage: 3260
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3260), src(0x01)
+FgGetVoltage: 3260
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3260), src(0x01)
+FgGetVoltage: 3260
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3415), src(0x01)
+FgGetVoltage: 3415
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3415), src(0x01)
+FgGetVoltage: 3415
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3415), src(0x01)
+FgGetVoltage: 3415
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3415), src(0x01)
+FgGetVoltage: 3415
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3421), src(0x01)
+FgGetVoltage: 3421
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3421), src(0x01)
+FgGetVoltage: 3421
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3421), src(0x01)
+FgGetVoltage: 3421
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3421), src(0x01)
+FgGetVoltage: 3421
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3431), src(0x01)
+FgGetVoltage: 3431
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3431), src(0x01)
+FgGetVoltage: 3431
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3431), src(0x01)
+FgGetVoltage: 3431
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3431), src(0x01)
+FgGetVoltage: 3431
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3446), src(0x01)
+FgGetVoltage: 3446
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3446), src(0x01)
+FgGetVoltage: 3446
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3446), src(0x01)
+FgGetVoltage: 3446
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3446), src(0x01)
+FgGetVoltage: 3446
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3455), src(0x01)
+FgGetVoltage: 3455
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3455), src(0x01)
+FgGetVoltage: 3455
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3455), src(0x01)
+FgGetVoltage: 3455
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3455), src(0x01)
+FgGetVoltage: 3455
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3461), src(0x01)
+FgGetVoltage: 3461
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3461), src(0x01)
+FgGetVoltage: 3461
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3461), src(0x01)
+FgGetVoltage: 3461
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3461), src(0x01)
+FgGetVoltage: 3461
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3463), src(0x01)
+FgGetVoltage: 3463
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3463), src(0x01)
+FgGetVoltage: 3463
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3463), src(0x01)
+FgGetVoltage: 3463
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3463), src(0x01)
+FgGetVoltage: 3463
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3476), src(0x01)
+FgGetVoltage: 3476
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3476), src(0x01)
+FgGetVoltage: 3476
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3476), src(0x01)
+FgGetVoltage: 3476
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3476), src(0x01)
+FgGetVoltage: 3476
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3482), src(0x01)
+FgGetVoltage: 3482
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3482), src(0x01)
+FgGetVoltage: 3482
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3482), src(0x01)
+FgGetVoltage: 3482
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3482), src(0x01)
+FgGetVoltage: 3482
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3488), src(0x01)
+FgGetVoltage: 3488
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3488), src(0x01)
+FgGetVoltage: 3488
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3488), src(0x01)
+FgGetVoltage: 3488
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3488), src(0x01)
+FgGetVoltage: 3488
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3487), src(0x01)
+FgGetVoltage: 3487
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3487), src(0x01)
+FgGetVoltage: 3487
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3487), src(0x01)
+FgGetVoltage: 3487
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3487), src(0x01)
+FgGetVoltage: 3487
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3495), src(0x01)
+FgGetVoltage: 3495
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3495), src(0x01)
+FgGetVoltage: 3495
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3495), src(0x01)
+FgGetVoltage: 3495
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3495), src(0x01)
+FgGetVoltage: 3495
+Charging for 3500mV
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+Not ADC Oriented Device
+[get_wireless_status]
+s2mu004_get_wireless_charger_detect: CHG_STATUS0=0x63
+chg_get_charger_status: cable_type(3), vbus_status(1)
+ChgGetChargerStatus: 3
+s2mu004_fuel_gauge_read_vcell: vbat(3504), src(0x01)
+FgGetVoltage: 3504
+Charging for 3500mV
+Now, Start Booting...
+get_battery_temperature: ADC VALUE[0] success[5]
+get_battery_temperature: ADC VALUE[9440]
+get_battery_temperature: Temp(188), Temp-ADC(9440)
+GetBattTemp: 188
+Recovery command: 32 bootonce-bootloader
+Booting Into Recovery Mode
+Booting Into Recovery Mode
+Loading Image Start : 72119 ms
+Loading Image Done : 72119 ms
+Total Image Read size : 4096 Bytes
+Loading Image Start : 72119 ms
+Loading Image Done : 72230 ms
+Total Image Read size : 28831744 Bytes
+QseecomStartApp (bksecapp) call success status=0, AppId=131074
+[EMC] f: 0x3
+[EMC] F: U
+[EMC]00 00 00 00
+EMC Fuse Status : 0
+challenge_size is 0, 0
+Oem unlock value is 1
+init cc mode flag 0x0
+[MDM] mdm_value : 0 
+[AFW] afw_value  : 0
+[RMM] RmmCryptoCheckIntegrity : Integrity is broken
+[RMM] The block is all zero(index 0)
+[RMM] RmmCryptoCheckIntegrity : Integrity is broken
+[RMM] The block is all zero(index 1)
+Will return ImageStatus 0[0x3] to DevAuth 
+Will return ImageStatus 1[0x2] to DevAuth 
+Will return ImageStatus 2[0x4] to DevAuth 
+Will return ImageStatus 3[0x4] to DevAuth 
+Will return ImageStatus 4[0x4] to DevAuth 
+Will return ImageStatus 5[0x4] to DevAuth 
+Will return ImageStatus 6[0x4] to DevAuth 
+Will return ImageStatus 7[0x4] to DevAuth 
+Will return ImageStatus 8[0x4] to DevAuth 
+Will return ImageStatus 9[0x0] to DevAuth 
+Will return ImageStatus 10[0x0] to DevAuth 
+Will return ImageStatus 11[0x0] to DevAuth 
+init cc mode flag 0x0
+[MDM] mdm_value : 0 
+[AFW] afw_value  : 0
+[RMM] RmmCryptoCheckIntegrity : Integrity is broken
+[RMM] The block is all zero(index 0)
+[RMM] RmmCryptoCheckIntegrity : Integrity is broken
+[RMM] The block is all zero(index 1)
+Will return ImageStatus 0[0x3] to DevAuth 
+Will return ImageStatus 1[0x2] to DevAuth 
+Will return ImageStatus 2[0x4] to DevAuth 
+Will return ImageStatus 3[0x4] to DevAuth 
+Will return ImageStatus 4[0x4] to DevAuth 
+Will return ImageStatus 5[0x4] to DevAuth 
+Will return ImageStatus 6[0x4] to DevAuth 
+Will return ImageStatus 7[0x4] to DevAuth 
+Will return ImageStatus 8[0x4] to DevAuth 
+Will return ImageStatus 9[0x0] to DevAuth 
+Will return ImageStatus 10[0x0] to DevAuth 
+Will return ImageStatus 11[0x0] to DevAuth 
+Loading Image Start : 72299 ms
+Loading Image Done : 72299 ms
+Total Image Read size : 4096 Bytes
+Loading Image Start : 72299 ms
+Loading Image Done : 72406 ms
+Total Image Read size : 28831744 Bytes
+[TIMA trusted boot]: Boot-time measurement successful
+Downloading recovery, SWREV = 5USER KERNEL
+(Booting) AUTHENTICATE Succeed Recovery binary: recovery
+recovery Updated status 2
+[Sec_Lib]ddi : saved
+will update ImageStatus 0[0x3] to storage 
+will update ImageStatus 1[0x2] to storage 
+will update ImageStatus 2[0x4] to storage 
+will update ImageStatus 3[0x4] to storage 
+will update ImageStatus 4[0x4] to storage 
+will update ImageStatus 5[0x4] to storage 
+will update ImageStatus 6[0x4] to storage 
+will update ImageStatus 7[0x4] to storage 
+will update ImageStatus 8[0x4] to storage 
+will update ImageStatus 9[0x0] to storage 
+will update ImageStatus 10[0x0] to storage 
+will update ImageStatus 11[0x0] to storage 
+[Sec_Lib]ddi : saved
+iccc_write_bl_data:
+TZ informed of recovery status: 1
+Memory Base Address: 0x80000000
+Decompressing kernel image start: 72814 ms
+Decompressing kernel image done: 73339 ms
+UFS Vendor : SAMSUNG
+FW rev : 0001
+product : KLUCG2K1EA-B0C1
+UFS MD : 1018
+Error getting charger info: Device Error
+sec_update_cmdline start
+ Orig : console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=2048 firmware_class.path=ccic_check_active
+ CheckActive: 1
+ FgGetFgReset: 1
+[UCS] ucs flag is Unknown
+[UCS] ucs flag : 00 00 00 00
+[UCS] ucs_value  : 0
+Memory Base Address: 0x80000000
+USRF : GetUserPartitionFlashed = 0x55535246
+SEC CMDLINE : console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=2048 firmware_class.path=/vendor/firmware_mntCmdline: console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=2048 firmware_class.path=/vendor/firmware_mnt/imag
+BootLinux: GetImage failed!Add DTB entry 0x124/00000008/0x00000006/0x20001/0x20014/0x0/0x20018/0x0/0x7D9DB25E/0x66AAE
+Add DTB entry 0x124/00000008/0x00000001/0x20001/0x20014/0x0/0x20018/0x0/0x7DA41D0C/0x66574
+Add DTB entry 0x124/00000008/0x00000003/0x20001/0x20014/0x0/0x20018/0x0/0x7DAA8280/0x66DF3
+Add DTB entry 0x124/00000008/0x00000002/0x20001/0x20014/0x0/0x20018/0x0/0x7DB0F073/0x66AAE
+Add DTB entry 0x124/00000008/0x00000000/0x20001/0x20014/0x0/0x20018/0x0/0x7DB75B21/0x6606F
+Add DTB entry 0x124/00000008/0x00000004/0x20001/0x20014/0x0/0x20018/0x0/0x7DBDBB90/0x66AAE
+Delete don't fit DTB entry 292/00000008/0x00000001/20001/20014/0/20018/0/7DA41D0C/66574
+Delete don't fit DTB entry 292/00000008/0x00000003/20001/20014/0/20018/0/7DAA8280/66DF3
+Delete don't fit DTB entry 292/00000008/0x00000002/20001/20014/0/20018/0/7DB0F073/66AAE
+Delete don't fit DTB entry 292/00000008/0x00000000/20001/20014/0/20018/0/7DB75B21/6606F
+Delete don't fit DTB entry 292/00000008/0x00000004/20001/20014/0/20018/0/7DBDBB90/66AAE
+Best match DTB tags 292/00000008/0x00000006/20001/20014/0/20018/0/(offset)0x7D9DB25E/(size)0x00066AAE
+Using pmic info 0x20014/0x0/0x20018/0x0 for device 0x20014/0x0/0x20018/0x0
+Memory Base Address: 0x80000000
+[73345] +UpdateDeviceTree
+RAM Partitions
+Adding Base: 0x0000000080000000 Available Length: 0x0000000080000000 
+Adding Base: 0x0000000100000000 Available Length: 0x000000007E4C0000 
+reg = <0x00000000 0x9D600000 0x00000000 0x02400000>
+reg = <0x00000000 0x9D400000 0x00000000 0x02400000>
+kaslr-Seed is added to chosen node
+ERROR: deleted sec_debug_region node ...
+S2MM005_read_adc: RID = 7
+(RID_OPEN)
+[MUIC] ADC Value : 0x07, Chager Type : 0x01, Vbus Status : 0x01
+ GetDeviceType: 3
+[73451] -UpdateDeviceTree
+[SWP] Value : 0x13 
+[SWP]Success, #1 is locked(Success) 1
+[SWP]Success, #2 is locked(Success) 1
+[SWP]Success, #3 is locked(Success) 1
+
+Shutting Down UEFI Boot Services: 73460 ms
+MDPLibProfile: splash enabledBDS: LogFs sync skipped, No Media
+App Log Flush : 0 ms
+Exit BS        [73463] UEFI End

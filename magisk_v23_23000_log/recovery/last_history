@@ -1,0 +1,341 @@
++ [Tz]
+--delete_efs_ota
+--data_resizing
+--delete_apn_changes
+reboot reason : [odin]RebootRecoveryAfterOdinDL 
+-
++ [Tz]
+--delete_efs_ota
+--data_resizing
+--delete_apn_changes
+reboot reason : [odin]RebootRecoveryAfterOdinDL 
+-
++ [Tz]
+--carry_out=csc_factory
+--data_resizing
+reboot reason : [odin]RebootRecoveryAfterOdinDL 
+-
++ [rr]
+--update_package=@/cache/recovery/block.map
+--update_org_package=/data/fota/update.zip
+--carry_out=open_fota
+--locale=en-US
+reboot reason : Thread-6:29516 [FOTA][IDM_FOTA][IDMFumoExecutorUpdateInProgress] 
+-
++ [xX]
+--update_package=@/cache/recovery/block.map
+--update_org_package=/data/fota/update.zip
+--carry_out=open_fota
+--locale=en-US
+reboot reason : Thread-8:6171 [FOTA][IDM_FOTA][IDMFumoExecutorUpdateInProgress] 
+-
++ [Ps]
+--update_package=@/cache/recovery/block.map
+--update_org_package=/data/fota/update.zip
+--carry_out=open_fota
+--locale=en-US
+reboot reason : Thread-8:10899 [FOTA][IDM_FOTA][IDMFumoExecutorUpdateInProgress] 
+-
++ [LM : 2017/9/12 15:26:49]
+--update_package=@/cache/recovery/block.map
+--locale=en-US
+--carry_out=open_fota
+--update_org_package=@/cache/recovery/block.map
+reboot reason : Thread-12:12637 RecoverySystem installPackage: --update_package=@/cache/recovery/blo 
+-
++ [qb : 2017/9/21 17:35:35]
+--wipe_data
+--reason=MasterClearConfirm
+--locale=en-US
+reboot reason : Reboot:26575 RecoverySystemMasterClearConfirm 
+-
++ [\] : 2017/9/21 17:41:36]
+reboot reason : [BootChecker]RebootRecoveryWithKey 
+-
++ [GO : 2017/10/3 11:9:0]
+--wipe_data
+--reason=MasterClearConfirm
+--locale=en-US
+reboot reason : Reboot:18376 RecoverySystemMasterClearConfirm 
+-
++ [VS | 2017/07/27 01:02:12 | T835JXU4CTF6]
+--wipe_cache
+NP
+reboot_reason=[odin]RebootRecoveryAfterOdinDL
++ [J[ | 2017/07/27 01:33:59 | T835JXU4CTF6]
+--data_resizing
+--delete_apn_changes
+NP
+reboot_reason=[odin]RebootRecoveryAfterOdinDL
++ [^[ | 2017/07/27 02:59:08 | T835JXU4CTF6]
+--wipe_cache
+NP
+reboot_reason=[BootChecker]RebootRecoveryWithKey
++ [sF | 2017/07/27 02:59:20 | T835JXU4CTF6]
+NP
+reboot_reason=[BootChecker]RebootRecoveryWithKey
++ [b] | 2017/07/27 03:01:41 | T835JXU4CTF6]
+NP
+reboot_reason=[BootChecker]RebootRecoveryWithKey
++ [_Z | 2017/07/27 03:02:07 | T835JXU4CTF6]
+NP
+reboot_reason=[BootChecker]RebootRecoveryWithKey
++ [LR | 2017/11/13 11:15:40 | T835JXU4CTF6]
+NP
+reboot_reason=[BootChecker]RebootRecoveryWithKey
++ [Om | 2017/11/15 02:23:26 | T835JXU4CTH1]
+--wipe_cache
+NP
+reboot_reason=[odin]RebootRecoveryAfterOdinDL
++ []N | 2017/12/25 05:55:46 | T835JXU4CTH1]
+NP
+reboot_reason=[BootChecker]RebootRecoveryWithKey
++ [Pb | 2017/12/25 06:01:35 | T835JXU4CTI4]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [Ov | 2017/03/11 01:36:32 | T835XXU4CTK1]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [gI | 2017/03/11 01:50:22 | T835XXU4CTK1]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [Q_ | 2017/03/11 01:52:21 | T835XXU4CTK1]
+NP
+reboot_reason=UNKNOWN
++ [[f | 2017/03/11 01:54:29 | T835XXU4CTK1]
+NP
+reboot_reason=UNKNOWN
++ [FB | 2017/03/11 02:01:01 | T835XXU4CTK1]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [Dt | 2017/03/11 02:01:55 | T835XXU4CTK1]
+NP
+reboot_reason=UNKNOWN
++ [Ac | 2017/03/11 02:05:36 | T835XXU4CTK1]
+NP
+reboot_reason=UNKNOWN
++ [u] | 2017/03/11 02:17:32 | T835JXU4CTI4]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [AG | 2017/03/11 07:34:38 | T835JXU4CTI4]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [iq | 2017/03/11 08:47:34 | T835XXU4CTK1]
+--data_resizing
+--delete_apn_changes
+NP
+reboot_reason=UNKNOWN
++ [vI | 2017/03/11 08:49:11 | T835XXU4CTK1]
+NP
+reboot_reason=UNKNOWN
++ [OV | 2017/03/11 08:51:54 | T835XXU4CTK1]
+NP
+reboot_reason=UNKNOWN
++ [C` | 2017/03/11 08:52:10 | T835XXU4CTK1]
+NP
+reboot_reason=UNKNOWN
++ [\S | 2017/03/11 08:56:21 | T835XXU4CTK1]
+NP
+reboot_reason=UNKNOWN
++ [\C | 2017/03/11 14:17:03 | T835JXU4CTI4]
+--data_resizing
+--delete_apn_changes
+NP
+reboot_reason=UNKNOWN
++ [H^ | 2017/02/02 08:31:24 | T835JXU4CTI4]
+NP
+reboot_reason=UNKNOWN
++ [SE | 2017/02/02 08:41:25 | T835JXS5CUC2]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [tt | 2017/03/15 09:45:41 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [ea | 2017/03/15 09:51:02 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [po | 2017/03/15 09:55:24 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [wx | 2017/03/15 09:56:33 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [oV | 2017/03/15 09:57:01 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [Zp | 2017/03/15 09:57:58 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [lJ | 2017/03/15 10:08:13 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [Hs | 2017/03/15 10:10:22 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [mx | 2017/03/15 10:11:31 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [nN | 2017/03/15 10:16:55 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [ao | 2017/03/15 11:24:34 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [NY | 2017/03/15 12:04:57 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [uR | 2017/03/15 12:10:11 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [`^ | 2017/03/15 12:24:24 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [hf | 2017/03/15 13:37:38 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [k^ | 2017/03/15 15:04:35 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [Dp | 2017/03/15 15:06:26 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [jq | 2017/03/15 15:16:43 | T835JXU5CUE2]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [UB | 2017/03/15 15:22:20 | T835JXU5CUE2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [Ta | 2017/03/15 15:33:01 | T835JXU5CUE2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [pa | 2017/03/15 15:33:50 | T835JXU5CUE2]
+NP
+reboot_reason=UNKNOWN
++ [sB | 2017/03/15 15:42:49 | T835JXU5CUE2]
+NP
+reboot_reason=UNKNOWN
++ [g\ | 2017/03/15 15:48:06 | T835JXU5CUE2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [_C | 2017/03/15 15:48:25 | T835JXU5CUE2]
+NP
+reboot_reason=UNKNOWN
++ [MZ | 2017/03/15 16:15:49 | T835JXU5CUE2]
+NP
+reboot_reason=UNKNOWN
++ [qV | 2017/03/15 16:20:43 | T835JXU5CUE2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [Mr | 2017/01/01 00:23:15 | T835JXU5CUE2]
+NP
+reboot_reason=UNKNOWN
++ [ai | 2017/01/01 01:41:29 | T835JXU5CUE2]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [dS | 2017/01/01 00:15:00 | T835JXU5CUE2]
+NP
+reboot_reason=UNKNOWN
++ [_E | 2017/01/01 00:28:15 | T835JXU5CUE2]
+NP
+reboot_reason=UNKNOWN
++ [lz | 2017/01/01 00:28:37 | T835JXU5CUE2]
+NP
+reboot_reason=UNKNOWN
++ [vg | 2017/01/01 00:36:13 | T835JXU5CUE2]
+NP
+reboot_reason=UNKNOWN
++ [Lh | 2017/01/01 00:43:41 | T835JXU5CUE2]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [Lf | 2017/01/01 01:17:38 | T835JXU5CUE2]
+NP
+reboot_reason=UNKNOWN
++ [GI | 2017/01/01 01:27:04 | T835JXS5CUC2]
+--wipe_cache
+NP
+reboot_reason=UNKNOWN
++ [RN | 2017/01/01 01:33:30 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [mC | 2017/01/01 01:46:39 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [YT | 2017/01/01 02:00:08 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [jI | 2017/01/01 02:05:29 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [QM | 2017/01/01 03:04:45 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [sN | 2017/01/01 03:06:55 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [Hv | 2017/01/01 03:11:49 | T835JXS5CUC2]
+--prompt_and_wipe_app_data
+--reason=RescueParty
+--locale=en_US
+NP
+reboot_reason=UNKNOWN
++ [fe | 2017/01/01 00:44:27 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [RG | 2017/01/01 02:38:51 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN
++ [YM | 2017/01/01 00:01:57 | T835JXS5CUC2]
+NP
+reboot_reason=UNKNOWN

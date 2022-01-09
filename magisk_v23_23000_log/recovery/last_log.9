@@ -1,0 +1,1607 @@
+[    0.000647][RN-A][6oo1] Starting recovery (pid 575) on Sun Jan  1 01:33:30 2017
+[    0.000805][RN-A][6oo1] recovery tmp log path : /efs/recovery/tmp_recovery.log
+[    0.000876][RN-A][6oo1] init_extra_history() : /efs/recovery/extra_history exists
+[    0.000948][RN-A][6oo1] no /efs/recovery/tmp_recovery.log file -> normal operation
+[    0.001019][RN-A][6oo1]
+[    0.001068][RN-A][6oo1] [collecting table information 2]
+[    0.001132][RN-A][6oo1] recovery filesystem table
+[    0.001191][RN-A][6oo1] =========================
+[    0.001258][RN-A][6oo1]   0 /odm  ext4 /dev/block/platform/soc/1da4000.ufshc/by-name/odm 0
+[    0.001345][RN-A][6oo1]   1 /system  ext4 /dev/block/platform/soc/1da4000.ufshc/by-name/system 0
+[    0.001435][RN-A][6oo1]   2 /vendor  ext4 /dev/block/platform/soc/1da4000.ufshc/by-name/vendor 0
+[    0.001526][RN-A][6oo1]   3 /boot  emmc /dev/block/bootdevice/by-name/boot 0
+[    0.001606][RN-A][6oo1]   4 /recovery  emmc /dev/block/bootdevice/by-name/recovery 0
+[    0.001690][RN-A][6oo1]   5 /system  ext4 /dev/block/bootdevice/by-name/system 0
+[    0.001789][RN-A][6oo1]   6 /data  ext4 /dev/block/bootdevice/by-name/userdata -16384
+[    0.001873][RN-A][6oo1]   7 /cache  ext4 /dev/block/bootdevice/by-name/cache 0
+[    0.001943][RN-A][6oo1]   8 /sdcard  sdfat /dev/block/mmcblk0p1 0
+[    0.002008][RN-A][6oo1]   9 /efs  ext4 /dev/block/bootdevice/by-name/efs 0
+[    0.002101][RN-A][6oo1]   10 /carrier  ext4 /dev/block/bootdevice/by-name/carrier 0
+[    0.002174][RN-A][6oo1]   11 /preload  ext4 /dev/block/bootdevice/by-name/hidden 0
+[    0.002278][RN-A][6oo1]   12 /modem  emmc /dev/block/bootdevice/by-name/apnhlos 0
+[    0.002350][RN-A][6oo1]   13 /mdm  emmc /dev/block/bootdevice/by-name/modem 0
+[    0.002419][RN-A][6oo1]   14 /dsp  emmc /dev/block/bootdevice/by-name/dsp 0
+[    0.002489][RN-A][6oo1]   15 /vendor  ext4 /dev/block/bootdevice/by-name/vendor 0
+[    0.002594][RN-A][6oo1]   16 /odm  ext4 /dev/block/bootdevice/by-name/odm 0
+[    0.002727][RN-A][6oo1]   17 /misc  emmc /dev/block/bootdevice/by-name/misc 0
+[    0.002842][RN-A][6oo1]   18 /tmp  ramdisk ramdisk 0
+[    0.002934][RN-A][6oo1]
+[    0.003022][RN-A][6oo1]
+[    0.003079][RN-A][6oo1] [initialize init-recovery]
+[    0.003168][RN-A][6oo1]
+[    0.003225][RN-A][6oo1] #mount -f /cache 
+[    0.003293][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.004218][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.004338][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.004428][RN-A][6oo1]
+[    0.004476][RN-A][6oo1] #ls /cache/recovery/ 
+[    0.005765][RN-A][6oo1] -rw------- system   system          0 2017-01-01 01:27 last_crash
+[    0.005847][RN-A][6oo1] -rw------- system   system     463658 2017-01-01 01:27 last_kmsg
+[    0.005941][RN-A][6oo1] -rw------- system   system       7164 2017-01-01 01:27 last_history
+[    0.006041][RN-A][6oo1] -rw-r--r-- system   system      24026 2017-01-01 01:27 last_last_kernel
+[    0.006165][RN-A][6oo1] -rw------- system   system       2684 2017-01-01 01:27 last_extra_history
+[    0.006310][RN-A][6oo1] -rw-r--r-- system   system      50109 2017-01-01 01:27 last_recovery
+[    0.006420][RN-A][6oo1] -rw------- root     root            5 2017-01-01 01:27 last_locale
+[    0.006509][RN-A][6oo1] -rw------- system   system         63 2021-10-27 04:57 command
+[    0.006616][RN-A][6oo1] -rw-r--r-- system   system          0 2017-01-01 01:27 last_install
+[    0.006704][RN-A][6oo1] -rw------- system   system      30850 2021-10-27 04:56 rescueparty_log
+[    0.006790][RN-A][6oo1] -rw-r--r-- system   system       1119 2017-01-01 01:27 last_avc_msg_recovery
+[    0.006889][RN-A][6oo1] -rw------- system   system          0 2017-01-01 01:27 last_extra_history_old
+[    0.007024][RN-A][6oo1] -rw-r----- system   system      49681 2017-01-01 01:27 last_log
+[    0.007099][RN-A][6oo1]
+[    0.007181][RN-A][6oo1] #ls /cache/fota/ 
+[    0.007238][RN-A][6oo1]
+[    0.007286][RN-A][6oo1] #unmount /cache 
+[    0.008562][RN-A][6oo1] /cache sucessfully unmounted
+[    0.008628][RN-A][6oo1]
+[    0.008679][RN-A][6oo1] #exec -f /system/bin/e2fsck -v -y /dev/block/bootdevice/by-name/cache 
+[    0.020935][RN-A][6oo1] e2fsck 1.44.4 (18-Aug-2018)
+[    0.024904][RN-A][6oo1] skipping journal recovery because INCOMPAT_RECOVER was clear.
+[    0.025049][RN-A][6oo1] check whether gdt & bitmap free count is vaild
+[    0.025742][RN-A][6oo1] cache: clean, 30/25600 files, 2812/102400 blocks
+[    0.027596][RN-A][6oo1]
+[    0.027660][RN-A][6oo1] #mount /cache 
+[    0.028041][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.029447][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.029544][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.029634][RN-A][6oo1]
+[    0.029740][RN-A][6oo1] #fcut --limited-file-size=1024k -f /cache/recovery/last_recovery /tmp/recovery_old.tmp 
+[    0.031027][RN-A][6oo1]
+[    0.031086][RN-A][6oo1] #ls /efs/ 
+[    0.031149][RN-A][6oo1] drwx------ root     root              1970-01-01 00:00 lost+found
+[    0.031236][RN-A][6oo1] drwxr-xr-x system   system            2017-01-01 00:00 carrier
+[    0.031325][RN-A][6oo1] drwxrwxr-x radio    system            2022-01-07 17:44 sec_efs
+[    0.031410][RN-A][6oo1] drwxrwx--- system   system            2018-11-28 02:44 prov
+[    0.031494][RN-A][6oo1] drwxrwx--- system   system            2018-11-28 02:44 prov_data
+[    0.031568][RN-A][6oo1] drwxrwx--x radio    system            2017-01-01 01:33 recovery
+[    0.031640][RN-A][6oo1] drwxrwxr-- drm      system            2017-01-01 00:00 drm
+[    0.031711][RN-A][6oo1] drwxrwx--x radio    system            2017-01-01 00:00 cpk
+[    0.031784][RN-A][6oo1] drwxrw---- spay     spay              2017-01-01 00:00 pfw_data
+[    0.031858][RN-A][6oo1] drwxrwx--- radio    system            2018-11-28 02:44 TEE
+[    0.031929][RN-A][6oo1] drwxrwx--- system   system            2019-10-26 03:50 ssm
+[    0.032002][RN-A][6oo1] drwxrwxr-x wifi     root              2018-11-28 02:44 wifi
+[    0.032078][RN-A][6oo1] drwxrwx--- audioserver audio             2017-01-01 00:00 maxim
+[    0.032166][RN-A][6oo1] drwxrwxr-x root     radio             2017-01-01 00:00 imei
+[    0.032250][RN-A][6oo1] drwxrwxr-x system   system            2018-11-28 02:44 DAK
+[    0.032339][RN-A][6oo1] drwxrwxr-x system   system            2019-01-17 19:13 FactoryApp
+[    0.032444][RN-A][6oo1] drwxrwxr-x radio    system            2017-01-01 00:00 Battery
+[    0.032549][RN-A][6oo1] drwx------ system   system            2017-01-01 00:00 etc
+[    0.032654][RN-A][6oo1] drwxrwx--- system   bluetooth          2018-11-28 02:44 bluetooth
+[    0.032773][RN-A][6oo1] drwx------ system   system            2019-05-26 22:33 sfs
+[    0.032849][RN-A][6oo1] drwxrwx--x radio    system            2018-11-28 02:04 usb_hw_param
+[    0.032924][RN-A][6oo1] -rw-rw-r-- radio    radio         152 2018-11-28 02:44 00000000.authtokcont
+[    0.033036][RN-A][6oo1] -rw-r--r-- system   system        144 2018-11-28 02:44 wv.keys
+[    0.033109][RN-A][6oo1] drwx------ system   system            2021-02-14 02:56 umc
+[    0.033180][RN-A][6oo1] drwxr--r-- system   system            2019-01-17 19:13 adp_token
+[    0.033253][RN-A][6oo1] -rw-rw---- root     root           16 2017-01-01 00:45 lpm_boot.log
+[    0.033343][RN-A][6oo1] drwx------ nfc      nfc               2017-06-22 14:42 nfc
+[    0.033421][RN-A][6oo1] drwxrwxr-x system   system            2017-03-15 09:40 lpm
+[    0.033507][RN-A][6oo1] drwx------ system   system            2017-07-27 01:02 mb_po
+[    0.033607][RN-A][6oo1] drwxrwxr-x system   system            2017-07-27 01:02 gatekeeper
+[    0.033696][RN-A][6oo1] -rwx------ radio    radio          30 2021-10-27 04:54 telephony.prop
+[    0.033785][RN-A][6oo1] drwx------ system   system            2020-07-01 19:45 sfsAlt
+[    0.033903][RN-A][6oo1]
+[    0.033960][RN-A][6oo1] #ls /efs/MDM/ 
+[    0.035002][RN-A][6oo1] /cache sucessfully unmounted
+[    0.035117][RN-A][6oo1] running init-recovery time : 0.034s
+[    0.035183][RN-A][6oo1]
+[    0.035232][RN-A][6oo1] [init-history]
+[    0.035289][RN-A][6oo1]
+[    0.035338][RN-A][6oo1] #df /efs 
+[    0.035437][RN-A][6oo1] Filesystem               Size         Used         Free       Blksize
+[    0.035513][RN-A][6oo1] /efs                    15.7M(16433152)  840.0K(860160)   14.9M(15572992) 4096
+[    0.035592][RN-A][6oo1]
+[    0.035640][RN-A][6oo1] #mkdir -f radio system 0771 /efs/recovery 
+[    0.035705][RN-A][6oo1]
+[    0.035755][RN-A][6oo1] #touch -f /efs/recovery/history 
+[    0.035829][RN-A][6oo1] running init-history time : 0.000s
+[    0.035901][RN-A][6oo1]
+[    0.035956][RN-A][6oo1] [collecting command]
+[    0.036022][RN-A][6oo1] read /sys/class/sec/sec_key/keycode_pressed = 115:0,116:0,114:0
+[    0.036107][RN-A][6oo1] ?…z
+[    0.036181][RN-A][6oo1] E:isManualModeByKeyPress: KEY_VOLUMEUP(0)
+[    0.036257][RN-A][6oo1] E:isManualModeByKeyPress: KEY_POWER(0)
+[    0.036332][RN-A][6oo1] E:isManualModeByKeyPress: KEY_VOLUMEDOWN(0)
+[    0.036408][RN-A][6oo1] E:isManualModeByKeyPress: ManualKeyPress(0)
+[    0.036483][RN-A][6oo1] I:main :: Check recovery command!!
+[    0.036872][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.038278][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.038369][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.039226][RN-A][6oo1] I:Got 4 arguments from /cache/recovery/command
+[    0.041152][RN-A][6oo1] save_header(), prefix : RN
+[    0.041424][RN-A][6oo1] copy_file '/efs/recovery/history' '/cache/recovery/last_history'
+[    0.051865][RN-A][6oo1] /proc/reset_reason : NP
+[    0.051949][RN-A][6oo1] save_resetreason() : Failed to open /proc/pwrsrc (No such file or directory)
+[    0.052088][RN-A][6oo1] /proc/store_lastkmsg : 1
+[    0.052173][RN-A][6oo1] save_resetreason() : Failed to open /proc/extra (No such file or directory)
+[    0.052283][RN-A][6oo1] /system/bin/recovery: unrecognized option `--prompt_and_wipe_app_data'
+[    0.052376][RN-A][6oo1] /system/bin/recovery: unrecognized option `--reason=RescueParty'
+[    0.052450][RN-A][6oo1] locale is [en_US]
+[    0.052548][RN-A][6oo1] Loading make_device from librecovery_ui_ext.so
+[    0.052955][RN-A][6oo1] I:Brightness file: /sys/class/leds/lcd-backlight/brightness
+[    0.053040][RN-A][6oo1] I:Max brightness file: /sys/class/leds/lcd-backlight/max_brightness
+[    0.053134][RN-A][6oo1] I:Brightness: 120 (50%)
+[    0.053206][RN-A][6oo1] pixel_format : UNKNOWN
+[    0.054322][RN-A][6oo1] Failed to find/open a drm device: No such file or directory
+[    0.054720][RN-A][6oo1] fb0 reports (possibly inaccurate):
+[    0.054801][RN-A][6oo1]   vi.bits_per_pixel = 32
+[    0.054869][RN-A][6oo1]   vi.red.offset   =   0   .length =   8
+[    0.054998][RN-A][6oo1]   vi.green.offset =   8   .length =   8
+[    0.055073][RN-A][6oo1]   vi.blue.offset  =  16   .length =   8
+[    0.078052][RN-A][6oo1] framebuffer: 0 (2560 x 1600)
+[    0.333360][RN-A][6oo1] dpi : xxhdpi
+[    0.333425][RN-A][6oo1] dpY = 3
+[    0.335055][RN-A][6oo1]           erasing_text: en_US (137 x 57 @ 1856)
+[    0.337119][RN-A][6oo1]        no_command_text: en_US (249 x 57 @ 1856)
+[    0.338585][RN-A][6oo1]             error_text: en_US (99 x 57 @ 1856)
+[    0.339354][RN-A][6oo1]   cancel_wipe_data_text: en (315 x 48 @ 714)
+[    0.340633][RN-A][6oo1]   factory_data_reset_text: en (816 x 48 @ 714)
+[    0.340781][RN-A][6oo1] E:Failed to load bitmap try_again_text (error -1)
+[    0.343583][RN-A][6oo1]   wipe_data_confirmation_text: en (1052 x 96 @ 1462)
+[    0.343817][RN-A][6oo1] E:Failed to load bitmap wipe_data_menu_header_text (error -1)
+[    0.343894][RN-A][6oo1]
+[    0.343938][RN-A][6oo1] sim_frames 12
+[    0.378545][RN-A][6oo1] intro_frames 0
+[    0.378624][RN-A][6oo1] loop_frames 15
+[    0.409832][RN-A][6oo1] Reboot Recovery Cause file exist
+[    0.409920][RN-A][6oo1] read_reboot_recovery_cause_file++
+[    0.410044][RN-A][6oo1]
+[    0.410091][RN-A][6oo1] #fail to open recovery_cause(No such file or directory)#
+[    0.410152][RN-A][6oo1] read_reboot_recovery_cause_file(-2)--
+[    0.410211][RN-A][6oo1] Reboot Recovery Cause couldn't be read from file, so [UNKNOWN]
+[    0.410274][RN-A][6oo1]
+[    0.410312][RN-A][6oo1] #Reboot Recovery Cause is [UNKNOWN]#
+[    0.416866][RN-A][6oo1]
+[    0.416907][RN-A][6oo1] #Reboot Recovery Cause is [UNKNOWN]#
+[    0.416958][RN-A][6oo1]
+[    0.416995][RN-A][6oo1] [reboot-reason-history]
+[    0.417043][RN-A][6oo1] save_recovery_cause() : reboot_reason=UNKNOWN
+[    0.417109][RN-A][6oo1] copy_file '/efs/recovery/history' '/cache/recovery/last_history'
+[    0.420637][RN-A][6oo1] /system/bin/fastbootd can't be invoked (No such file or directory)
+[    0.420716][RN-A][6oo1] check the MDM policy. retry(1)
+[    0.420775][RN-A][6oo1] I:/efs is already mounted
+[    0.420830][RN-A][6oo1] check_MDM_policy: /efs is mounted normally
+[    0.420895][RN-A][6oo1] check_MDM_policy: /efs/MDM/FactoryReset does not exist. MDM allows factoryReset (No such file or directory)
+[    0.421039][RN-A][6oo1] W:[libfs_mgr]Failed to umount /efs: Device or resource busy
+[    0.421111][RN-A][6oo1] check_MDM_policy: can't unmount /efs (Device or resource busy)
+[    0.421175][RN-A][6oo1] check_MDM_policy: ret 1
+[    0.445533][RN-A][6oo1] I:locale is [en_US]
+[    0.449253][RN-A][6oo1] SELinux:  Skipping /product_file_contexts:  empty file
+[    0.449367][RN-A][6oo1] SELinux:  Skipping /odm_file_contexts:  empty file
+[    0.449525][RN-A][6oo1] SELinux: Loaded file_contexts
+[    0.449687][RN-A][6oo1] main() : usb_config = none, usb_state = none
+[    0.449836][RN-A][6oo1] ro.boot.boot_recovery=1 
+[    0.449897][RN-A][6oo1] rtn_config value is empty.
+[    0.449955][RN-A][6oo1] stage is []
+[    0.450004][RN-A][6oo1] reason is [RescueParty]
+[    0.450119][RN-A][6oo1] #Reason is [RescueParty]#
+[    0.462101][RN-A][6oo1] #Reason is [RescueParty]#
+[    0.462160][RN-A][6oo1] requested_time is [(null)]
+[    0.462208][RN-A][6oo1]
+[    0.462244][RN-A][6oo1] [read csc code]
+[    0.462288][RN-A][6oo1] I:/efs is already mounted
+[    0.463285][RN-A][6oo1] W:[libfs_mgr]Failed to umount /efs: Device or resource busy
+[    0.463346][RN-A][6oo1] can't unmount /efs - Device or resource busy
+[    0.463456][RN-A][6oo1] read csc code = 'EGY'
+[    0.463505][RN-A][6oo1] Use simple ui.
+[    0.466583][RN-A][6oo1]        installing_text: en_US (459 x 57 @ 1856)
+[    0.495384][RN-A][6oo1] kernel_version : Linux version 4.4.205-19646842 (dpi@SWDH4620) (gcc version 4.9.x 20150123 (prerelease) (GCC) ) #1 SMP PREEMPT Thu Mar 25 15:07:26 KST 2021
+[    0.495539][RN-A][6oo1]
+[    0.495586][RN-A][6oo1] Command: "/system/bin/recovery" "--prompt_and_wipe_app_data" "--reason=RescueParty" "--locale=en_US"
+[    0.495678][RN-A][6oo1]
+[    0.495721][RN-A][6oo1] update_package = (null)
+[    0.495778][RN-A][6oo1] should_wipe_data = 0, should_wipe_cache = 0,wipe_sdcard = 0,should_wipe_carrier = 0,no_wipe_custom=0
+[    0.495857][RN-A][6oo1] data_resizing = 0
+[    0.495900][RN-A][6oo1] update_factory_csc = 0, update_home_csc = 0, factory_fota = 0
+[    0.495959][RN-A][6oo1] carry_out = (null)
+[    0.496002][RN-A][6oo1] tima_kernel_recovery = 0
+[    0.496047][RN-A][6oo1] just_exit = 0
+[    0.496088][RN-A][6oo1] omc_binary_download = 0
+[    0.496133][RN-A][6oo1] delete_apn_changes = 0
+[    0.496177][RN-A][6oo1] color_id_wallpaper = 0
+[    0.496221][RN-A][6oo1] check_carrier_format = 0
+[    0.496266][RN-A][6oo1] should_prompt_and_wipe_data = 0
+[    0.496322][RN-A][6oo1] should_prompt_and_wipe_app_data = 1
+[    0.496383][RN-A][6oo1] rescue = 0
+[    0.496433][RN-A][6oo1]
+[    0.496478][RN-A][6oo1]
+[    0.496523][RN-A][6oo1]
+[    0.496567][RN-A][6oo1] [property list]
+[    0.496625][RN-A][6oo1] persist.audio.fluence.voicecomm=true
+[    0.496690][RN-A][6oo1] ro.bluetooth.a2dp_offload.supported=true
+[    0.496755][RN-A][6oo1] persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
+[    0.496830][RN-A][6oo1] persist.bluetooth.a2dp_offload.disabled=false
+[    0.496894][RN-A][6oo1] vendor.bluetooth.soc=cherokee
+[    0.496996][RN-A][6oo1] persist.vendor.btstack.enable.splita2dp=true
+[    0.497057][RN-A][6oo1] persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+[    0.497121][RN-A][6oo1] ro.boot.dram_info=FF,03,00,4G
+[    0.497172][RN-A][6oo1] ro.boottime.init=4683
+[    0.497220][RN-A][6oo1] ro.boottime.init.selinux=74
+[    0.497270][RN-A][6oo1] ro.boottime.init.cold_boot_wait=1445
+[    0.497324][RN-A][6oo1] ro.boottime.ueventd=4849220258
+[    0.497375][RN-A][6oo1] ro.boottime.recovery=6321012757
+[    0.497426][RN-A][6oo1] persist.vendor.cne.feature=0
+[    0.497484][RN-A][6oo1] ro.cfg.freelimit_val=17
+[    0.497541][RN-A][6oo1] ro.cfg.dha_cached_max=18
+[    0.497595][RN-A][6oo1] ro.cfg.custom_sw_limit=325
+[    0.497651][RN-A][6oo1] ro.cfg.custom_tm_limit=1000
+[    0.497706][RN-A][6oo1] ro.cfg.upgrade_pressure=75
+[    0.497760][RN-A][6oo1] ro.cfg.enable_reentry_lmk=true
+[    0.497817][RN-A][6oo1] ro.cfg.kill_heaviest_task=true
+[    0.497875][RN-A][6oo1] ro.cfg.enable_userspace_lmk=true
+[    0.497932][RN-A][6oo1] ro.config.knox=v30
+[    0.497983][RN-A][6oo1] ro.config.knox.ucm=1
+[    0.498031][RN-A][6oo1] ro.config.tima=1
+[    0.498072][RN-A][6oo1] ro.config.dmverity=G
+[    0.498117][RN-A][6oo1] ro.config.fha_enable=true
+[    0.498162][RN-A][6oo1] ro.config.ringtone_2=Basic_Bell.ogg
+[    0.498211][RN-A][6oo1] ro.config.media_sound=Media_preview_Touch_the_light.ogg
+[    0.498267][RN-A][6oo1] ro.config.timaversion=3.0
+[    0.498313][RN-A][6oo1] ro.config.add_bonusEFK=1
+[    0.498357][RN-A][6oo1] ro.config.iccc_version=3.0
+[    0.498403][RN-A][6oo1] ro.config.dha_lmk_scale=1.0
+[    0.498449][RN-A][6oo1] ro.config.freelimit_val=17
+[    0.498500][RN-A][6oo1] ro.config.dha_cached_max=16
+[    0.498556][RN-A][6oo1] ro.config.dha_cached_min=4
+[    0.498610][RN-A][6oo1] ro.config.custom_sw_limit=250
+[    0.498667][RN-A][6oo1] ro.config.timaversion_info=Knox3.4_S.R.R
+[    0.498730][RN-A][6oo1] ro.config.upgrade_pressure=50
+[    0.498791][RN-A][6oo1] ro.config.rm_preload_enabled=1
+[    0.498851][RN-A][6oo1] ro.config.fall_prevent_enable=true
+[    0.498913][RN-A][6oo1] ro.config.notification_sound_2=S_Charming_Bell.ogg
+[    0.498986][RN-A][6oo1] ro.boot.cp_reserved_mem=off
+[    0.499047][RN-A][6oo1] ro.bionic.arch=arm64
+[    0.499096][RN-A][6oo1] ro.bionic.2nd_arch=arm
+[    0.499143][RN-A][6oo1] ro.bionic.cpu_variant=generic
+[    0.499194][RN-A][6oo1] ro.bionic.2nd_cpu_variant=cortex-a73
+[    0.499246][RN-A][6oo1] dalvik.vm.minidebuginfo=true
+[    0.499296][RN-A][6oo1] dalvik.vm.dex2oat-minidebuginfo=true
+[    0.499350][RN-A][6oo1] dalvik.vm.dex2oat-max-image-block-size=524288
+[    0.499407][RN-A][6oo1] dalvik.vm.dex2oat-resolve-startup-strings=true
+[    0.499464][RN-A][6oo1] ro.boot.debug_level=0x4f4c
+[    0.499512][RN-A][6oo1] debug.sf.hw=1
+[    0.499557][RN-A][6oo1] debug.sf.enable_hwc_vds=1
+[    0.499616][RN-A][6oo1] debug.sf.latch_unsignaled=1
+[    0.499675][RN-A][6oo1] debug.atrace.tags.enableflags=0
+[    0.499737][RN-A][6oo1] debug.gralloc.enable_fb_ubwc=1
+[    0.499797][RN-A][6oo1] debug.stagefright.omx_default_rank=0
+[    0.499862][RN-A][6oo1] debug.stagefright.omx_default_rank.sw-audio=1
+[    0.499925][RN-A][6oo1] bt.max.hfpclient.connections=1
+[    0.499981][RN-A][6oo1] mm.enable.smoothstreaming=true
+[    0.500038][RN-A][6oo1] ro.cmc.version=2.0
+[    0.500089][RN-A][6oo1] ro.cmc.device_type=sd
+[    0.500140][RN-A][6oo1] ro.nfc.port=I2C
+[    0.500183][RN-A][6oo1] ro.opa.eligible_device=true
+[    0.500229][RN-A][6oo1] ro.hwui.path_cache_size=32
+[    0.500275][RN-A][6oo1] ro.hwui.layer_cache_size=48
+[    0.500321][RN-A][6oo1] ro.hwui.texture_cache_size=72
+[    0.500368][RN-A][6oo1] ro.hwui.gradient_cache_size=1
+[    0.500415][RN-A][6oo1] ro.hwui.r_buffer_cache_size=8
+[    0.500463][RN-A][6oo1] ro.hwui.drop_shadow_cache_size=6
+[    0.500512][RN-A][6oo1] ro.hwui.text_large_cache_width=2048
+[    0.500561][RN-A][6oo1] ro.hwui.text_small_cache_width=1024
+[    0.500612][RN-A][6oo1] ro.hwui.text_large_cache_height=4096
+[    0.500671][RN-A][6oo1] ro.hwui.text_small_cache_height=1024
+[    0.500730][RN-A][6oo1] ro.hwui.texture_cache_flushrate=0.4
+[    0.500795][RN-A][6oo1] ro.smps.enable=true
+[    0.500847][RN-A][6oo1] ro.wifi.channels=
+[    0.500898][RN-A][6oo1] ro.allow.mock.location=0
+[    0.500952][RN-A][6oo1] ro.build.keys=test-keys
+[    0.501005][RN-A][6oo1] ro.build.scafe.version=2020A
+[    0.501063][RN-A][6oo1] ro.build.flavor=gts4lltexx-user
+[    0.501125][RN-A][6oo1] ro.build.selinux=1
+[    0.501180][RN-A][6oo1] ro.build.selinux.enforce=1
+[    0.501230][RN-A][6oo1] ro.build.version.sem=2902
+[    0.501280][RN-A][6oo1] ro.build.version.sep=110100
+[    0.501330][RN-A][6oo1] ro.build.version.all_codenames=REL
+[    0.501383][RN-A][6oo1] ro.build.version.security_index=1
+[    0.501436][RN-A][6oo1] ro.build.version.preview_sdk_fingerprint=REL
+[    0.501493][RN-A][6oo1] ro.build.version.min_supported_target_sdk=23
+[    0.501550][RN-A][6oo1] ro.build.2ndbrand=false
+[    0.501599][RN-A][6oo1] ro.build.official.release=true
+[    0.501649][RN-A][6oo1] ro.build.changelist=19646842
+[    0.501702][RN-A][6oo1] ro.build.sw_version=T835JXS5CUC2
+[    0.501762][RN-A][6oo1] ro.build.tf_modelnumber=SM-T835
+[    0.501824][RN-A][6oo1] ro.build.display_build_number=true
+[    0.501887][RN-A][6oo1] ro.iorapd.enable=false
+[    0.501943][RN-A][6oo1] ro.system.build.id=QP1A.190711.020
+[    0.502006][RN-A][6oo1] ro.system.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.502077][RN-A][6oo1] ro.system.build.date.utc=1616652039
+[    0.502140][RN-A][6oo1] ro.system.build.tags=release-keys
+[    0.502202][RN-A][6oo1] ro.system.build.type=user
+[    0.502256][RN-A][6oo1] ro.system.build.version.sdk=29
+[    0.502307][RN-A][6oo1] ro.system.build.version.sehi=2903
+[    0.502355][RN-A][6oo1] ro.system.build.version.release=10
+[    0.502403][RN-A][6oo1] ro.system.build.version.incremental=T835JXS5CUC2
+[    0.502457][RN-A][6oo1] ro.system.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.502532][RN-A][6oo1] ro.treble.enabled=true
+[    0.502576][RN-A][6oo1] ro.product.locale=en-GB
+[    0.502621][RN-A][6oo1] ro.qualcomm.cabl=1
+[    0.502664][RN-A][6oo1] ro.bluetooth.a4wp=false
+[    0.502709][RN-A][6oo1] ro.bluetooth.wipower=true
+[    0.502758][RN-A][6oo1] ro.bluetooth.emb_wp_mode=true
+[    0.502814][RN-A][6oo1] ro.bluetooth.library_name=libbluetooth.so
+[    0.502876][RN-A][6oo1] ro.user_trial=FALSE
+[    0.502927][RN-A][6oo1] ro.postinstall.fstab.prefix=/system
+[    0.502986][RN-A][6oo1] ro.factory_mode=0
+[    0.503038][RN-A][6oo1] ro.actionable_compatible_property.enabled=true
+[    0.503102][RN-A][6oo1] mmp.enable.3g2=true
+[    0.503154][RN-A][6oo1] sdm.debug.disable_skip_validate=1
+[    0.503212][RN-A][6oo1] sdm.perf_hint_window=50
+[    0.503266][RN-A][6oo1] init.svc.ueventd=running
+[    0.503316][RN-A][6oo1] init.svc.recovery=running
+[    0.503361][RN-A][6oo1] qcom.hw.aac.encoder=true
+[    0.503409][RN-A][6oo1] qcom.bluetooth.soc=cherokee
+[    0.503460][RN-A][6oo1] qemu.hw.mainkeys=0
+[    0.503506][RN-A][6oo1] rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+[    0.503567][RN-A][6oo1] vidc.enc.dcvs.extra-buff-count=2
+[    0.503619][RN-A][6oo1] audio.sys.noisy.broadcast.delay=600
+[    0.503672][RN-A][6oo1] audio.sys.offload.pstimeout.secs=3
+[    0.503723][RN-A][6oo1] media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+[    0.503785][RN-A][6oo1] media.stagefright.enable-aac=true
+[    0.503846][RN-A][6oo1] media.stagefright.enable-qcp=true
+[    0.503909][RN-A][6oo1] media.stagefright.enable-http=true
+[    0.503972][RN-A][6oo1] media.stagefright.enable-scan=true
+[    0.504035][RN-A][6oo1] media.stagefright.enable-fma2dp=true
+[    0.504099][RN-A][6oo1] media.stagefright.enable-player=true
+[    0.504164][RN-A][6oo1] media.aac_51_output_enabled=true
+[    0.504227][RN-A][6oo1] tunnel.audio.encode=true# end of device/samsung/gts4llte/system.prop
+[    0.504308][RN-A][6oo1] persist.mm.enable.prefetch=true
+[    0.504367][RN-A][6oo1] persist.ts.rtmakeup=false
+[    0.504416][RN-A][6oo1] persist.hwc.enable_vds=1
+[    0.504462][RN-A][6oo1] persist.data.netmgrd.qos.enable=true
+[    0.504512][RN-A][6oo1] persist.demo.hdmirotationlock=false
+[    0.504568][RN-A][6oo1] persist.rild.nitz_plmn=
+[    0.504615][RN-A][6oo1] persist.rild.nitz_long_ons_0=
+[    0.504663][RN-A][6oo1] persist.rild.nitz_long_ons_1=
+[    0.504710][RN-A][6oo1] persist.rild.nitz_long_ons_2=
+[    0.504757][RN-A][6oo1] persist.rild.nitz_long_ons_3=
+[    0.504805][RN-A][6oo1] persist.rild.nitz_short_ons_0=
+[    0.504854][RN-A][6oo1] persist.rild.nitz_short_ons_1=
+[    0.504931][RN-A][6oo1] persist.rild.nitz_short_ons_2=
+[    0.504992][RN-A][6oo1] persist.rild.nitz_short_ons_3=
+[    0.505051][RN-A][6oo1] persist.backup.ntpServer=0.pool.ntp.org
+[    0.505112][RN-A][6oo1] persist.fuse_sdcard=true
+[    0.505166][RN-A][6oo1] restore.feature.use_samsung_smart_switch_flow=1
+[    0.505232][RN-A][6oo1] DEVICE_PROVISIONED=1
+[    0.505287][RN-A][6oo1] security.securehw.available=false
+[    0.505347][RN-A][6oo1] security.securenvm.available=false
+[    0.505406][RN-A][6oo1] ro.config.ringtone=Over_the_Horizon.ogg
+[    0.505466][RN-A][6oo1] ro.config.alarm_alert=Morning_Glory.ogg
+[    0.505516][RN-A][6oo1] ro.config.notification_sound=Skyline.ogg
+[    0.505566][RN-A][6oo1] ro.boot.em.did=205E07B88522
+[    0.505612][RN-A][6oo1] ro.boot.em.model=SM-T835
+[    0.505657][RN-A][6oo1] ro.boot.em.status=0x0
+[    0.505701][RN-A][6oo1] ro.boot.usrf=9438192
+[    0.505744][RN-A][6oo1] ro.boot.flash.locked=0
+[    0.505788][RN-A][6oo1] ro.boot.sales.param.offset=9437648
+[    0.505836][RN-A][6oo1] ro.boot.sec_atd.tty=/dev/ttyHS8
+[    0.505884][RN-A][6oo1] ro.boot.baseband=msm
+[    0.505928][RN-A][6oo1] ro.boot.hardware=qcom
+[    0.505981][RN-A][6oo1] ro.boot.revision=7
+[    0.506032][RN-A][6oo1] ro.boot.ucs_mode=0
+[    0.506084][RN-A][6oo1] ro.boot.ap_serial=0x07B88522
+[    0.506140][RN-A][6oo1] ro.boot.carrierid=
+[    0.506191][RN-A][6oo1] ro.boot.carrierid.param.offset=9437644
+[    0.506252][RN-A][6oo1] ro.boot.prototype.param.offset=9437660
+[    0.506313][RN-A][6oo1] ro.boot.bootdevice=1da4000.ufshc
+[    0.506371][RN-A][6oo1] ro.boot.bootloader=T835JXS5CUC2
+[    0.506428][RN-A][6oo1] ro.boot.sales_code=EGY
+[    0.506482][RN-A][6oo1] ro.boot.warranty_bit=1
+[    0.506527][RN-A][6oo1] ro.boot.boot_recovery=1
+[    0.506572][RN-A][6oo1] ro.boot.security_mode=1526595585
+[    0.506620][RN-A][6oo1] ro.boot.cp_debug_level=0x55FF
+[    0.506666][RN-A][6oo1] ro.boot.ddr_start_type=1
+[    0.506711][RN-A][6oo1] ro.boot.verifiedbootstate=orange
+[    0.506759][RN-A][6oo1] ro.build.id=QP1A.190711.020
+[    0.506805][RN-A][6oo1] ro.build.PDA=T835JXS5CUC2
+[    0.506851][RN-A][6oo1] ro.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.506903][RN-A][6oo1] ro.build.date.utc=1616652039
+[    0.506949][RN-A][6oo1] ro.build.host=SWDH4620
+[    0.507001][RN-A][6oo1] ro.build.tags=release-keys
+[    0.507056][RN-A][6oo1] ro.build.type=user
+[    0.507107][RN-A][6oo1] ro.build.user=dpi
+[    0.507156][RN-A][6oo1] ro.build.display.id=QP1A.190711.020.T835JXS5CUC2
+[    0.507222][RN-A][6oo1] ro.build.product=gts4llte
+[    0.507276][RN-A][6oo1] ro.build.version.sdk=29
+[    0.507331][RN-A][6oo1] ro.build.version.base_os=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXU4CTI4:user/release-keys
+[    0.507421][RN-A][6oo1] ro.build.version.release=10
+[    0.507476][RN-A][6oo1] ro.build.version.codename=REL
+[    0.507529][RN-A][6oo1] ro.build.version.incremental=T835JXS5CUC2
+[    0.507582][RN-A][6oo1] ro.build.version.preview_sdk=0
+[    0.507630][RN-A][6oo1] ro.build.version.security_patch=2021-02-01
+[    0.507683][RN-A][6oo1] ro.build.description=gts4lltexx-user 10 QP1A.190711.020 T835JXS5CUC2 release-keys
+[    0.507753][RN-A][6oo1] ro.build.characteristics=tablet
+[    0.507802][RN-A][6oo1] ro.build.system_root_image=false
+[    0.507850][RN-A][6oo1] ro.product.cpu.abi=arm64-v8a
+[    0.507897][RN-A][6oo1] ro.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+[    0.507952][RN-A][6oo1] ro.product.name=gts4lltexx
+[    0.508002][RN-A][6oo1] ro.product.brand=samsung
+[    0.508056][RN-A][6oo1] ro.product.model=SM-T835
+[    0.508111][RN-A][6oo1] ro.product.device=gts4llte
+[    0.508166][RN-A][6oo1] ro.product.system.brand=samsung
+[    0.508222][RN-A][6oo1] ro.product.manufacturer=samsung
+[    0.508285][RN-A][6oo1] ro.baseband=msm
+[    0.508336][RN-A][6oo1] ro.bootmode=unknown
+[    0.508388][RN-A][6oo1] ro.hardware=qcom
+[    0.508439][RN-A][6oo1] ro.revision=7
+[    0.508488][RN-A][6oo1] ro.bootloader=T835JXS5CUC2
+[    0.508542][RN-A][6oo1] ro.debuggable=0
+[    0.508585][RN-A][6oo1] ro.property_service.version=2
+[    0.508633][RN-A][6oo1] sys.usb.controller=a800000.dwc3
+[    0.508680][RN-A][6oo1] persist.sys.dalvik.vm.lib.2=libart.so
+[    0.508730][RN-A][6oo1] af.fast_track_multiplier=1
+[    0.508775][RN-A][6oo1] ro.af.client_heap_size_kbyte=7168
+[    0.508824][RN-A][6oo1] ro.sf.lcd_density=360
+[    0.508868][RN-A][6oo1] ro.com.google.gmsversion=10_202005
+[    0.508917][RN-A][6oo1] ro.minui.default_rotation=ROTATION_LEFT
+[    0.508967][RN-A][6oo1] ro.radio.noril=no
+[    0.509009][RN-A][6oo1] ro.zygote=zygote64_32
+[    0.509060][RN-A][6oo1] ro.opengles.version=196610
+[    0.509115][RN-A][6oo1] ro.telephony.default_cdma_sub=0
+[    0.509172][RN-A][6oo1] ro.oem_unlock_supported=1
+[    0.509226][RN-A][6oo1] ro.control_privapp_permissions=enforce
+[    0.509286][RN-A][6oo1] audio.offload.min.duration.secs=30
+[    0.509345][RN-A][6oo1] audio.offload.video=true
+[    0.509398][RN-A][6oo1] audio.deep_buffer.media=true
+[    0.509455][RN-A][6oo1] media.stagefright.thumbnail.prefer_hw_codecs=true
+[    0.509520][RN-A][6oo1] keyguard.no_require_sim=true
+[    0.509577][RN-A][6oo1] persist.radio.multisim.config=ss
+[    0.509625][RN-A][6oo1] ro.dalvik.vm.native.bridge=0
+[    0.509672][RN-A][6oo1] dalvik.vm.isa.arm.variant=cortex-a73
+[    0.509721][RN-A][6oo1] dalvik.vm.isa.arm.features=default
+[    0.509769][RN-A][6oo1] dalvik.vm.isa.arm64.variant=generic
+[    0.509818][RN-A][6oo1] dalvik.vm.isa.arm64.features=default
+[    0.509868][RN-A][6oo1] dalvik.vm.dexopt.secondary=true
+[    0.509915][RN-A][6oo1] dalvik.vm.usejit=true
+[    0.509959][RN-A][6oo1] dalvik.vm.heapsize=512m
+[    0.510003][RN-A][6oo1] dalvik.vm.lockprof.threshold=500
+[    0.510057][RN-A][6oo1] dalvik.vm.dex2oat-Xms=64m
+[    0.510120][RN-A][6oo1] dalvik.vm.dex2oat-Xmx=512m
+[    0.510184][RN-A][6oo1] dalvik.vm.heapmaxfree=8m
+[    0.510247][RN-A][6oo1] dalvik.vm.heapminfree=2m
+[    0.510310][RN-A][6oo1] dalvik.vm.heapstartsize=8m
+[    0.510373][RN-A][6oo1] dalvik.vm.appimageformat=lz4
+[    0.510440][RN-A][6oo1] dalvik.vm.usejitprofiles=true
+[    0.510506][RN-A][6oo1] dalvik.vm.heapgrowthlimit=256m
+[    0.510573][RN-A][6oo1] dalvik.vm.image-dex2oat-Xms=64m
+[    0.510640][RN-A][6oo1] dalvik.vm.image-dex2oat-Xmx=64m
+[    0.510705][RN-A][6oo1] dalvik.vm.heaptargetutilization=0.75
+[    0.510758][RN-A][6oo1] ro.frp.pst=/dev/block/persistent
+[    0.510809][RN-A][6oo1] ro.odm.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.510867][RN-A][6oo1] ro.odm.build.date.utc=1616652039
+[    0.510918][RN-A][6oo1] ro.odm.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.511000][RN-A][6oo1] ro.apex.updatable=false
+[    0.511048][RN-A][6oo1] ro.hwui.use_vulkan=
+[    0.511094][RN-A][6oo1] ro.vndk.version=29
+[    0.511139][RN-A][6oo1] ro.board.platform=msm8998
+[    0.511189][RN-A][6oo1] ro.kernel.qemu=0
+[    0.511247][RN-A][6oo1] ro.vendor.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.511326][RN-A][6oo1] ro.vendor.build.date.utc=1616652039
+[    0.511397][RN-A][6oo1] ro.vendor.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.511505][RN-A][6oo1] ro.carrier=unknown
+[    0.511565][RN-A][6oo1] ro.product.cpu.abilist32=armeabi-v7a,armeabi
+[    0.511650][RN-A][6oo1] ro.product.cpu.abilist64=arm64-v8a
+[    0.511757][RN-A][6oo1] ro.product.odm.name=gts4lltexx
+[    0.511862][RN-A][6oo1] ro.product.odm.brand=samsung
+[    0.511963][RN-A][6oo1] ro.product.odm.model=SM-T835
+[    0.512060][RN-A][6oo1] ro.product.odm.device=gts4llte
+[    0.512158][RN-A][6oo1] ro.product.odm.manufacturer=samsung
+[    0.512259][RN-A][6oo1] ro.product.board=msm8998
+[    0.512349][RN-A][6oo1] ro.product.vendor.name=gts4lltexx
+[    0.512448][RN-A][6oo1] ro.product.vendor.brand=samsung
+[    0.512554][RN-A][6oo1] ro.product.vendor.model=SM-T835
+[    0.512651][RN-A][6oo1] ro.product.vendor.device=gts4llte
+[    0.512760][RN-A][6oo1] ro.product.vendor.manufacturer=samsung
+[    0.512869][RN-A][6oo1] ro.product.first_api_level=27
+[    0.512968][RN-A][6oo1] ro.hardware.egl=adreno
+[    0.513065][RN-A][6oo1] ro.hardware.vulkan=adreno
+[    0.513160][RN-A][6oo1] ro.hardware.nfc_nci=nqx.default
+[    0.513217][RN-A][6oo1] ro.hardware.chipname=MSM8998
+[    0.513271][RN-A][6oo1] ro.hardware.keystore=mdfpp
+[    0.513325][RN-A][6oo1] ro.hardware.gatekeeper=mdfpp
+[    0.513378][RN-A][6oo1] ro.bootimage.build.date=Thu Mar 25 15:00:39 KST 2021
+[    0.513444][RN-A][6oo1] ro.bootimage.build.date.utc=1616652039
+[    0.513501][RN-A][6oo1] ro.bootimage.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.513606][RN-A][6oo1] ro.build.fingerprint=samsung/gts4lltexx/gts4llte:10/QP1A.190711.020/T835JXS5CUC2:user/release-keys
+[    0.513687][RN-A][6oo1] pm.dexopt.boot=verify
+[    0.513733][RN-A][6oo1] pm.dexopt.ab-ota=speed-profile
+[    0.513781][RN-A][6oo1] pm.dexopt.shared=speed
+[    0.513827][RN-A][6oo1] pm.dexopt.install=speed-profile
+[    0.513875][RN-A][6oo1] pm.dexopt.inactive=verify
+[    0.513921][RN-A][6oo1] pm.dexopt.bg-dexopt=speed-profile
+[    0.513970][RN-A][6oo1] pm.dexopt.first-boot=quicken
+[    0.514017][RN-A][6oo1] ro.telephony.iwlan_operation_mode=legacy
+[    0.514070][RN-A][6oo1] ro.adb.secure=1
+[    0.514121][RN-A][6oo1] ro.secure=1
+[    0.514171][RN-A][6oo1] ro.com.google.clientidbase=android-samsung-ss
+[    0.514236][RN-A][6oo1] security.mdf=None
+[    0.514287][RN-A][6oo1] security.mdf.result=None
+[    0.514344][RN-A][6oo1] sys.usb.configfs=1
+[    0.514414][RN-A][6oo1] ro.gsid.image_running=0
+[    0.514477][RN-A][6oo1] log.tag.stats_log=I
+[    0.514542][RN-A][6oo1] ro.logd.size.stats=64K
+[    0.514607][RN-A][6oo1] ro.logd.auditd=false
+[    0.514672][RN-A][6oo1] vendor.mm.enable.qcom_parser=13631487
+[    0.514743][RN-A][6oo1] ro.multisim.simslotcount=1
+[    0.514800][RN-A][6oo1] persist.vendor.overlay.izat.optin=rro
+[    0.514862][RN-A][6oo1] vendor.camera.aux.packagelist=org.codeaurora.snapcam
+[    0.514944][RN-A][6oo1] persist.vendor.camera.privapp.list=org.codeaurora.snapcam
+[    0.515019][RN-A][6oo1] persist.debug.wfd.enable=1
+[    0.515076][RN-A][6oo1] persist.debug.coresight.config=stm-events
+[    0.515138][RN-A][6oo1] ro.product_ship=true
+[    0.515191][RN-A][6oo1] ril.subscription.types=NV,RUIM
+[    0.515249][RN-A][6oo1] persist.radio.sib16_support=1
+[    0.515306][RN-A][6oo1] ro.error.receiver.default=com.samsung.receiver.error
+[    0.515373][RN-A][6oo1] persist.timed.enable=true
+[    0.515428][RN-A][6oo1] selinux.policy_version=SEPF_SM-T835_10_0021
+[    0.515491][RN-A][6oo1] ro.boot.serialno=ce10182ab292a103037e
+[    0.515554][RN-A][6oo1] ro.serialno=ce10182ab292a103037e
+[    0.515614][RN-A][6oo1] ro.setupwizard.mode=OPTIONAL
+[    0.515670][RN-A][6oo1] ro.setupwizard.wifi_on_exit=false
+[    0.515730][RN-A][6oo1] ro.setupwizard.rotation_locked=false
+[    0.515795][RN-A][6oo1] setupwizard.theme=glif_v3_light
+[    0.515867][RN-A][6oo1] setupwizard.feature.enable_stencil_partner_customization=1
+[    0.515940][RN-A][6oo1] security.perf_harden=1
+[    0.515996][RN-A][6oo1] ro.product.system.name=gts4lltexx
+[    0.516055][RN-A][6oo1] ro.product.system.model=SM-T835
+[    0.516115][RN-A][6oo1] ro.product.system.device=gts4llte
+[    0.516180][RN-A][6oo1] ro.product.system.manufacturer=samsung
+[    0.516241][RN-A][6oo1] ro.security.mdf.ux=Enabled
+[    0.516297][RN-A][6oo1] ro.security.mdf.ver=3.1
+[    0.516349][RN-A][6oo1] ro.security.mdf.release=5
+[    0.516403][RN-A][6oo1] ro.security.fips.ux=Enabled
+[    0.516459][RN-A][6oo1] ro.security.wlan.ver=1.0
+[    0.516512][RN-A][6oo1] ro.security.wlan.release=2
+[    0.516569][RN-A][6oo1] ro.security.vpnpp.ver=2.1
+[    0.516622][RN-A][6oo1] ro.security.vpnpp.release=3.0
+[    0.516679][RN-A][6oo1] ro.security.fips_skc.ver=1.8
+[    0.516735][RN-A][6oo1] ro.security.keystore.keytype=sak,gak
+[    0.516795][RN-A][6oo1] ro.security.fips_bssl.ver=1.4
+[    0.516858][RN-A][6oo1] dev.pm.dyn_samplingrate=1
+[    0.516914][RN-A][6oo1] dev.mnt.blk.efs=sda
+[    0.516966][RN-A][6oo1] dev.mnt.blk.cache=sda
+[    0.517018][RN-A][6oo1] net.bt.name=Android
+[    0.517070][RN-A][6oo1] sys.config.activelaunch_enable=true
+[    0.517131][RN-A][6oo1] sys.vendor.shutdown.waittime=500
+[    0.517189][RN-A][6oo1] persist.sys.usb.config=mtp
+[    0.517245][RN-A][6oo1] persist.sys.wfd.virtual=0
+[    0.517301][RN-A][6oo1] persist.security.ams.enforcing=1
+[    0.517359][RN-A][6oo1] security.ADP.version=0
+[    0.517417][RN-A][6oo1] security.ADP.policy_version=00000000
+[    0.517485][RN-A][6oo1] security.ASKS.version=0
+[    0.517546][RN-A][6oo1] security.ASKS.time_value=00000000
+[    0.517610][RN-A][6oo1] security.ASKS.rufs_enable=true
+[    0.517682][RN-A][6oo1] security.ASKS.policy_version=00000000
+[    0.517744][RN-A][6oo1] ro.vendor.audio.sdk.ssr=false
+[    0.517800][RN-A][6oo1] ro.vendor.audio.sdk.fluencetype=none
+[    0.517860][RN-A][6oo1] vendor.audio.hw.aac.encoder=true
+[    0.517920][RN-A][6oo1] vendor.audio.use.sw.ape.decoder=true
+[    0.517979][RN-A][6oo1] vendor.audio.use.sw.alac.decoder=true
+[    0.518039][RN-A][6oo1] vendor.audio.flac.sw.decoder.24bit=true
+[    0.518101][RN-A][6oo1] vendor.audio.safx.pbe.enabled=false
+[    0.518162][RN-A][6oo1] vendor.audio.dolby.ds2.enabled=false
+[    0.518222][RN-A][6oo1] vendor.audio.dolby.ds2.hardbypass=false
+[    0.518281][RN-A][6oo1] vendor.audio.parser.ip.buffer.size=262144
+[    0.518341][RN-A][6oo1] vendor.audio.tunnel.encode=false
+[    0.518400][RN-A][6oo1] vendor.audio.volume.headset.gain.depcal=true
+[    0.518463][RN-A][6oo1] vendor.audio.feature.fm.enable=true
+[    0.518523][RN-A][6oo1] vendor.audio.feature.hfp.enable=true
+[    0.518585][RN-A][6oo1] vendor.audio.feature.snd_mon.enable=true
+[    0.518650][RN-A][6oo1] vendor.audio.feature.audiozoom.enable=false
+[    0.518712][RN-A][6oo1] vendor.audio.feature.hdmi_edid.enable=true
+[    0.518774][RN-A][6oo1] vendor.audio.feature.hwdep_cal.enable=false
+[    0.518836][RN-A][6oo1] vendor.audio.feature.spkr_prot.enable=true
+[    0.518900][RN-A][6oo1] vendor.audio.feature.compr_voip.enable=true
+[    0.518964][RN-A][6oo1] vendor.audio.feature.maxx_audio.enable=false
+[    0.519027][RN-A][6oo1] vendor.audio.feature.usb_offload.enable=true
+[    0.519092][RN-A][6oo1] vendor.audio.feature.a2dp_offload.enable=false
+[    0.519156][RN-A][6oo1] vendor.audio.feature.display_port.enable=true
+[    0.519220][RN-A][6oo1] vendor.audio.feature.external_dsp.enable=false
+[    0.519284][RN-A][6oo1] vendor.audio.feature.external_speaker.enable=false
+[    0.519345][RN-A][6oo1] vendor.audio.feature.compress_meta_data.enable=true
+[    0.519400][RN-A][6oo1] vendor.audio.feature.concurrent_capture.enable=false
+[    0.519454][RN-A][6oo1] vendor.audio.feature.multi_voice_session.enable=false
+[    0.519510][RN-A][6oo1] vendor.audio.feature.deepbuffer_as_primary.enable=true
+[    0.519566][RN-A][6oo1] vendor.audio.offload.track.enable=true
+[    0.519616][RN-A][6oo1] vendor.audio.offload.buffer.size.kb=32
+[    0.519667][RN-A][6oo1] vendor.audio.offload.gapless.enabled=true
+[    0.519718][RN-A][6oo1] vendor.audio.offload.multiaac.enable=true
+[    0.519774][RN-A][6oo1] vendor.audio.offload.multiple.enabled=false
+[    0.519839][RN-A][6oo1] vendor.audio.offload.passthrough=false
+[    0.519900][RN-A][6oo1] vendor.audio.spkr_prot.tx.sampling_rate=48000
+[    0.519964][RN-A][6oo1] vendor.voice.path.for.pcm.voip=true
+[    0.520024][RN-A][6oo1] persist.vendor.audio.hw.binder.size_kbyte=1024
+[    0.520089][RN-A][6oo1] persist.vendor.audio.ras.enabled=false
+[    0.520150][RN-A][6oo1] persist.vendor.audio.fluence.speaker=true
+[    0.520212][RN-A][6oo1] persist.vendor.audio.fluence.voicerec=false
+[    0.520275][RN-A][6oo1] persist.vendor.audio.fluence.voicecall=true
+[    0.520337][RN-A][6oo1] ro.vendor.bluetooth.wipower=false
+[    0.520386][RN-A][6oo1] vendor.qcom.bluetooth.soc=cherokee
+[    0.520435][RN-A][6oo1] persist.vendor.qcom.bluetooth.enable.splita2dp=true
+[    0.520490][RN-A][6oo1] persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
+[    0.520558][RN-A][6oo1] persist.camera.privapp.list=org.codeaurora.snapcam
+[    0.520614][RN-A][6oo1] ro.odm.build.id=QP1A.190711.020
+[    0.520664][RN-A][6oo1] ro.odm.build.tags=release-keys
+[    0.520712][RN-A][6oo1] ro.odm.build.type=user
+[    0.520757][RN-A][6oo1] ro.odm.build.version.sdk=29
+[    0.520804][RN-A][6oo1] ro.odm.build.version.release=10
+[    0.520861][RN-A][6oo1] ro.odm.build.version.incremental=T835JXS5CUC2
+[    0.520925][RN-A][6oo1] ro.odm.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+[    0.520993][RN-A][6oo1] ro.odm.product.cpu.abilist32=armeabi-v7a,armeabi
+[    0.521060][RN-A][6oo1] ro.odm.product.cpu.abilist64=arm64-v8a
+[    0.521120][RN-A][6oo1] ro.vendor.sec.radio.def_network=9
+[    0.521179][RN-A][6oo1] ro.vendor.epdg.support=true
+[    0.521234][RN-A][6oo1] ro.vendor.build.id=QP1A.190711.020
+[    0.521294][RN-A][6oo1] ro.vendor.build.tags=release-keys
+[    0.521352][RN-A][6oo1] ro.vendor.build.type=user
+[    0.521398][RN-A][6oo1] ro.vendor.build.version.sdk=29
+[    0.521444][RN-A][6oo1] ro.vendor.build.version.sehi=2903
+[    0.521493][RN-A][6oo1] ro.vendor.build.version.release=10
+[    0.521542][RN-A][6oo1] ro.vendor.build.version.incremental=T835JXS5CUC2
+[    0.521596][RN-A][6oo1] ro.vendor.product.cpu.abilist=arm64-v8a,armeabi-v7a,armeabi
+[    0.521653][RN-A][6oo1] ro.vendor.product.cpu.abilist32=armeabi-v7a,armeabi
+[    0.521708][RN-A][6oo1] ro.vendor.product.cpu.abilist64=arm64-v8a
+[    0.521758][RN-A][6oo1] ro.vendor.sensors.dpc=true
+[    0.521804][RN-A][6oo1] ro.vendor.sensors.pmd=true
+[    0.521858][RN-A][6oo1] ro.vendor.sensors.dev_ori=true
+[    0.521915][RN-A][6oo1] ro.vendor.sensors.mot_detect=true
+[    0.521973][RN-A][6oo1] ro.vendor.sensors.multishake=true
+[    0.522033][RN-A][6oo1] ro.vendor.sensors.sta_detect=true
+[    0.522091][RN-A][6oo1] ro.vendor.mg_factory_mode=0
+[    0.522147][RN-A][6oo1] ro.vendor.use_data_netmgrd=true
+[    0.522207][RN-A][6oo1] ro.vendor.extension_library=libqti-perfd-client.so
+[    0.522275][RN-A][6oo1] vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
+[    0.522342][RN-A][6oo1] vendor.vidc.enc.disable.pq=true
+[    0.522395][RN-A][6oo1] vendor.power.pasr.enabled=true
+[    0.522443][RN-A][6oo1] vendor.audio_hal.period_size=192
+[    0.522491][RN-A][6oo1] persist.vendor.bt.aac_frm_ctl.enabled=true
+[    0.522542][RN-A][6oo1] persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+[    0.522598][RN-A][6oo1] persist.vendor.data.mode=concurrent
+[    0.522647][RN-A][6oo1] persist.vendor.qcomsysd.enabled=1
+[    0.522695][RN-A][6oo1] ro.vendor.display.hdr.config=/vendor/etc/hdr_tm_config.xml
+[    0.522753][RN-A][6oo1] ro.vendor.display.cabl=2
+[    0.522798][RN-A][6oo1] vendor.display.disable_ext_anim=1
+[    0.522848][RN-A][6oo1] vendor.display.perf_hint_window=50
+[    0.522907][RN-A][6oo1] vendor.display.disable_skip_validate=1
+[    0.522968][RN-A][6oo1] vendor.display.enable_default_color_mode=1
+[    0.523031][RN-A][6oo1] ro.vendor.qti.va_odm.support=1
+[    0.523089][RN-A][6oo1] ro.vendor.qti.va_aosp.support=1
+[    0.523145][RN-A][6oo1] vendor.gralloc.enable_fb_ubwc=1
+[    0.523204][RN-A][6oo1] ro.vendor.multisim.simslotcount=1
+[    0.523262][RN-A][6oo1] persist.vendor.radio.atfwd.start=true
+[    0.523323][RN-A][6oo1] persist.vendor.radio.rat_on=combine
+[    0.523381][RN-A][6oo1] persist.vendor.radio.custom_ecc=1
+[    0.523432][RN-A][6oo1] persist.vendor.radio.sib16_support=1
+[    0.523482][RN-A][6oo1] persist.vendor.radio.procedure_bytes=SKIP
+[    0.523533][RN-A][6oo1] persist.vendor.radio.apm_sim_not_pwdn=1
+[    0.523583][RN-A][6oo1] vendor.rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+[    0.523641][RN-A][6oo1] ro.vendor.build.security_patch=2021-02-01
+[    0.523692][RN-A][6oo1]
+[    0.523728][RN-A][6oo1] Supported API: 3
+[    0.528491][RN-A][6oo1] I:/efs is already mounted
+[    0.528801][RN-A][6oo1] W:[libfs_mgr]Failed to umount /efs: Device or resource busy
+[    0.528866][RN-A][6oo1] check_selective_file:Can't unmount /efs - Device or resource busy
+[    0.528944][RN-A][6oo1] just_reboot_after_update = 1
+[    0.561445][RN-A][6oo1] prompt_and_wipe_app_data
+[    0.563770][RN-A][6oo1] mode is rescue party
+[    0.573620][RN-A][6oo1] success to save recovery mode : rescue party
+[    0.573699][RN-A][6oo1] print_rescueparty_log()
+[    0.574043][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.575606][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.575686][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.576698][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.576756][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.576856][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.576935][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.577000][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.577089][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.577156][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.577239][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.577313][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.577378][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.577496][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.577569][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.577629][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.577690][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.577746][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.577815][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.577875][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.577929][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.578042][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.578145][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.578231][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.578306][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.578378][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.578464][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.578538][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.578599][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.578696][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.578762][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.578828][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.578889][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.578944][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.579012][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.579083][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.579156][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.579284][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.579365][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.579438][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.579511][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.579577][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.579651][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.579712][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.579765][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.579861][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.579927][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.579991][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.580055][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.580122][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.580205][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.580283][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.580347][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.580464][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.580545][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.580636][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.580697][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.580753][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.580823][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.580884][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.580937][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.581040][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.581118][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.581192][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.581265][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.581332][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.581415][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.581489][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.581556][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.581663][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.581730][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.581790][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.581849][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.581904][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.581972][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.582036][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.582098][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.582220][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.582358][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.582430][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.582503][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.582569][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.582642][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.582703][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.582758][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.582855][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.582921][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.582981][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.583042][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.583110][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.583192][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.583266][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.583331][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.583450][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.583530][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.583598][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.583659][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.583715][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.583784][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.583845][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.583898][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.583994][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.584067][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.584139][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.584211][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.584277][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.584359][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.584439][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.584504][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.584612][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.584678][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.584737][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.584797][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.584852][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.584939][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.585007][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.585074][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.585197][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.585277][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.585361][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.585435][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.585501][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.585587][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.585651][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.585705][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.585801][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.585866][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.585925][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.585985][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.586040][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.586127][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.586201][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.586266][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.586384][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.586472][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.586558][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.586626][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.586680][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.586749][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.586809][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.586863][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.586959][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.587024][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.587091][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.587162][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.587228][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.587310][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.587383][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.587446][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.587562][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.587629][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.587688][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.587747][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.587802][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.587869][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.587934][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.587988][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.588098][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.588178][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.588249][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.588321][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.588387][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.588469][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.588541][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.588597][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.588693][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.588758][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.588816][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.588876][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.588930][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.588999][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.589072][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.589136][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.589253][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.589332][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.589406][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.589479][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.589542][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.589610][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.589670][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.589723][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.589818][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.589883][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.589942][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.590009][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.590075][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.590157][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.590230][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.590294][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.590411][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.590490][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.590550][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.590610][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.590665][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.590737][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.590798][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.590851][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.590947][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.591026][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.591099][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.591171][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.591238][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.591321][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.591394][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.591459][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.591563][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.591628][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.591688][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.591748][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.591803][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.591877][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.591939][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.592003][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.592121][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.592205][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.592277][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.592349][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.592417][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.592518][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.592580][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.592634][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.592731][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.592798][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.592857][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.592917][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.592981][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.593065][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.593139][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.593207][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.593325][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.593406][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.593479][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.593539][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.593595][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.593669][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.593731][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.593784][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.593882][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.593952][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.594027][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.594099][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.594165][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.594306][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.594379][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.594443][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.594546][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.594611][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.594671][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.594731][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.594791][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.594860][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.594936][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.595004][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.595125][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.595205][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.595278][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.595350][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.595417][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.595497][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.595558][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.595611][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.595708][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.595773][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.595832][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.595892][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.595952][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.596035][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.596108][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.596173][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.596291][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.596371][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.596443][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.596508][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.596568][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.596638][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.596698][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.596752][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.596849][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.596917][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.596989][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.597062][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.597131][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.597216][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.597289][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.597353][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.597470][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.597535][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.597595][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.597655][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.597710][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.597778][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.597838][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.597892][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.598008][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.598088][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.598160][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.598233][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.598299][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.598383][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.598454][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.598507][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.598603][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.598670][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.598729][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.598788][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.598843][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.598924][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.598997][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.599062][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.599181][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.599260][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.599338][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.599417][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.599480][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.599556][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.599622][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.599680][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.599785][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.599856][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.599921][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.599995][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.600063][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.600147][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.600220][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.600284][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.600402][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.600481][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.600552][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.600622][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.600684][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.600761][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.600826][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.600884][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.600993][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.601074][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.601147][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.601221][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.601287][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.601370][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.601444][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.601508][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.601614][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.601687][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.601752][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.601819][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.601879][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.601953][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.602023][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.602089][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.602230][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.602311][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.602387][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.602461][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.602529][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.602606][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.602676][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.602734][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.602841][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.602917][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.602986][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.603051][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.603119][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.603202][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.603276][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.603340][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.603459][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.603540][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.603609][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.603669][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.603724][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.603792][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.603855][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.603909][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.604005][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.604078][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.604208][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.604280][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.604346][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.604429][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.604503][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.604568][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.604667][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.604732][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.604793][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.604853][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.604923][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.604994][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.605059][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.605126][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.605244][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.605323][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.605400][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.605473][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.605540][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.605615][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.605676][RN-A][6oo1] !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.605730][RN-A][6oo1] java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.605826][RN-A][6oo1] 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.605893][RN-A][6oo1] 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.605953][RN-A][6oo1] 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.606154][RN-A][6oo1] 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.606222][RN-A][6oo1] 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.606306][RN-A][6oo1] 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.606381][RN-A][6oo1]
+[    0.606425][RN-A][6oo1] save_rescue_summary()
+[    0.606478][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.606558][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.606647][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.606731][RN-A][6oo1] RECOVERY_DBG: Exception count : 50
+[    0.606781][RN-A][6oo1] RECOVERY_DBG: !@*** FATAL EXCEPTION IN SYSTEM PROCESS: main
+[    0.606840][RN-A][6oo1] RECOVERY_DBG: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean com.android.server.wm.WindowManagerService.detectSafeMode()' on a null object reference
+[    0.606942][RN-A][6oo1] RECOVERY_DBG: 	at com.android.server.SystemServer.startOtherServices(SystemServer.java:2199)
+[    0.607013][RN-A][6oo1] RECOVERY_DBG: 	at com.android.server.SystemServer.run(SystemServer.java:905)
+[    0.607078][RN-A][6oo1] RECOVERY_DBG: 	at com.android.server.SystemServer.main(SystemServer.java:731)
+[    0.607143][RN-A][6oo1] RECOVERY_DBG: 	at java.lang.reflect.Method.invoke(Native Method)
+[    0.607212][RN-A][6oo1] RECOVERY_DBG: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:496)
+[    0.607301][RN-A][6oo1] RECOVERY_DBG: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1078)
+[    0.607380][RN-A][6oo1] RECOVERY_DBG: 
+[    0.607430][RN-A][6oo1]
+[    0.607472][RN-A][6oo1] make rescue summary
+[    0.607524][RN-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[    0.607593][RN-A][6oo1] I:Saving locale "en_US"
+[    0.607647][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.607723][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.607796][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.607867][RN-A][6oo1] I:## clear BCB message
+[    0.607911][RN-A][6oo1] I:## unlink /cache/recovery/command
+[    0.607960][RN-A][6oo1] save_current_log true, has_cashe true.
+[    0.608011][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[    0.608076][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[    0.608149][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[    0.665564][RN-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[    0.665653][RN-A][6oo1] copy_log_files_to_cache :: klog : 1
+[    0.665736][RN-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[    0.669274][RN-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[    0.669350][RN-A][6oo1] append_file offset 50109
+[    0.669815][RN-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[    0.681009][RN-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[    0.794633][RN-A][6oo1]
+[    0.794688][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[    0.794759][RN-A][6oo1]
+[    0.794810][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[    0.794898][RN-A][6oo1]
+[    0.794951][RN-A][6oo1]  FRP Enabled!! 
+[    0.801304][RN-A][6oo1]
+[    0.801383][RN-A][6oo1]  drawWarning[-1] 
+[  120.812673][RN-A][6oo1] I:Brightness: 60 (25%)
+[  240.813818][RN-A][6oo1] I:Brightness: 0 (off)
+[  440.008808][RN-A][6oo1] I:Brightness: 120 (50%)
+[  482.299094][RN-A][6oo1]
+[  482.299155][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  482.299208][RN-A][6oo1]
+[  482.299246][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  482.299299][RN-A][6oo1]
+[  482.299338][RN-A][6oo1]  FRP Enabled!! 
+[  482.305931][RN-A][6oo1]
+[  482.305977][RN-A][6oo1]  drawWarning[-1] 
+[  483.356752][RN-A][6oo1]
+[  483.356804][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  483.356863][RN-A][6oo1]
+[  483.356900][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  483.356953][RN-A][6oo1]
+[  483.356991][RN-A][6oo1]  FRP Enabled!! 
+[  483.363316][RN-A][6oo1]
+[  483.363355][RN-A][6oo1]  drawWarning[-1] 
+[  483.907703][RN-A][6oo1]
+[  483.907757][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  483.907818][RN-A][6oo1]
+[  483.907862][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  483.907925][RN-A][6oo1]
+[  483.907968][RN-A][6oo1]  FRP Enabled!! 
+[  483.914369][RN-A][6oo1]
+[  483.914414][RN-A][6oo1]  drawWarning[-1] 
+[  484.992789][RN-A][6oo1] RECOVERY_DBG: [RN | 2017/01/01 01:33:30 | T835JXS5CUC2]
+[  484.992857][RN-A][6oo1] RECOVERY_DBG: --prompt_and_wipe_app_data
+[  484.992914][RN-A][6oo1] RECOVERY_DBG: --reason=RescueParty
+[  484.992964][RN-A][6oo1] RECOVERY_DBG: --locale=en_US
+[  484.993022][RN-A][6oo1] RECOVERY_DBG: NP
+[  484.993074][RN-A][6oo1] RECOVERY_DBG: reboot_reason=UNKNOWN
+[  484.993134][RN-A][6oo1] show_rescueparty_log
+[  485.103820][RN-A][6oo1]
+[  485.103874][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  485.103944][RN-A][6oo1]
+[  485.103994][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  485.104067][RN-A][6oo1]
+[  485.104116][RN-A][6oo1]  FRP Enabled!! 
+[  485.110119][RN-A][6oo1]
+[  485.110157][RN-A][6oo1]  drawWarning[-1] 
+[  489.950120][RN-A][6oo1]
+[  489.950178][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  489.950240][RN-A][6oo1]
+[  489.950284][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  489.950348][RN-A][6oo1]
+[  489.950392][RN-A][6oo1]  FRP Enabled!! 
+[  489.956258][RN-A][6oo1]
+[  489.956305][RN-A][6oo1]  drawWarning[-1] 
+[  490.682206][RN-A][6oo1] View rescue summary
+[  490.684676][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  490.686238][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  490.686332][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  518.521495][RN-A][6oo1]
+[  518.521577][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  518.521648][RN-A][6oo1]
+[  518.521698][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  518.521773][RN-A][6oo1]
+[  518.521824][RN-A][6oo1]  FRP Enabled!! 
+[  518.527658][RN-A][6oo1]
+[  518.527714][RN-A][6oo1]  drawWarning[-1] 
+[  520.506815][RN-A][6oo1]
+[  520.506862][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  520.506915][RN-A][6oo1]
+[  520.506952][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  520.507005][RN-A][6oo1]
+[  520.507042][RN-A][6oo1]  FRP Enabled!! 
+[  520.512963][RN-A][6oo1]
+[  520.513005][RN-A][6oo1]  drawWarning[-1] 
+[  522.165446][RN-A][6oo1]
+[  522.165503][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  522.165568][RN-A][6oo1]
+[  522.165607][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  522.165679][RN-A][6oo1]
+[  522.165718][RN-A][6oo1]  FRP Enabled!! 
+[  522.171527][RN-A][6oo1]
+[  522.171566][RN-A][6oo1]  drawWarning[-1] 
+[  522.838153][RN-A][6oo1] View rescue log
+[  522.845306][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  522.846822][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  522.846915][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  544.662873][RN-A][6oo1]
+[  544.662941][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  544.662996][RN-A][6oo1]
+[  544.663035][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  544.663092][RN-A][6oo1]
+[  544.663130][RN-A][6oo1]  FRP Enabled!! 
+[  544.668955][RN-A][6oo1]
+[  544.668995][RN-A][6oo1]  drawWarning[-1] 
+[  546.002285][RN-A][6oo1]
+[  546.002339][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  546.002400][RN-A][6oo1]
+[  546.002438][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  546.002491][RN-A][6oo1]
+[  546.002527][RN-A][6oo1]  FRP Enabled!! 
+[  546.008460][RN-A][6oo1]
+[  546.008501][RN-A][6oo1]  drawWarning[-1] 
+[  546.538085][RN-A][6oo1]
+[  546.538138][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  546.538199][RN-A][6oo1]
+[  546.538242][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  546.538305][RN-A][6oo1]
+[  546.538348][RN-A][6oo1]  FRP Enabled!! 
+[  546.544175][RN-A][6oo1]
+[  546.544220][RN-A][6oo1]  drawWarning[-1] 
+[  557.670525][RN-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[  557.670610][RN-A][6oo1] I:Saving locale "en_US"
+[  557.677551][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  557.678988][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  557.679069][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  557.681285][RN-A][6oo1] I:## clear BCB message
+[  557.681412][RN-A][6oo1] I:## unlink /cache/recovery/command
+[  557.684738][RN-A][6oo1] save_current_log true, has_cashe true.
+[  557.685377][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  557.686748][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  557.686829][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  557.780609][RN-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[  557.780707][RN-A][6oo1] copy_log_files_to_cache :: klog : 1
+[  557.780803][RN-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[  557.795527][RN-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[  557.795613][RN-A][6oo1] append_file offset 140376
+[  557.795762][RN-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[  557.819741][RN-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[  557.931466][RN-A][6oo1]
+[  557.931537][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  557.931592][RN-A][6oo1]
+[  557.931632][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  557.931689][RN-A][6oo1]
+[  557.931728][RN-A][6oo1]  FRP Enabled!! 
+[  557.938035][RN-A][6oo1]
+[  557.938076][RN-A][6oo1]  drawWarning[-1] 
+[  559.339095][RN-A][6oo1]
+[  559.339148][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  559.339209][RN-A][6oo1]
+[  559.339253][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  559.339316][RN-A][6oo1]
+[  559.339359][RN-A][6oo1]  FRP Enabled!! 
+[  559.345777][RN-A][6oo1]
+[  559.345823][RN-A][6oo1]  drawWarning[-1] 
+[  560.814322][RN-A][6oo1]
+[  560.814368][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  560.814419][RN-A][6oo1]
+[  560.814457][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  560.814510][RN-A][6oo1]
+[  560.814553][RN-A][6oo1]  FRP Enabled!! 
+[  560.820901][RN-A][6oo1]
+[  560.820947][RN-A][6oo1]  drawWarning[-1] 
+[  561.326073][RN-A][6oo1]
+[  561.326125][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  561.326175][RN-A][6oo1]
+[  561.326211][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  561.326262][RN-A][6oo1]
+[  561.326298][RN-A][6oo1]  FRP Enabled!! 
+[  561.332731][RN-A][6oo1]
+[  561.332770][RN-A][6oo1]  drawWarning[-1] 
+[  562.586636][RN-A][6oo1]  Wipe App Data
+[  562.623509][RN-A][6oo1]
+[  562.623562][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  562.623631][RN-A][6oo1]
+[  562.623680][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  562.623751][RN-A][6oo1]
+[  562.623788][RN-A][6oo1]  FRP Enabled!! 
+[  562.627006][RN-A][6oo1]
+[  562.627045][RN-A][6oo1]  drawWarning[-1] 
+[  564.502718][RN-A][6oo1]
+[  564.502770][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  564.502830][RN-A][6oo1]
+[  564.502874][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  564.502936][RN-A][6oo1]
+[  564.502979][RN-A][6oo1]  FRP Enabled!! 
+[  564.506339][RN-A][6oo1]
+[  564.506385][RN-A][6oo1]  drawWarning[-1] 
+[  565.791798][RN-A][6oo1]
+[  565.791843][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  565.791895][RN-A][6oo1]
+[  565.791933][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  565.791987][RN-A][6oo1]
+[  565.792024][RN-A][6oo1]  FRP Enabled!! 
+[  565.795296][RN-A][6oo1]
+[  565.795335][RN-A][6oo1]  drawWarning[-1] 
+[  566.871495][RN-A][6oo1]
+[  566.871548][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  566.871608][RN-A][6oo1]
+[  566.871651][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  566.871715][RN-A][6oo1]
+[  566.871752][RN-A][6oo1]  FRP Enabled!! 
+[  566.874949][RN-A][6oo1]
+[  566.874989][RN-A][6oo1]  drawWarning[-1] 
+[  576.641778][RN-A][6oo1]
+[  576.641849][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  576.641920][RN-A][6oo1]
+[  576.641971][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  576.642045][RN-A][6oo1]
+[  576.642095][RN-A][6oo1]  FRP Enabled!! 
+[  576.645319][RN-A][6oo1]
+[  576.645367][RN-A][6oo1]  drawWarning[-1] 
+[  577.603821][RN-A][6oo1] [Wipe App Data] : no
+[  577.603869][RN-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[  577.603932][RN-A][6oo1] I:Saving locale "en_US"
+[  577.611371][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  577.612925][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  577.613019][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  577.615229][RN-A][6oo1] I:## clear BCB message
+[  577.615355][RN-A][6oo1] I:## unlink /cache/recovery/command
+[  577.622729][RN-A][6oo1] save_current_log true, has_cashe true.
+[  577.623388][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  577.624667][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  577.624743][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  577.707809][RN-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[  577.707893][RN-A][6oo1] copy_log_files_to_cache :: klog : 1
+[  577.708002][RN-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[  577.713327][RN-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[  577.713404][RN-A][6oo1] append_file offset 237518
+[  577.713589][RN-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[  577.736617][RN-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[  577.852293][RN-A][6oo1]
+[  577.852360][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  577.852431][RN-A][6oo1]
+[  577.852482][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  577.852556][RN-A][6oo1]
+[  577.852607][RN-A][6oo1]  FRP Enabled!! 
+[  577.858984][RN-A][6oo1]
+[  577.859025][RN-A][6oo1]  drawWarning[-1] 
+[  579.405933][RN-A][6oo1]
+[  579.405981][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  579.406032][RN-A][6oo1]
+[  579.406070][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  579.406141][RN-A][6oo1]
+[  579.406185][RN-A][6oo1]  FRP Enabled!! 
+[  579.412499][RN-A][6oo1]
+[  579.412545][RN-A][6oo1]  drawWarning[-1] 
+[  579.822902][RN-A][6oo1]
+[  579.822948][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  579.822999][RN-A][6oo1]
+[  579.823035][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  579.823087][RN-A][6oo1]
+[  579.823123][RN-A][6oo1]  FRP Enabled!! 
+[  579.829597][RN-A][6oo1]
+[  579.829636][RN-A][6oo1]  drawWarning[-1] 
+[  580.499846][RN-A][6oo1]
+[  580.499898][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  580.499958][RN-A][6oo1]
+[  580.500001][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  580.500064][RN-A][6oo1]
+[  580.500107][RN-A][6oo1]  FRP Enabled!! 
+[  580.506563][RN-A][6oo1]
+[  580.506609][RN-A][6oo1]  drawWarning[-1] 
+[  581.306172][RN-A][6oo1]
+[  581.306216][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  581.306267][RN-A][6oo1]
+[  581.306303][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  581.306355][RN-A][6oo1]
+[  581.306395][RN-A][6oo1]  FRP Enabled!! 
+[  581.312833][RN-A][6oo1]
+[  581.312878][RN-A][6oo1]  drawWarning[-1] 
+[  582.075590][RN-A][6oo1]
+[  582.075634][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  582.075686][RN-A][6oo1]
+[  582.075723][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  582.075775][RN-A][6oo1]
+[  582.075812][RN-A][6oo1]  FRP Enabled!! 
+[  582.082149][RN-A][6oo1]
+[  582.082188][RN-A][6oo1]  drawWarning[-1] 
+[  627.005970][RN-A][6oo1]
+[  627.006045][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  627.006106][RN-A][6oo1]
+[  627.006149][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  627.006212][RN-A][6oo1]
+[  627.006255][RN-A][6oo1]  FRP Enabled!! 
+[  627.012636][RN-A][6oo1]
+[  627.012681][RN-A][6oo1]  drawWarning[-1] 
+[  628.239832][RN-A][6oo1]
+[  628.239876][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  628.239927][RN-A][6oo1]
+[  628.239965][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  628.240028][RN-A][6oo1]
+[  628.240071][RN-A][6oo1]  FRP Enabled!! 
+[  628.246413][RN-A][6oo1]
+[  628.246460][RN-A][6oo1]  drawWarning[-1] 
+[  628.789255][RN-A][6oo1] RECOVERY_DBG: [RN | 2017/01/01 01:33:30 | T835JXS5CUC2]
+[  628.789326][RN-A][6oo1] RECOVERY_DBG: --prompt_and_wipe_app_data
+[  628.789388][RN-A][6oo1] RECOVERY_DBG: --reason=RescueParty
+[  628.789447][RN-A][6oo1] RECOVERY_DBG: --locale=en_US
+[  628.789501][RN-A][6oo1] RECOVERY_DBG: NP
+[  628.789551][RN-A][6oo1] RECOVERY_DBG: reboot_reason=UNKNOWN
+[  628.789610][RN-A][6oo1] show_rescueparty_log
+[  628.899851][RN-A][6oo1]
+[  628.899904][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  628.899974][RN-A][6oo1]
+[  628.900024][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  628.900097][RN-A][6oo1]
+[  628.900148][RN-A][6oo1]  FRP Enabled!! 
+[  628.905963][RN-A][6oo1]
+[  628.906008][RN-A][6oo1]  drawWarning[-1] 
+[  631.316064][RN-A][6oo1] View rescue log
+[  631.323340][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  631.324971][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  631.325058][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  662.789459][RN-A][6oo1]
+[  662.789539][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  662.789595][RN-A][6oo1]
+[  662.789635][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  662.789692][RN-A][6oo1]
+[  662.789730][RN-A][6oo1]  FRP Enabled!! 
+[  662.795537][RN-A][6oo1]
+[  662.795577][RN-A][6oo1]  drawWarning[-1] 
+[  664.541992][RN-A][6oo1]
+[  664.542046][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  664.542107][RN-A][6oo1]
+[  664.542151][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  664.542214][RN-A][6oo1]
+[  664.542258][RN-A][6oo1]  FRP Enabled!! 
+[  664.548163][RN-A][6oo1]
+[  664.548209][RN-A][6oo1]  drawWarning[-1] 
+[  665.169983][RN-A][6oo1] View rescue summary
+[  665.172353][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  665.173892][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  665.173995][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  672.669879][RN-A][6oo1]
+[  672.669938][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  672.669991][RN-A][6oo1]
+[  672.670039][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  672.670112][RN-A][6oo1]
+[  672.670162][RN-A][6oo1]  FRP Enabled!! 
+[  672.676048][RN-A][6oo1]
+[  672.676095][RN-A][6oo1]  drawWarning[-1] 
+[  673.969318][RN-A][6oo1]
+[  673.969363][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  673.969416][RN-A][6oo1]
+[  673.969453][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  673.969507][RN-A][6oo1]
+[  673.969544][RN-A][6oo1]  FRP Enabled!! 
+[  673.975437][RN-A][6oo1]
+[  673.975477][RN-A][6oo1]  drawWarning[-1] 
+[  674.585798][RN-A][6oo1]
+[  674.585851][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  674.585911][RN-A][6oo1]
+[  674.585955][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  674.586018][RN-A][6oo1]
+[  674.586061][RN-A][6oo1]  FRP Enabled!! 
+[  674.591949][RN-A][6oo1]
+[  674.591987][RN-A][6oo1]  drawWarning[-1] 
+[  676.368367][RN-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=0)
+[  676.368444][RN-A][6oo1] I:Saving locale "en_US"
+[  676.375585][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  676.377114][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  676.377207][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  676.379513][RN-A][6oo1] I:## clear BCB message
+[  676.379631][RN-A][6oo1] I:## unlink /cache/recovery/command
+[  676.383108][RN-A][6oo1] save_current_log true, has_cashe true.
+[  676.383740][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  676.385084][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  676.385163][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  676.471253][RN-A][6oo1] copy_log_files_to_cache :: copy log files to manual..
+[  676.471342][RN-A][6oo1] copy_log_files_to_cache :: klog : 1
+[  676.471448][RN-A][6oo1] copy_file '/proc/last_kmsg' '/cache/recovery/last_last_kernel'
+[  676.477258][RN-A][6oo1] append_file  '/efs/recovery/tmp_recovery.log' '/tmp/recovery_old.tmp' -1
+[  676.477343][RN-A][6oo1] append_file offset 339269
+[  676.477536][RN-A][6oo1] copy_file '/tmp/recovery_old.tmp' '/cache/recovery/last_recovery'
+[  676.505642][RN-A][6oo1] remove /efs/recovery/tmp_recovery.log
+[  676.616522][RN-A][6oo1]
+[  676.616583][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  676.616655][RN-A][6oo1]
+[  676.616706][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  676.616781][RN-A][6oo1]
+[  676.616830][RN-A][6oo1]  FRP Enabled!! 
+[  676.623188][RN-A][6oo1]
+[  676.623227][RN-A][6oo1]  drawWarning[-1] 
+[  678.426005][RN-A][6oo1]
+[  678.426062][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  678.426123][RN-A][6oo1]
+[  678.426167][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  678.426231][RN-A][6oo1]
+[  678.426275][RN-A][6oo1]  FRP Enabled!! 
+[  678.432577][RN-A][6oo1]
+[  678.432623][RN-A][6oo1]  drawWarning[-1] 
+[  679.408952][RN-A][6oo1]
+[  679.408997][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  679.409049][RN-A][6oo1]
+[  679.409086][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  679.409140][RN-A][6oo1]
+[  679.409177][RN-A][6oo1]  FRP Enabled!! 
+[  679.415630][RN-A][6oo1]
+[  679.415672][RN-A][6oo1]  drawWarning[-1] 
+[  680.475460][RN-A][6oo1]
+[  680.475516][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  680.475577][RN-A][6oo1]
+[  680.475621][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  680.475685][RN-A][6oo1]
+[  680.475726][RN-A][6oo1]  FRP Enabled!! 
+[  680.482027][RN-A][6oo1]
+[  680.482066][RN-A][6oo1]  drawWarning[-1] 
+[  682.855946][RN-A][6oo1]
+[  682.856009][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  682.856080][RN-A][6oo1]
+[  682.856131][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  682.856205][RN-A][6oo1]
+[  682.856254][RN-A][6oo1]  FRP Enabled!! 
+[  682.862607][RN-A][6oo1]
+[  682.862652][RN-A][6oo1]  drawWarning[-1] 
+[  714.535393][RN-A][6oo1]
+[  714.535466][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  714.535528][RN-A][6oo1]
+[  714.535573][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  714.535636][RN-A][6oo1]
+[  714.535680][RN-A][6oo1]  FRP Enabled!! 
+[  714.541964][RN-A][6oo1]
+[  714.542003][RN-A][6oo1]  drawWarning[-1] 
+[  715.245948][RN-A][6oo1]
+[  715.245993][RN-A][6oo1]  check_ReactivationLock_Support[] 
+[  715.246050][RN-A][6oo1]
+[  715.246095][RN-A][6oo1]  check_FRP_Support[/dev/block/persistent] 
+[  715.246159][RN-A][6oo1]
+[  715.246202][RN-A][6oo1]  FRP Enabled!! 
+[  715.252612][RN-A][6oo1]
+[  715.252657][RN-A][6oo1]  drawWarning[-1] 
+[  717.807598][RN-A][6oo1] Power off
+[  717.832826][RN-A][6oo1]
+[  717.832875][RN-A][6oo1] [Checking pre-multi-csc2]
+[  717.832924][RN-A][6oo1]
+[  717.832961][RN-A][6oo1] [start failed section]
+[  717.833008][RN-A][6oo1] sales_code=[EGY]
+[  717.833053][RN-A][6oo1] Carrier ID=[EMPTY]
+[  717.833105][RN-A][6oo1] [WARNING] Carrier ID Error
+[  717.833161][RN-A][6oo1]
+[  717.833204][RN-A][6oo1] [system partition space check]
+[  717.833263][RN-A][6oo1] This device has /odm partition.
+[  717.833320][RN-A][6oo1]
+[  717.833363][RN-A][6oo1] [out-recovery]
+[  717.833439][RN-A][6oo1] running out-recovery time : 0.000s
+[  717.833501][RN-A][6oo1] copy_avc_msg_to_data(1)
+[  717.840765][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  717.842362][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  717.842440][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  717.842513][RN-A][6oo1] copy_file '/proc/avc_msg' '/cache/recovery/last_avc_msg_recovery'
+[  717.852669][RN-A][6oo1] !__RECOVERY_FOR_ASSAMBLY
+[  717.853136][RN-A][6oo1] start_recovery() : del_recovery_command = yes
+[  717.853193][RN-A][6oo1] main() : del_recovery_command(recovery.delete.command) = yes
+[  717.853257][RN-A][6oo1] Shutting down...
+[  719.862057][RN-A][6oo1] ## sec_reboot(del=1, cmd=shutdown,, clear_BCB=1)
+[  719.862144][RN-A][6oo1] ## finish_recovery(delcmd=1, clearBCB=1, check_unlink=1)
+[  719.862218][RN-A][6oo1] I:Saving locale "en_US"
+[  719.864485][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  719.866180][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  719.866276][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
+[  719.868611][RN-A][6oo1] I:## clear BCB message
+[  719.868706][RN-A][6oo1] I:## unlink /cache/recovery/command
+[  719.879875][RN-A][6oo1] save_current_log true, has_cashe true.
+[  719.881043][RN-A][6oo1] I:[libfs_mgr]superblock s_max_mnt_count:38,/dev/block/bootdevice/by-name/cache
+[  719.883134][RN-A][6oo1] I:[libfs_mgr]__mount(source=/dev/block/bootdevice/by-name/cache,target=/cache,type=ext4)=0: Success
+[  719.883235][RN-A][6oo1] I:[libfs_mgr]__mount return 0(source=cache,target=/cache,type=ext4,flags=0,options=): Success
