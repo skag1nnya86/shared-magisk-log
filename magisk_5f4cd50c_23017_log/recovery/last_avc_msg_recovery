@@ -1,0 +1,7 @@
+audit(0.639:1): initialized
+audit(1483229685.399:2): policy loaded auid=4294967295 ses=4294967295
+audit(1483229686.769:3): avc:  denied  { getattr } for  pid=1 comm="init" name="panic_on_oops" dev="proc" ino=952 scontext=u:r:init:s0 tcontext=u:object_r:proc_panic:s0 tclass=file permissive=0
+audit(1483229686.769:4): avc:  denied  { getattr } for  pid=1 comm="init" name="max_map_count" dev="proc" ino=953 scontext=u:r:init:s0 tcontext=u:object_r:proc_max_map_count:s0 tclass=file permissive=0
+audit(1483229686.789:5): avc:  denied  { getattr } for  pid=1 comm="init" name="hostname" dev="proc" ino=9728 scontext=u:r:init:s0 tcontext=u:object_r:proc_hostname:s0 tclass=file permissive=0
+audit(1483229686.789:6): avc:  denied  { getattr } for  pid=1 comm="init" name="domainname" dev="proc" ino=9729 scontext=u:r:init:s0 tcontext=u:object_r:proc_hostname:s0 tclass=file permissive=0
+audit(1483229687.519:7): avc:  denied  { ioctl } for  pid=602 comm="mke2fs" path="/dev/block/sda23" dev="tmpfs" ino=865 ioctlcmd=127b scontext=u:r:recovery:s0 tcontext=u:object_r:cache_block_device:s0 tclass=blk_file permissive=0

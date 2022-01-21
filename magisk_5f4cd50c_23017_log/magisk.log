@@ -1,0 +1,20 @@
+01-01 00:22:39.935   701   701 I : Magisk 5f4cd50c(23017) daemon started
+01-01 00:22:39.936   701   701 I : * Device API level: 29
+01-01 02:22:47.065   701   703 D : resetprop: getprop [ro.crypto.state]: [encrypted]
+01-01 02:22:47.066   701   703 D : resetprop: getprop [init.svc.vold]: [running]
+01-01 02:22:47.068   701   703 I : ** post-fs-data mode running
+01-01 02:22:47.068   701   703 I : * Mounting mirrors
+01-01 02:22:47.068   701   703 I : mount: /sbin/.magisk/mirror/vendor
+01-01 02:22:47.068   701   703 I : link: /sbin/.magisk/mirror/persist
+01-01 02:22:47.068   701   703 I : link: /sbin/.magisk/mirror/cache
+01-01 02:22:47.068   701   703 I : mount: /sbin/.magisk/mirror/data
+01-01 02:22:47.068   701   703 I : link: /sbin/.magisk/mirror/system
+01-01 02:22:47.068   701   703 I : mount: /sbin/.magisk/mirror/system_root
+01-01 02:22:47.068   701   703 I : link: /sbin/.magisk/mirror/product
+01-01 02:22:47.068   701   703 I : * Initializing Magisk environment
+01-01 02:22:47.108   701   703 D : resetprop: decode with protobuf [/data/property/persistent_properties]
+01-01 02:22:47.108   701   703 D : resetprop: prop [persist.sys.safemode] does not exist
+01-01 02:22:47.113   701   703 I : * Running post-fs-data.d scripts
+01-01 02:22:47.117   701   703 D : bind_mnt: /sbin/.magisk/modules <- /sbin/.magisk/mirror/data/adb/modules
+01-01 02:22:47.121   701   703 I : * Running module post-fs-data scripts
+01-01 02:22:47.122   701   703 I : * Loading modules
